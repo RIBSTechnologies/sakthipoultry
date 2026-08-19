@@ -12,7 +12,7 @@ import { ClosingCTA } from "@/components/home/ClosingCTA";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: `${site.name} | Integrated Poultry Company in South India` },
+  title: { absolute: `${site.name} | Integrated Poultry Company in Tamil Nadu` },
   description: site.description,
   alternates: { canonical: "/" },
 };

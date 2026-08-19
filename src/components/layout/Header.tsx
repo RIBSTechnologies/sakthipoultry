@@ -29,7 +29,7 @@ export function Header() {
       <div className="bg-ink text-white">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-3 px-4 py-1.5 text-[11px] uppercase tracking-[0.16em] sm:px-6 lg:px-8">
           <p className="font-semibold text-gold">Quality forever</p>
-          <p className="hidden text-white/70 sm:block">Integrated poultry company · South India</p>
+          <p className="hidden text-white/70 sm:block">Integrated Poultry Company · Tamil Nadu</p>
           <a href={`mailto:${site.email}`} className="truncate hover:text-gold">
             {site.email}
           </a>
@@ -71,7 +71,7 @@ export function Header() {
                 href={item.href}
                 data-active={active}
                 className={cn(
-                  "nav-link shrink-0 whitespace-nowrap px-2 py-2 text-[11px] font-semibold uppercase tracking-[0.06em] text-ink/70 hover:text-ink xl:px-2.5",
+                  "nav-link shrink-0 whitespace-nowrap px-1.5 py-2 text-[11px] font-semibold uppercase tracking-[0.04em] text-ink/70 hover:text-ink xl:px-2",
                   active && "text-ink",
                 )}
               >

@@ -23,13 +23,13 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Integrated Poultry Company in South India`,
+    default: `${site.name} | Integrated Poultry Company in Tamil Nadu`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
   keywords: [
     "Sakthi Poultry",
-    "integrated poultry South India",
+    "integrated poultry Tamil Nadu",
     "Vencobb",
     "broiler chicks",
     "hatching eggs",

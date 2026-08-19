@@ -5,7 +5,7 @@ export const site = {
   tagline: "Quality at Every Stage. From Our Farms to the Market.",
   motto: "Quality forever",
   description:
-    "Sakthi Poultry Private Limited is an integrated poultry company in South India focused on delivering quality across the broiler poultry value chain — from breeder farms and hatcheries to feed production and commercial broiler farms.",
+    "Sakthi Poultry Private Limited is an integrated poultry company in Tamil Nadu focused on delivering quality across the broiler poultry value chain — from breeder farms and hatcheries to feed production and commercial broiler farms.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3001",
   email: "sakthichicken_ho@yahoo.com",
   /** Update with the official enquiry / WhatsApp number. Leave blank to hide call buttons. */
@@ -39,7 +39,7 @@ export const navItems = [
   { href: "/operations", label: "Operations" },
   { href: "/quality", label: "Quality" },
   { href: "/products", label: "Products" },
-  { href: "/farmers-partners", label: "Farmers & Partners", short: "Farmers" },
+  { href: "/farmers-partners", label: "Farmers & Partners" },
   { href: "/locations", label: "Locations" },
   { href: "/news-events", label: "News & Events", short: "News" },
   { href: "/careers", label: "Careers" },

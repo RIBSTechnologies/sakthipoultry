@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Egg, Factory, Bird, Wheat, Home, Truck } from "lucide-react";
+import { ArrowRight, Factory, Bird, Wheat, Home, Truck, Store } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { asset, cn } from "@/lib/utils";
@@ -10,45 +10,45 @@ import { SectionHeading } from "./SectionHeading";
 const steps = [
   {
     step: "01",
-    title: "Parent Breeder Farms",
+    title: "Breeding",
     summary: "Carefully managed parent stock with biosecurity protocols.",
     icon: Home,
     image: asset("farm-aerial-sheds.jpg"),
   },
   {
     step: "02",
-    title: "Hatching Eggs",
-    summary: "High viability and controlled storage handling.",
-    icon: Egg,
-    image: asset("healthy-birds-02.jpg"),
-  },
-  {
-    step: "03",
-    title: "Poultry Hatchery",
+    title: "Hatchery",
     summary: "Regulated incubation producing healthy day-old chicks.",
     icon: Factory,
     image: asset("farm-complex.jpg"),
   },
   {
-    step: "04",
-    title: "Poultry Feed",
+    step: "03",
+    title: "Feed Manufacturing",
     summary: "Formulated Sakthi Bromix for optimal growth stages.",
     icon: Wheat,
     image: asset("feed-bags-chicks.jpg"),
   },
   {
-    step: "05",
-    title: "Broiler Farms",
-    summary: "Contracted farming network with veterinary & technical backing.",
+    step: "04",
+    title: "Broiler Farming",
+    summary: "Contracted farming network with veterinary and technical backing.",
     icon: Bird,
     image: asset("aerial-farm-01.jpg"),
   },
   {
-    step: "06",
-    title: "Market Distribution",
-    summary: "Streamlined logistics to serve the South Indian market.",
+    step: "05",
+    title: "Integrated Logistics",
+    summary: "Coordinated movement of chicks, feed and live birds across the chain.",
     icon: Truck,
     image: asset("aerial-complex-02.jpg"),
+  },
+  {
+    step: "06",
+    title: "Sales and Distribution",
+    summary: "Broiler birds and feed supplied to wholesale, retail and institutional buyers.",
+    icon: Store,
+    image: asset("aerial-complex-05.jpg"),
   },
 ];
 

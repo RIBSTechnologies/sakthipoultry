@@ -35,35 +35,42 @@ export const homeStrengths = [
 export const valueChain = [
   {
     step: "01",
-    title: "Breeder Farms",
+    title: "Breeding",
     summary:
       "Our quality journey begins at the breeder-farm level, where parent birds are managed as an important foundation of the broiler production cycle.",
     image: asset("healthy-birds-01.jpg"),
   },
   {
     step: "02",
-    title: "Poultry Hatcheries",
+    title: "Hatchery",
     summary:
-      "Our poultry hatcheries incubate and hatch broiler chicks in controlled environments with a strong focus on hygiene and biosecurity.",
+      "Our hatcheries incubate and hatch broiler chicks in controlled environments with a strong focus on hygiene and biosecurity.",
     image: asset("farm-complex.jpg"),
   },
   {
     step: "03",
-    title: "Poultry Feed Manufacturing",
+    title: "Feed Manufacturing",
     summary:
       "Balanced nutrition plays an important role in poultry health and performance. Our feed operations support the nutritional requirements of breeder and broiler birds through breeder feed and broiler feed.",
     image: asset("feed-bags-chicks.jpg"),
   },
   {
     step: "04",
-    title: "Broiler Farms",
+    title: "Broiler Farming",
     summary:
       "At the commercial broiler farming stage, birds are raised in clean environments and provided balanced nutrition to support their overall well-being and development.",
     image: asset("aerial-farm-03.jpg"),
   },
   {
     step: "05",
-    title: "Sales & Distribution",
+    title: "Integrated Logistics",
+    summary:
+      "Chicks, feed and live birds move through a coordinated logistics network so each stage of the chain stays on schedule.",
+    image: asset("aerial-complex-02.jpg"),
+  },
+  {
+    step: "06",
+    title: "Sales and Distribution",
     summary:
       "Our integrated operations extend to broiler bird and poultry feed sales, connecting production with customers and business partners.",
     image: asset("aerial-complex-05.jpg"),

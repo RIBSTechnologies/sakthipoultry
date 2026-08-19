@@ -1,4 +1,11 @@
-import { ArrowRight, Egg, Bird, Wheat } from "lucide-react";
+import {
+  ArrowRight,
+  Egg,
+  Bird,
+  Wheat,
+  Drumstick,
+  FlaskConical,
+} from "lucide-react";
 import Link from "next/link";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { Button } from "@/components/ui/Button";
@@ -11,9 +18,9 @@ const products = [
     badge: "Genetics",
     tags: [] as string[],
     detail:
-      "Fertile broiler hatching eggs from our own parent operations, selected for uniformity, hatchability and careful hatchery-ready handling.",
+      "Fertile broiler hatching eggs from our parent operations, handled for viability, uniformity and hatchery-ready quality.",
     href: "/products#hatching-eggs",
-    cta: "View Hatching Eggs",
+    cta: "Explore Hatching Eggs",
     icon: Egg,
     image: asset("healthy-birds-02.jpg"),
   },
@@ -22,9 +29,9 @@ const products = [
     badge: "Day-old chicks",
     tags: [] as string[],
     detail:
-      "Quality day-old broiler chicks from our modern hatchery, with in-ovo vaccination, hygiene protocols and graded dispatch for farm placement.",
+      "Healthy day-old broiler chicks from regulated hatchery incubation, graded and dispatched for placement.",
     href: "/products#day-old-chicks",
-    cta: "View Broiler Chicks",
+    cta: "Explore Broiler Chicks",
     icon: Bird,
     image: asset("feed-bags-chicks.jpg"),
   },
@@ -33,9 +40,9 @@ const products = [
     badge: "Nutrition",
     tags: ["Pre-Starter Crumble", "Starter Crumble", "Finisher Pellet"],
     detail:
-      "Stage-specific broiler feed from our automated plant, made with selected raw materials to support healthy growth and efficient bird performance.",
+      "Stage-specific broiler nutrition from our automated plant, formulated to support growth, gut health and feed conversion.",
     href: "/products#poultry-feed",
-    cta: "View Poultry Feed",
+    cta: "Explore Poultry Feed",
     icon: Wheat,
     image: asset("feed-trough.jpg"),
   },
@@ -44,11 +51,33 @@ const products = [
     badge: "Live birds",
     tags: [] as string[],
     detail:
-      "Live broilers from our contract farming network, grown with veterinary oversight and supplied to wholesale traders and retail outlets.",
+      "Market-ready broilers from our integrated farming network, grown with veterinary oversight and consistent husbandry.",
     href: "/products#live-broilers",
-    cta: "View Broiler Birds",
+    cta: "Explore Broiler Birds",
     icon: Bird,
     image: asset("chickens-feeding.jpg"),
+  },
+  {
+    name: "Chicken Meat",
+    badge: "Processing",
+    tags: [] as string[],
+    detail:
+      "Chicken products sourced from our broiler chain for buyers who need a reliable South Indian supply connection.",
+    href: "/contact?type=product",
+    cta: "Explore Chicken Products",
+    icon: Drumstick,
+    image: asset("aerial-complex-05.jpg"),
+  },
+  {
+    name: "Laboratory Services",
+    badge: "Diagnostics",
+    tags: [] as string[],
+    detail:
+      "In-house laboratory and veterinary diagnostics supporting flock health, feed quality and on-farm decision making.",
+    href: "/contact?type=general",
+    cta: "Enquire About Laboratory Services",
+    icon: FlaskConical,
+    image: asset("farm-complex.jpg"),
   },
 ];
 
@@ -62,11 +91,11 @@ export function ProductsGrid() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           id="products-heading"
-          eyebrow="Poultry Products & Solutions"
+          eyebrow="Products & Services"
           title="Poultry Products & Solutions for a Growing Industry"
         />
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {products.map((product) => {
             const Icon = product.icon;
             return (
@@ -74,23 +103,21 @@ export function ProductsGrid() {
                 key={product.name}
                 className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-lg"
               >
-                <div className="relative h-56 overflow-hidden sm:h-64">
+                <div className="relative h-44 overflow-hidden">
                   <MediaImage
                     src={product.image}
                     alt={product.name}
                     fill
                     className="object-cover transition duration-500 group-hover:scale-105"
-                    sizes="(min-width: 640px) 50vw, 100vw"
+                    sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
                   />
                   <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-forest-deep/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
                     <Icon className="size-3.5 text-gold-light" aria-hidden />
                     {product.badge}
                   </span>
                 </div>
-                <div className="flex flex-1 flex-col p-5 sm:p-6">
-                  <h3 className="font-display text-xl text-ink sm:text-2xl">
-                    {product.name}
-                  </h3>
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="font-display text-xl text-ink">{product.name}</h3>
                   {product.tags.length > 0 ? (
                     <ul className="mt-3 flex flex-wrap gap-1.5">
                       {product.tags.map((tag) => (

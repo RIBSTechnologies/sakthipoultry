@@ -1,73 +1,63 @@
-"use client";
-
-import { useState } from "react";
-import { ArrowRight, Factory, Bird, Wheat, Home, Truck, Store } from "lucide-react";
+import {
+  ArrowRight,
+  Factory,
+  Handshake,
+  Home,
+  Store,
+  Truck,
+  Wheat,
+} from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
-import { asset, cn } from "@/lib/utils";
+import { asset } from "@/lib/utils";
 import { SectionHeading } from "./SectionHeading";
 
 const steps = [
   {
     step: "01",
     title: "Breeding",
-    summary: "Stringent biosecurity and scientific flock management.",
-    detail:
-      "Quality breeding supported by stringent biosecurity and scientific flock management to maintain healthy and productive flocks.",
+    text: "Quality breeding supported by stringent biosecurity and scientific flock management to maintain healthy and productive flocks.",
     icon: Home,
     image: asset("healthy-birds-01.jpg"),
   },
   {
     step: "02",
     title: "Modern Hatchery",
-    summary: "In-ovo vaccination, hygiene and biosecure chick output.",
-    detail:
-      "Advanced hatchery operations with in-ovo vaccination technology, controlled processes and high standards of hygiene and biosecurity to deliver quality day-old chicks.",
+    text: "Advanced hatchery operations with in-ovo vaccination technology, controlled processes and high standards of hygiene and biosecurity to deliver quality day-old chicks.",
     icon: Factory,
     image: asset("farm-complex.jpg"),
   },
   {
     step: "03",
     title: "Feed Manufacturing",
-    summary: "Selected raw materials and controlled milling processes.",
-    detail:
-      "Quality poultry feed manufactured using carefully selected raw materials and controlled processes to support healthy growth and efficient bird performance.",
+    text: "Quality poultry feed manufactured using carefully selected raw materials and controlled processes to support healthy growth and efficient bird performance.",
     icon: Wheat,
     image: asset("feed-bags-chicks.jpg"),
   },
   {
     step: "04",
     title: "Contract Broiler Farming",
-    summary: "Chicks, feed, veterinary support and farm biosecurity.",
-    detail:
-      "A strong contract farming network backed by dedicated veterinary and technical teams, providing farmers with chicks, feed, technical guidance, flock health support and biosecurity practices.",
-    icon: Bird,
-    image: asset("aerial-farm-04.jpg"),
+    text: "A strong contract farming network backed by dedicated veterinary and technical teams, providing farmers with chicks, feed, technical guidance, flock health support and biosecurity practices.",
+    icon: Handshake,
+    image: asset("aerial-farm-01.jpg"),
   },
   {
     step: "05",
     title: "Integrated Logistics",
-    summary: "Company-owned fleet, including refrigerated transport.",
-    detail:
-      "Our company-owned fleet supports the transportation of Parent Birds, Hatching Eggs and Broiler Day-Old Chicks, including refrigerated transportation where required, as well as timely delivery of live broiler birds to retail outlets.",
+    text: "Our company-owned fleet supports the transportation of Parent Birds, Hatching Eggs and Broiler Day-Old Chicks, including refrigerated transportation where required, as well as timely delivery of live broiler birds to retail outlets.",
     icon: Truck,
-    image: asset("aerial-complex-06.jpg"),
+    image: asset("aerial-complex-02.jpg"),
   },
   {
     step: "06",
     title: "Live Bird Sales & Distribution",
-    summary: "Reliable supply to wholesale traders and retail outlets.",
-    detail:
-      "Reliable supply of quality live birds to wholesale traders and retail outlets through dedicated market channels, supported by responsive service and timely delivery.",
+    text: "Reliable supply of quality live birds to wholesale traders and retail outlets through dedicated market channels, supported by responsive service and timely delivery.",
     icon: Store,
-    image: asset("chickens-feeding.jpg"),
+    image: asset("aerial-complex-05.jpg"),
   },
 ];
 
 export function ValueChain() {
-  const [active, setActive] = useState(0);
-  const current = steps[active];
-
   return (
     <section
       id="value-chain"
@@ -82,77 +72,51 @@ export function ValueChain() {
           subtitle="Sakthi Poultry brings together key stages of the poultry value chain through integrated operations, strong biosecurity, advanced technology, farmer partnerships and dedicated logistics."
         />
 
-        <ol className="relative mt-12 grid gap-3 lg:grid-cols-6">
-          <span
-            className="pointer-events-none absolute top-[1.65rem] right-[8%] left-[8%] hidden h-px bg-line lg:block"
-            aria-hidden
-          />
-          {steps.map((item, i) => {
+        <ol className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-2 text-sm font-semibold text-forest">
+          {steps.map((item, i) => (
+            <li key={item.step} className="flex items-center gap-2">
+              {i > 0 ? (
+                <span className="font-medium text-gold" aria-hidden>
+                  →
+                </span>
+              ) : null}
+              <span>{item.title}</span>
+            </li>
+          ))}
+        </ol>
+
+        <ol className="mt-10 grid gap-5 lg:grid-cols-2">
+          {steps.map((item) => {
             const Icon = item.icon;
-            const selected = i === active;
             return (
-              <li key={item.step} className="relative">
-                <button
-                  type="button"
-                  onClick={() => setActive(i)}
-                  className={cn(
-                    "flex h-full w-full flex-col rounded-2xl border bg-white p-4 text-left shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md",
-                    selected
-                      ? "border-gold ring-2 ring-gold/30"
-                      : "border-line hover:border-gold/40",
-                  )}
-                  aria-pressed={selected}
-                  aria-controls="value-chain-panel"
-                >
-                  <span
-                    className={cn(
-                      "relative z-10 mb-3 inline-flex size-10 items-center justify-center rounded-full text-sm font-bold",
-                      selected
-                        ? "bg-gold text-white"
-                        : "bg-forest text-white",
-                    )}
-                  >
-                    {item.step}
-                  </span>
-                  <Icon
-                    className={cn("mb-2 size-5", selected ? "text-gold" : "text-forest")}
-                    aria-hidden
-                  />
-                  <span className="font-display text-base font-medium text-ink">
-                    {item.title}
-                  </span>
-                  <span className="mt-1 text-xs leading-relaxed text-muted">
-                    {item.summary}
-                  </span>
-                </button>
+              <li key={item.step}>
+                <article className="grid h-full overflow-hidden rounded-2xl border border-line bg-white shadow-sm sm:grid-cols-[11.5rem_1fr]">
+                  <div className="relative min-h-[11rem] sm:min-h-full">
+                    <MediaImage
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 200px, (min-width: 640px) 184px, 100vw"
+                    />
+                    <span className="absolute top-3 left-3 inline-flex size-10 items-center justify-center rounded-full bg-forest text-sm font-bold text-white">
+                      {item.step}
+                    </span>
+                  </div>
+                  <div className="flex flex-col p-5 sm:p-6">
+                    <div className="flex items-center gap-2">
+                      <Icon className="size-4 shrink-0 text-gold" aria-hidden />
+                      <h3 className="font-display text-xl text-ink">{item.title}</h3>
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-muted">
+                      {item.text}
+                    </p>
+                  </div>
+                </article>
               </li>
             );
           })}
         </ol>
-
-        <div
-          id="value-chain-panel"
-          className="mt-8 grid overflow-hidden rounded-2xl border border-line bg-white lg:grid-cols-2"
-        >
-          <div className="relative min-h-[240px] lg:min-h-[360px]">
-            <MediaImage
-              src={current.image}
-              alt={current.title}
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 50vw, 100vw"
-            />
-          </div>
-          <div className="flex flex-col justify-center p-6 sm:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-              Stage {current.step}
-            </p>
-            <h3 className="mt-2 font-display text-2xl text-ink sm:text-3xl">
-              {current.title}
-            </h3>
-            <p className="mt-3 leading-relaxed text-muted">{current.detail}</p>
-          </div>
-        </div>
 
         <Button href="/operations" variant="accent" size="lg" className="mt-10">
           Explore Our Operations

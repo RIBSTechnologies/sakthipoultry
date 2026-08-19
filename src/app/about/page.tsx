@@ -44,7 +44,7 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="relative min-h-[360px] overflow-hidden rounded-2xl">
+            <div className="relative min-h-[360px] overflow-hidden">
               <MediaImage
                 src={asset("aerial-complex-02.jpg")}
                 alt="Sakthi Poultry production complex"
@@ -162,7 +162,7 @@ export default function AboutPage() {
               { img: asset("farm-complex.jpg"), t: "Hatchery & support buildings" },
               { img: asset("feed-bags-chicks.jpg"), t: "Automated feed manufacturing" },
             ].map((c) => (
-              <figure key={c.t} className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <figure key={c.t} className="relative aspect-[4/3] overflow-hidden">
                 <MediaImage src={c.img} alt={c.t} fill className="object-cover" sizes="33vw" />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-forest-deep/75 px-4 py-3 text-sm text-white">
                   {c.t}

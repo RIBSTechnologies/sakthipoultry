@@ -22,7 +22,7 @@ export function ProductGrid() {
             id={p.slug}
             className="scroll-mt-32 grid overflow-hidden rounded-2xl border border-line bg-white lg:grid-cols-2"
           >
-            <div className="relative min-h-[280px] lg:min-h-[360px]">
+            <div className="relative min-h-[280px]">
               <MediaImage src={p.image} alt={p.name} fill className="object-cover" sizes="50vw" />
             </div>
             <div className="p-8">

@@ -4,7 +4,6 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { JobBoard } from "@/components/careers/JobBoard";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { asset } from "@/lib/utils";
-import { MediaImage } from "@/components/ui/MediaImage";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -35,27 +34,19 @@ export default function CareersPage() {
               {
                 t: "Field-first",
                 d: "Decisions are tested in sheds and mill shifts, not only in meeting rooms.",
-                img: asset("aerial-farm-03.jpg"),
               },
               {
                 t: "Learning",
                 d: "Biosecurity, nutrition and welfare skills are shared across company and contract farms.",
-                img: asset("chicken-drinker.jpg"),
               },
               {
                 t: "Benefits",
                 d: "Statutory benefits, on-site operational exposure, and a path from technician to supervisor roles.",
-                img: asset("feed-bags-chicks.jpg"),
               },
             ].map((c) => (
-              <article key={c.t} className="overflow-hidden rounded-2xl border border-line bg-white">
-                <div className="relative h-44">
-                  <MediaImage src={c.img} alt={c.t} fill className="object-cover" sizes="33vw" />
-                </div>
-                <div className="p-6">
-                  <h2 className="font-semibold text-forest">{c.t}</h2>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{c.d}</p>
-                </div>
+              <article key={c.t} className="border border-line bg-white p-6">
+                <h2 className="font-semibold text-forest">{c.t}</h2>
+                <p className="mt-2 text-sm text-muted leading-relaxed">{c.d}</p>
               </article>
             ))}
           </div>

@@ -46,7 +46,7 @@ export default function OperationsPage() {
                   ))}
                 </ul>
               </div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <MediaImage
                   src={op.image}
                   alt={op.title}
@@ -59,13 +59,13 @@ export default function OperationsPage() {
           ))}
         </div>
 
-        <div className="mt-20 rounded-2xl border border-line bg-white p-8 text-center">
+        <div className="mt-20 border border-line bg-white p-8 text-center">
           <p className="text-lg text-forest">
             Looking to place chicks, book feed, or join as a grower?
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button href="/farmers-partners" variant="gold">
-              Become Sakthi Farmer
+              Farmers & partners
             </Button>
             <Button href="/contact" variant="outline">
               Commercial enquiry

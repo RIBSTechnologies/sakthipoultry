@@ -6,6 +6,8 @@ import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { farmerBenefits, farmerSteps, partnerSegments } from "@/lib/data";
 import { asset } from "@/lib/utils";
 import { MediaImage } from "@/components/ui/MediaImage";
+import { Button } from "@/components/ui/Button";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Farmers & Partners",
@@ -71,7 +73,7 @@ export default function FarmersPartnersPage() {
               title="Tell us about your farm"
               description="Share location, shed capacity and utilities. A field officer will follow up if the site fits the current placement plan."
             />
-            <div className="relative mt-8 aspect-[4/3] overflow-hidden">
+            <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl">
               <MediaImage
                 src={asset("aerial-farm-05.jpg")}
                 alt="Farm sheds ready for contract placement"
@@ -83,6 +85,55 @@ export default function FarmersPartnersPage() {
           </div>
           <div className="border border-line bg-white p-6 sm:p-8">
             <LeadForm type="farmer" />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="For traders & retailers"
+            title="Grow with Sakthi in the market"
+            description="Dedicated live-bird channels for wholesale traders and retail outlets, supported by our own logistics fleet."
+          />
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            {[
+              {
+                title: "Become a Sakthi Trader",
+                text: "Source uniform live birds for wholesale markets, with scheduled lots and dedicated commercial support.",
+                image: asset("aerial-complex-05.jpg"),
+                alt: "Wholesale live-bird distribution from Sakthi Poultry",
+              },
+              {
+                title: "Become a Sakthi Retailer",
+                text: "Reliable live-bird supply for your outlet, with timely delivery from our company-owned logistics fleet.",
+                image: asset("chickens-feeding.jpg"),
+                alt: "Live broiler birds for retail outlets",
+              },
+            ].map((box) => (
+              <article
+                key={box.title}
+                className="overflow-hidden rounded-2xl border border-line bg-cream-2"
+              >
+                <div className="relative h-56">
+                  <MediaImage
+                    src={box.image}
+                    alt={box.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                  />
+                </div>
+                <div className="p-6 sm:p-8">
+                  <h3 className="font-display text-2xl text-ink">{box.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{box.text}</p>
+                  <Button href="/contact?type=dealer" variant="accent" size="md" className="mt-5">
+                    Enquire Now
+                    <ArrowRight className="size-4" aria-hidden />
+                  </Button>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

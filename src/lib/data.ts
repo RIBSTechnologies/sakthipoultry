@@ -37,43 +37,43 @@ export const valueChain = [
     step: "01",
     title: "Breeding",
     summary:
-      "Our quality journey begins at the breeder-farm level, where parent birds are managed as an important foundation of the broiler production cycle.",
+      "Quality breeding supported by stringent biosecurity and scientific flock management to maintain healthy and productive flocks.",
     image: asset("healthy-birds-01.jpg"),
   },
   {
     step: "02",
-    title: "Hatchery",
+    title: "Modern Hatchery",
     summary:
-      "Our hatcheries incubate and hatch broiler chicks in controlled environments with a strong focus on hygiene and biosecurity.",
+      "Advanced hatchery operations with in-ovo vaccination technology, controlled processes and high standards of hygiene and biosecurity to deliver quality day-old chicks.",
     image: asset("farm-complex.jpg"),
   },
   {
     step: "03",
     title: "Feed Manufacturing",
     summary:
-      "Balanced nutrition plays an important role in poultry health and performance. Our feed operations support the nutritional requirements of breeder and broiler birds through breeder feed and broiler feed.",
+      "Quality poultry feed manufactured using carefully selected raw materials and controlled processes to support healthy growth and efficient bird performance.",
     image: asset("feed-bags-chicks.jpg"),
   },
   {
     step: "04",
-    title: "Broiler Farming",
+    title: "Contract Broiler Farming",
     summary:
-      "At the commercial broiler farming stage, birds are raised in clean environments and provided balanced nutrition to support their overall well-being and development.",
-    image: asset("aerial-farm-03.jpg"),
+      "A strong contract farming network backed by dedicated veterinary and technical teams, providing farmers with chicks, feed, technical guidance, flock health support and biosecurity practices.",
+    image: asset("aerial-farm-04.jpg"),
   },
   {
     step: "05",
     title: "Integrated Logistics",
     summary:
-      "Chicks, feed and live birds move through a coordinated logistics network so each stage of the chain stays on schedule.",
-    image: asset("aerial-complex-02.jpg"),
+      "Our company-owned fleet supports the transportation of Parent Birds, Hatching Eggs and Broiler Day-Old Chicks, including refrigerated transportation where required, as well as timely delivery of live broiler birds to retail outlets.",
+    image: asset("aerial-complex-06.jpg"),
   },
   {
     step: "06",
-    title: "Sales and Distribution",
+    title: "Live Bird Sales & Distribution",
     summary:
-      "Our integrated operations extend to broiler bird and poultry feed sales, connecting production with customers and business partners.",
-    image: asset("aerial-complex-05.jpg"),
+      "Reliable supply of quality live birds to wholesale traders and retail outlets through dedicated market channels, supported by responsive service and timely delivery.",
+    image: asset("chickens-feeding.jpg"),
   },
 ];
 
@@ -82,36 +82,29 @@ export const homeProducts = [
     slug: "hatching-eggs",
     name: "Hatching Eggs",
     short:
-      "We supply fertile broiler hatching eggs produced within our own hatching egg production operations, with a focus on quality and uniformity for incubation.",
+      "Fertile broiler hatching eggs from our own parent operations, selected for uniformity, hatchability and careful hatchery-ready handling.",
     image: asset("healthy-birds-02.jpg"),
   },
   {
     slug: "day-old-chicks",
     name: "Broiler Day-Old Chicks",
     short:
-      "Our broiler chicks are incubated and hatched in our own hatcheries, where hygiene and biosecurity are important parts of hatchery operations.",
+      "Quality day-old broiler chicks from our modern hatchery, with in-ovo vaccination, hygiene protocols and graded dispatch for farm placement.",
     image: asset("feed-bags-chicks.jpg"),
   },
   {
     slug: "live-broilers",
     name: "Broiler Birds",
     short:
-      "We supply broiler birds produced through our integrated poultry operations with continued emphasis on quality throughout the production cycle.",
+      "Live broilers from our contract farming network, grown with veterinary oversight and supplied to wholesale traders and retail outlets.",
     image: asset("chickens-feeding.jpg"),
   },
   {
     slug: "poultry-feed",
-    name: "Breeder Feed",
+    name: "Sakthi Bromix Broiler Feed",
     short:
-      "Our breeder poultry feed is designed to support breeder nutrition and the production of quality fertile eggs and broiler chicks.",
+      "Quality poultry feed from our automated plant, made with selected raw materials to support healthy growth and efficient bird performance.",
     image: asset("feed-trough.jpg"),
-  },
-  {
-    slug: "poultry-feed",
-    name: "Broiler Feed",
-    short:
-      "Our broiler poultry feed provides nutrition required to support broiler growth and performance.",
-    image: asset("cage-rows.jpg"),
   },
 ];
 
@@ -121,7 +114,7 @@ export const products = [
     name: "Hatching Eggs",
     category: "Genetics",
     short:
-      "Uniform, sanitised hatching eggs selected for hatchability and chick quality.",
+      "Fertile broiler hatching eggs from our own parent operations, selected for uniformity, hatchability and careful hatchery-ready handling.",
     image: asset("healthy-birds-02.jpg"),
     highlights: [
       "High hatchability parent stock",
@@ -141,17 +134,17 @@ export const products = [
     name: "Broiler Day-Old Chicks",
     category: "DOC",
     short:
-      "Vaccinated broiler DOC with high livability and rapid-growth genetics.",
+      "Quality day-old broiler chicks from our modern hatchery, with in-ovo vaccination, hygiene protocols and graded dispatch for farm placement.",
     image: asset("feed-bags-chicks.jpg"),
     highlights: [
       "High livability genetics",
-      "Vaccinated hatchery stock",
+      "In-ovo vaccination and hatchery hygiene",
       "Graded, counted and climate-protected dispatch",
       "Technical guidance for placement",
     ],
     specs: [
       { label: "Genetics", value: "Commercial broiler (incl. Vencobb lines)" },
-      { label: "Health", value: "Hatchery vaccination as per protocol" },
+      { label: "Health", value: "In-ovo vaccination and hatchery hygiene protocols" },
       { label: "Dispatch", value: "Climate-aware chick boxes, counted lots" },
       { label: "Support", value: "Placement & early-life advisory" },
     ],
@@ -161,7 +154,7 @@ export const products = [
     name: "Live Broiler Birds",
     category: "Live birds",
     short:
-      "Uniform-weight, high-yield broilers for wholesale, retail and institutional buyers.",
+      "Live broilers from our contract farming network, grown with veterinary oversight and supplied to wholesale traders and retail outlets.",
     image: asset("chickens-feeding.jpg"),
     highlights: [
       "Uniform live weight lots",
@@ -181,7 +174,7 @@ export const products = [
     name: "Poultry & Livestock Feed",
     category: "Nutrition",
     short:
-      "Breeder, broiler and cattle feed manufactured on automated mash and pellet lines.",
+      "Quality poultry feed from our automated plant, made with selected raw materials to support healthy growth and efficient bird performance.",
     image: asset("feed-trough.jpg"),
     highlights: [
       "Breeder poultry feed",
@@ -284,28 +277,33 @@ export const operations = [
 
 export const qualityPillars = [
   {
-    title: "Quality Assurance Framework",
-    text: "Standards run from inbound grains and additives through milling, farm placement, harvest and dispatch. Each stage has checkpoints so quality is designed in — not inspected at the end.",
-    image: asset("feed-trough.jpg"),
+    title: "Quality Across the Value Chain",
+    text: "Quality at Sakthi Poultry is designed into every hand-off — from breeding and hatchery to feed manufacturing, contract farming, logistics and live-bird supply. Checkpoints on raw materials, flock health, hygiene and dispatch keep performance consistent for farmers, traders and retail outlets.",
+    image: asset("aerial-complex-03.jpg"),
   },
   {
-    title: "Biosecurity Measures",
-    text: "Multi-tier perimeter controls, sanitisation gates, visitor logs and controlled access protect parent stock, hatcheries and broiler houses from preventable disease pressure.",
+    title: "Biosecurity Discipline",
+    text: "Multi-tier perimeter controls, sanitisation, visitor logs and zoned access protect parent stock, hatcheries and broiler houses. Biosecurity is treated as an operating habit: gates, PPE, downtime sanitation and controlled movement between sites.",
     image: asset("farm-aerial-sheds.jpg"),
   },
   {
-    title: "Food Safety & Animal Welfare",
-    text: "Ethical rearing protocols, balanced nutrition, stocking discipline and antibiotic stewardship support bird welfare and safer meat for the market.",
-    image: asset("cage-rows.jpg"),
+    title: "Hatchery Hygiene & In-Ovo Vaccination",
+    text: "Modern hatchery operations combine controlled incubation, hygiene protocols and in-ovo vaccination technology. The aim is simple: deliver quality day-old chicks with high livability, ready for disciplined placement on contract and company farms.",
+    image: asset("farm-complex.jpg"),
   },
   {
-    title: "Laboratory & Testing",
-    text: "Internal pathology and nutritional analysis capabilities give faster turnaround on flock health and feed quality — so field teams can act early.",
+    title: "Feed Quality Control",
+    text: "Sakthi Bromix is manufactured with selected raw materials, formulation discipline and in-process checks. Stage-specific rations support healthy growth and feed conversion, with sampling from mill to farm trough so nutrition stays on specification.",
+    image: asset("feed-trough.jpg"),
+  },
+  {
+    title: "Flock Health & Bird Welfare",
+    text: "Dedicated veterinary and technical teams support housing, water, feed, vaccination and husbandry across the contract network. Welfare, stocking and ventilation are operational requirements — because bird health and product quality move together.",
     image: asset("chicken-drinker.jpg"),
   },
   {
-    title: "Sustainability",
-    text: "Water-conscious operations, organised litter and waste handling, and energy-aware housing design reduce the footprint of production across units.",
+    title: "Responsible Operations",
+    text: "Organised litter and waste handling, water-conscious practices and energy-aware housing reduce the footprint of production. Quality includes how we leave the farm, not only how birds leave the gate.",
     image: asset("waste-management.jpg"),
   },
 ];
@@ -446,13 +444,13 @@ export const farmerSteps = [
 export const partnerSegments = [
   {
     id: "retailer",
-    title: "Retailers & butcher shops",
-    text: "Reliable live-bird supply for neighbourhood and town markets.",
+    title: "Become a Sakthi Retailer",
+    text: "Reliable live-bird supply for your outlet, with timely delivery from our company-owned logistics fleet.",
   },
   {
     id: "trader",
-    title: "Traders & wholesale buyers",
-    text: "Volume lots with uniform weight for redistribution.",
+    title: "Become a Sakthi Trader",
+    text: "Source uniform live birds for wholesale markets, with scheduled lots and dedicated commercial support.",
   },
   {
     id: "feed-distributor",

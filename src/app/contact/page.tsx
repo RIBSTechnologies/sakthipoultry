@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { site, fullAddress, mapsHref } from "@/lib/site";
 import { asset } from "@/lib/utils";
 import { Mail, MapPin } from "lucide-react";
+import { MediaImage } from "@/components/ui/MediaImage";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -49,6 +50,15 @@ export default function ContactPage() {
             <br />
             Production: South Singampunari, Sivagangai District
           </p>
+          <div className="relative mt-8 h-48 overflow-hidden rounded-2xl">
+            <MediaImage
+              src={asset("aerial-complex-07.jpg")}
+              alt="Sakthi Poultry production complex"
+              fill
+              className="object-cover"
+              sizes="40vw"
+            />
+          </div>
           <iframe
             title="Sakthi Poultry head office map"
             className="mt-8 h-64 w-full border border-line"

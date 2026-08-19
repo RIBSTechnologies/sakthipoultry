@@ -11,44 +11,56 @@ const steps = [
   {
     step: "01",
     title: "Breeding",
-    summary: "Carefully managed parent stock with biosecurity protocols.",
+    summary: "Stringent biosecurity and scientific flock management.",
+    detail:
+      "Quality breeding supported by stringent biosecurity and scientific flock management to maintain healthy and productive flocks.",
     icon: Home,
-    image: asset("farm-aerial-sheds.jpg"),
+    image: asset("healthy-birds-01.jpg"),
   },
   {
     step: "02",
-    title: "Hatchery",
-    summary: "Regulated incubation producing healthy day-old chicks.",
+    title: "Modern Hatchery",
+    summary: "In-ovo vaccination, hygiene and biosecure chick output.",
+    detail:
+      "Advanced hatchery operations with in-ovo vaccination technology, controlled processes and high standards of hygiene and biosecurity to deliver quality day-old chicks.",
     icon: Factory,
     image: asset("farm-complex.jpg"),
   },
   {
     step: "03",
     title: "Feed Manufacturing",
-    summary: "Formulated Sakthi Bromix for optimal growth stages.",
+    summary: "Selected raw materials and controlled milling processes.",
+    detail:
+      "Quality poultry feed manufactured using carefully selected raw materials and controlled processes to support healthy growth and efficient bird performance.",
     icon: Wheat,
     image: asset("feed-bags-chicks.jpg"),
   },
   {
     step: "04",
-    title: "Broiler Farming",
-    summary: "Contracted farming network with veterinary and technical backing.",
+    title: "Contract Broiler Farming",
+    summary: "Chicks, feed, veterinary support and farm biosecurity.",
+    detail:
+      "A strong contract farming network backed by dedicated veterinary and technical teams, providing farmers with chicks, feed, technical guidance, flock health support and biosecurity practices.",
     icon: Bird,
-    image: asset("aerial-farm-01.jpg"),
+    image: asset("aerial-farm-04.jpg"),
   },
   {
     step: "05",
     title: "Integrated Logistics",
-    summary: "Coordinated movement of chicks, feed and live birds across the chain.",
+    summary: "Company-owned fleet, including refrigerated transport.",
+    detail:
+      "Our company-owned fleet supports the transportation of Parent Birds, Hatching Eggs and Broiler Day-Old Chicks, including refrigerated transportation where required, as well as timely delivery of live broiler birds to retail outlets.",
     icon: Truck,
-    image: asset("aerial-complex-02.jpg"),
+    image: asset("aerial-complex-06.jpg"),
   },
   {
     step: "06",
-    title: "Sales and Distribution",
-    summary: "Broiler birds and feed supplied to wholesale, retail and institutional buyers.",
+    title: "Live Bird Sales & Distribution",
+    summary: "Reliable supply to wholesale traders and retail outlets.",
+    detail:
+      "Reliable supply of quality live birds to wholesale traders and retail outlets through dedicated market channels, supported by responsive service and timely delivery.",
     icon: Store,
-    image: asset("aerial-complex-05.jpg"),
+    image: asset("chickens-feeding.jpg"),
   },
 ];
 
@@ -65,9 +77,9 @@ export function ValueChain() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           id="value-chain-heading"
-          eyebrow="Integrated Value Chain"
-          title="One Integrated Value Chain. Quality from Beginning to Market."
-          subtitle="Quality poultry production depends on every stage working together."
+          eyebrow="Integrated Poultry Value Chain"
+          title="From Breeding to Market — Quality Connected at Every Stage"
+          subtitle="Sakthi Poultry brings together key stages of the poultry value chain through integrated operations, strong biosecurity, advanced technology, farmer partnerships and dedicated logistics."
         />
 
         <ol className="relative mt-12 grid gap-3 lg:grid-cols-6">
@@ -122,7 +134,7 @@ export function ValueChain() {
           id="value-chain-panel"
           className="mt-8 grid overflow-hidden rounded-2xl border border-line bg-white lg:grid-cols-2"
         >
-          <div className="relative min-h-[220px] lg:min-h-[320px]">
+          <div className="relative min-h-[240px] lg:min-h-[360px]">
             <MediaImage
               src={current.image}
               alt={current.title}
@@ -138,7 +150,7 @@ export function ValueChain() {
             <h3 className="mt-2 font-display text-2xl text-ink sm:text-3xl">
               {current.title}
             </h3>
-            <p className="mt-3 leading-relaxed text-muted">{current.summary}</p>
+            <p className="mt-3 leading-relaxed text-muted">{current.detail}</p>
           </div>
         </div>
 

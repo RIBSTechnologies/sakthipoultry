@@ -4,7 +4,6 @@ import {
   Bird,
   Wheat,
   Drumstick,
-  FlaskConical,
 } from "lucide-react";
 import Link from "next/link";
 import { MediaImage } from "@/components/ui/MediaImage";
@@ -69,15 +68,15 @@ const products = [
     image: asset("aerial-complex-05.jpg"),
   },
   {
-    name: "Laboratory Services",
-    badge: "Diagnostics",
+    name: "Breeder Feed",
+    badge: "Nutrition",
     tags: [] as string[],
     detail:
-      "In-house laboratory and veterinary diagnostics supporting flock health, feed quality and on-farm decision making.",
-    href: "/contact?type=general",
-    cta: "Enquire About Laboratory Services",
-    icon: FlaskConical,
-    image: asset("farm-complex.jpg"),
+      "Our breeder poultry feed is designed to support breeder nutrition and the production of quality fertile eggs and broiler chicks.",
+    href: "/products#poultry-feed",
+    cta: "Explore Breeder Feed",
+    icon: Wheat,
+    image: asset("cage-rows.jpg"),
   },
 ];
 

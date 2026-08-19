@@ -5,7 +5,7 @@ import { asset } from "@/lib/utils";
 const links = [
   { href: "/operations", label: "Explore Our Business" },
   { href: "/products", label: "View Our Products" },
-  { href: "/farmers-partners#apply", label: "Become a Farming Partner" },
+  { href: "/farmers-partners#apply", label: "Become Sakthi Farmer" },
   { href: "/contact?type=general", label: "Send an Enquiry" },
 ];
 

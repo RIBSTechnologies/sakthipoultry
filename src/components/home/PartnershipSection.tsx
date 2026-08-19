@@ -5,6 +5,8 @@ import {
   Wheat,
   Tractor,
   Handshake,
+  Store,
+  ShoppingBag,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
@@ -37,6 +39,23 @@ const benefits = [
     title: "Long-Term Relationships",
     text: "Fair, mutually beneficial contracts.",
     icon: Handshake,
+  },
+];
+
+const partnerPaths = [
+  {
+    title: "Become a Sakthi Trader",
+    text: "Join our wholesale live-bird network with scheduled lots, uniform weights and dedicated market support for redistribution.",
+    href: "/contact?type=dealer",
+    cta: "Enquire Now",
+    icon: Store,
+  },
+  {
+    title: "Become a Sakthi Retailer",
+    text: "Supply your outlet with quality live birds through dedicated channels, timely delivery and responsive service.",
+    href: "/contact?type=dealer",
+    cta: "Enquire Now",
+    icon: ShoppingBag,
   },
 ];
 
@@ -90,16 +109,35 @@ export function PartnershipSection() {
             })}
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8">
             <Button href="/farmers-partners#apply" variant="accent" size="lg">
-              Become a Farming Partner
+              Become Sakthi Farmer
               <ArrowRight className="size-4" aria-hidden />
-            </Button>
-            <Button href="/contact?type=dealer" variant="outline" size="lg">
-              Partner With Sakthi
             </Button>
           </div>
         </div>
+      </div>
+
+      <div className="relative z-10 mx-auto mt-10 grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+        {partnerPaths.map((item) => {
+          const Icon = item.icon;
+          return (
+            <article
+              key={item.title}
+              className="rounded-2xl border border-line bg-white p-6 shadow-sm"
+            >
+              <span className="inline-flex size-11 items-center justify-center rounded-full bg-forest text-gold-light">
+                <Icon className="size-5" aria-hidden />
+              </span>
+              <h3 className="mt-4 font-display text-xl text-ink">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{item.text}</p>
+              <Button href={item.href} variant="outline" size="sm" className="mt-5">
+                {item.cta}
+                <ArrowRight className="size-4" aria-hidden />
+              </Button>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

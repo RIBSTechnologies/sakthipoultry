@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { asset } from "@/lib/utils";
 import { SectionHeading } from "./SectionHeading";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 
 const steps = [
   {
@@ -65,14 +66,17 @@ export function ValueChain() {
       className="scroll-mt-28 bg-[#eef6f2] py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          id="value-chain-heading"
-          eyebrow="Integrated Poultry Value Chain"
-          title="From Breeding to Market — Quality Connected at Every Stage"
-          subtitle="Sakthi Poultry brings together key stages of the poultry value chain through integrated operations, strong biosecurity, advanced technology, farmer partnerships and dedicated logistics."
-        />
+        <Reveal>
+          <SectionHeading
+            id="value-chain-heading"
+            eyebrow="Integrated Poultry Value Chain"
+            title="From Breeding to Market — Quality Connected at Every Stage"
+            subtitle="Sakthi Poultry brings together key stages of the poultry value chain through integrated operations, strong biosecurity, advanced technology, farmer partnerships and dedicated logistics."
+          />
+        </Reveal>
 
-        <ol className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-2 text-sm font-semibold text-forest">
+        <Reveal delay={0.08}>
+          <ol className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-2 text-sm font-semibold text-forest">
           {steps.map((item, i) => (
             <li key={item.step} className="flex items-center gap-2">
               {i > 0 ? (
@@ -84,19 +88,20 @@ export function ValueChain() {
             </li>
           ))}
         </ol>
+        </Reveal>
 
-        <ol className="mt-10 grid gap-5 lg:grid-cols-2">
+        <Stagger className="mt-10 grid gap-5 lg:grid-cols-2">
           {steps.map((item) => {
             const Icon = item.icon;
             return (
-              <li key={item.step}>
-                <article className="grid h-full overflow-hidden rounded-2xl border border-line bg-white shadow-sm sm:grid-cols-[11.5rem_1fr]">
+              <StaggerItem key={item.step}>
+                <article className="grid h-full overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:grid-cols-[11.5rem_1fr]">
                   <div className="relative min-h-[11rem] sm:min-h-full">
                     <MediaImage
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover"
+                      className="object-cover transition duration-700 hover:scale-105"
                       sizes="(min-width: 1024px) 200px, (min-width: 640px) 184px, 100vw"
                     />
                     <span className="absolute top-3 left-3 inline-flex size-10 items-center justify-center rounded-full bg-forest text-sm font-bold text-white">
@@ -113,15 +118,17 @@ export function ValueChain() {
                     </p>
                   </div>
                 </article>
-              </li>
+              </StaggerItem>
             );
           })}
-        </ol>
+        </Stagger>
 
-        <Button href="/operations" variant="accent" size="lg" className="mt-10">
-          Explore Our Operations
-          <ArrowRight className="size-4" aria-hidden />
-        </Button>
+        <Reveal delay={0.1}>
+          <Button href="/operations" variant="accent" size="lg" className="mt-10">
+            Explore Our Operations
+            <ArrowRight className="size-4" aria-hidden />
+          </Button>
+        </Reveal>
       </div>
     </section>
   );

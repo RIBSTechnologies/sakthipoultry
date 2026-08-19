@@ -10,6 +10,7 @@ import { MediaImage } from "@/components/ui/MediaImage";
 import { Button } from "@/components/ui/Button";
 import { asset } from "@/lib/utils";
 import { SectionHeading } from "./SectionHeading";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 
 const products = [
   {
@@ -88,16 +89,19 @@ export function ProductsGrid() {
       className="scroll-mt-28 bg-white py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          id="products-heading"
-          eyebrow="Products & Services"
-          title="Poultry Products & Solutions for a Growing Industry"
-        />
+        <Reveal>
+          <SectionHeading
+            id="products-heading"
+            eyebrow="Products & Services"
+            title="Poultry Products & Solutions for a Growing Industry"
+          />
+        </Reveal>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {products.map((product) => {
             const Icon = product.icon;
             return (
+              <StaggerItem key={product.name}>
               <article
                 key={product.name}
                 className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-lg"
@@ -107,7 +111,7 @@ export function ProductsGrid() {
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover transition duration-500 group-hover:scale-105"
+                    className="object-cover transition duration-700 group-hover:scale-105"
                     sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
                   />
                   <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-forest-deep/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
@@ -141,16 +145,19 @@ export function ProductsGrid() {
                   </Link>
                 </div>
               </article>
+              </StaggerItem>
             );
           })}
-        </div>
+        </Stagger>
 
-        <div className="mt-10 flex justify-center">
+        <Reveal delay={0.1}>
+          <div className="mt-10 flex justify-center">
           <Button href="/products" variant="accent" size="lg">
             View More
             <ArrowRight className="size-4" aria-hidden />
           </Button>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { asset } from "@/lib/utils";
 import { SectionHeading } from "./SectionHeading";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 
 const pillars = [
   {
@@ -64,7 +65,8 @@ export function QualityPillars() {
       className="scroll-mt-28 bg-[#f3f7f5] py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <Reveal>
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
             id="quality-heading"
             eyebrow="Quality & Biosecurity"
@@ -75,8 +77,10 @@ export function QualityPillars() {
             Five quality gates from parent stock to welfare — visible on the
             farm, not only on a poster.
           </p>
-        </div>
+          </div>
+        </Reveal>
 
+        <Reveal delay={0.08}>
         <div className="mt-12 overflow-hidden rounded-[1.75rem] border border-line bg-white shadow-sm lg:grid lg:grid-cols-12">
           <aside className="relative isolate min-h-[22rem] overflow-hidden lg:col-span-5 lg:min-h-full">
             <MediaImage
@@ -107,7 +111,7 @@ export function QualityPillars() {
           </aside>
 
           <div className="flex flex-col justify-between lg:col-span-7">
-            <ol className="relative p-5 sm:p-8 lg:p-10">
+            <Stagger className="relative p-5 sm:p-8 lg:p-10">
               <span
                 className="absolute top-12 bottom-12 left-[2.15rem] hidden w-px bg-line sm:block lg:left-[2.65rem]"
                 aria-hidden
@@ -115,7 +119,7 @@ export function QualityPillars() {
               {pillars.map((pillar) => {
                 const Icon = pillar.icon;
                 return (
-                  <li
+                  <StaggerItem
                     key={pillar.title}
                     className="relative grid grid-cols-[auto_1fr] gap-4 py-4 first:pt-0 last:pb-0 sm:grid-cols-[auto_1fr_5.5rem] sm:gap-5 sm:py-5"
                   >
@@ -142,10 +146,10 @@ export function QualityPillars() {
                         sizes="88px"
                       />
                     </div>
-                  </li>
+                  </StaggerItem>
                 );
               })}
-            </ol>
+            </Stagger>
 
             <div className="border-t border-line px-5 py-5 sm:px-8 lg:px-10">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
@@ -164,11 +168,14 @@ export function QualityPillars() {
             </div>
           </div>
         </div>
+        </Reveal>
 
-        <Button href="/quality" variant="accent" size="lg" className="mt-10">
-          Discover Our Quality Approach
-          <ArrowRight className="size-4" aria-hidden />
-        </Button>
+        <Reveal delay={0.1}>
+          <Button href="/quality" variant="accent" size="lg" className="mt-10">
+            Discover Our Quality Approach
+            <ArrowRight className="size-4" aria-hidden />
+          </Button>
+        </Reveal>
       </div>
     </section>
   );

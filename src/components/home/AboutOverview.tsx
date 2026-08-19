@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { asset } from "@/lib/utils";
 import { SectionHeading } from "./SectionHeading";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function AboutOverview() {
   return (
@@ -13,7 +14,7 @@ export function AboutOverview() {
       className="scroll-mt-28 bg-white py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
-        <div>
+        <Reveal>
           <SectionHeading
             id="about-heading"
             eyebrow="Corporate Overview"
@@ -48,9 +49,9 @@ export function AboutOverview() {
             About Sakthi Poultry
             <ArrowRight className="size-4" aria-hidden />
           </Button>
-        </div>
+        </Reveal>
 
-        <div className="flex flex-col gap-5">
+        <Reveal delay={0.1} className="flex flex-col gap-5">
           <div className="relative overflow-hidden rounded-2xl">
             <MediaImage
               src={asset("farm-complex.jpg")}
@@ -78,7 +79,7 @@ export function AboutOverview() {
               <ArrowRight className="size-4" aria-hidden />
             </Link>
           </aside>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

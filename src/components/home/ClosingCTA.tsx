@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SectionBackdrop } from "./SectionBackdrop";
+import { Reveal } from "@/components/ui/Reveal";
 import { asset } from "@/lib/utils";
 
 const links = [
@@ -29,7 +30,8 @@ export function ClosingCTA() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <Reveal>
+        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-light">
           Quality Forever
         </p>
@@ -59,7 +61,8 @@ export function ClosingCTA() {
             </Link>
           ))}
         </div>
-      </div>
+        </div>
+      </Reveal>
     </section>
   );
 }

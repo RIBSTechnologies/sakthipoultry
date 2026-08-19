@@ -1,11 +1,18 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { site } from "@/lib/site";
 import { asset } from "@/lib/utils";
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export function Hero() {
+  const reduce = useReducedMotion();
+
   return (
     <section
       id="hero"
@@ -15,38 +22,56 @@ export function Hero() {
       <VideoPlayer
         src={site.heroVideo}
         poster={asset("aerial-farm-01.jpg")}
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        className="hero-media pointer-events-none absolute inset-0 h-full w-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/90 via-forest-deep/70 to-forest-deep/25" />
       <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-forest-deep/40" />
 
-      <div className="relative z-10 mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-4 pb-16 pt-36 sm:px-6 sm:pb-20 lg:px-8">
-        <p className="inline-flex w-fit items-center rounded-full border border-gold/40 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-light backdrop-blur-sm">
+      <motion.div
+        className="relative z-10 mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-4 pb-16 pt-36 sm:px-6 sm:pb-20 lg:px-8"
+        initial={reduce ? false : "hidden"}
+        animate="show"
+        variants={{
+          hidden: {},
+          show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
+        }}
+      >
+        <motion.p
+          variants={item}
+          className="inline-flex w-fit items-center rounded-full border border-gold/40 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-light backdrop-blur-sm"
+        >
           Vencobb Family Associate • Integrated Poultry Integration
-        </p>
+        </motion.p>
 
-        <h1
+        <motion.h1
           id="hero-heading"
+          variants={item}
           className="mt-6 max-w-4xl font-display text-4xl font-medium leading-[1.12] text-white sm:text-5xl lg:text-6xl"
         >
           Integrated Poultry Excellence.{" "}
           <span className="italic text-gold-light">Quality at Every Stage.</span>
-        </h1>
+        </motion.h1>
 
-        <p className="mt-4 max-w-2xl text-lg font-medium text-white sm:text-xl">
+        <motion.p
+          variants={item}
+          className="mt-4 max-w-2xl text-lg font-medium text-white sm:text-xl"
+        >
           Quality Poultry from an Integrated Poultry Company in Tamil Nadu
-        </p>
+        </motion.p>
 
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-[17px]">
+        <motion.p
+          variants={item}
+          className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-[17px]"
+        >
           From parent breeder farms and hatcheries to broiler chicks, poultry
           feed, broiler farming and distribution, Sakthi Poultry Private Limited
           manages an integrated poultry value chain focused on consistent quality,
           efficient operations, bird health and responsible farming practices.
           Driven by our enduring philosophy —{" "}
           <em className="font-medium not-italic text-gold-light">“Quality Forever”</em>.
-        </p>
+        </motion.p>
 
-        <div className="mt-8 flex flex-wrap items-center gap-3">
+        <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
           <Button href="/contact?type=product" variant="accent" size="lg">
             Product Enquiry
           </Button>
@@ -65,8 +90,23 @@ export function Hero() {
             Explore Our Business
             <ArrowRight className="size-4" aria-hidden />
           </Link>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
+
+      <motion.a
+        href="#about-overview"
+        className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 text-white/70 sm:block"
+        aria-label="Scroll to next section"
+        animate={reduce ? undefined : { y: [0, 8, 0] }}
+        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <ChevronDown className="size-7" aria-hidden />
+      </motion.a>
     </section>
   );
 }
+
+const item = {
+  hidden: { opacity: 0, y: 22 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
+};

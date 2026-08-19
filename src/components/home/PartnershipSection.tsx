@@ -13,6 +13,7 @@ import { MediaImage } from "@/components/ui/MediaImage";
 import { asset } from "@/lib/utils";
 import { SectionHeading } from "./SectionHeading";
 import { SectionBackdrop } from "./SectionBackdrop";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 
 const benefits = [
   {
@@ -72,7 +73,8 @@ export function PartnershipSection() {
       />
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-5">
-          <div className="relative overflow-hidden rounded-2xl">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-2xl">
             <MediaImage
               src={asset("aerial-farm-04.jpg")}
               alt="Contract broiler farms in the Sakthi Poultry network"
@@ -80,65 +82,68 @@ export function PartnershipSection() {
               height={720}
               className="h-80 w-full object-cover lg:h-[28rem]"
             />
-          </div>
+            </div>
+          </Reveal>
         </div>
 
         <div className="lg:col-span-7">
-          <SectionHeading
-            id="partners-heading"
-            eyebrow="Farmer & Partner Network"
-            title="Growing Poultry. Growing Partnerships."
-            subtitle="Farmers Are an Important Part of Our Value Chain"
-          />
+          <Reveal>
+            <SectionHeading
+              id="partners-heading"
+              eyebrow="Farmer & Partner Network"
+              title="Growing Poultry. Growing Partnerships."
+              subtitle="Farmers Are an Important Part of Our Value Chain"
+            />
+          </Reveal>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+          <Stagger className="mt-8 grid gap-3 sm:grid-cols-2">
             {benefits.map((item) => {
               const Icon = item.icon;
               return (
-                <article
-                  key={item.title}
-                  className="rounded-2xl border border-line bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-md"
-                >
-                  <span className="inline-flex size-10 items-center justify-center rounded-full bg-forest/10 text-forest">
-                    <Icon className="size-5" aria-hidden />
-                  </span>
-                  <h3 className="mt-3 font-display text-lg text-ink">{item.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{item.text}</p>
-                </article>
+                <StaggerItem key={item.title}>
+                  <article className="h-full rounded-2xl border border-line bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-md">
+                    <span className="inline-flex size-10 items-center justify-center rounded-full bg-forest/10 text-forest">
+                      <Icon className="size-5" aria-hidden />
+                    </span>
+                    <h3 className="mt-3 font-display text-lg text-ink">{item.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-muted">{item.text}</p>
+                  </article>
+                </StaggerItem>
               );
             })}
-          </div>
+          </Stagger>
 
-          <div className="mt-8">
-            <Button href="/farmers-partners#apply" variant="accent" size="lg">
-              Become Sakthi Farmer
-              <ArrowRight className="size-4" aria-hidden />
-            </Button>
-          </div>
+          <Reveal delay={0.1}>
+            <div className="mt-8">
+              <Button href="/farmers-partners#apply" variant="accent" size="lg">
+                Become Sakthi Farmer
+                <ArrowRight className="size-4" aria-hidden />
+              </Button>
+            </div>
+          </Reveal>
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto mt-10 grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+      <Stagger className="relative z-10 mx-auto mt-10 grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
         {partnerPaths.map((item) => {
           const Icon = item.icon;
           return (
-            <article
-              key={item.title}
-              className="rounded-2xl border border-line bg-white p-6 shadow-sm"
-            >
-              <span className="inline-flex size-11 items-center justify-center rounded-full bg-forest text-gold-light">
-                <Icon className="size-5" aria-hidden />
-              </span>
-              <h3 className="mt-4 font-display text-xl text-ink">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{item.text}</p>
-              <Button href={item.href} variant="outline" size="sm" className="mt-5">
-                {item.cta}
-                <ArrowRight className="size-4" aria-hidden />
-              </Button>
-            </article>
+            <StaggerItem key={item.title}>
+              <article className="h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                <span className="inline-flex size-11 items-center justify-center rounded-full bg-forest text-gold-light">
+                  <Icon className="size-5" aria-hidden />
+                </span>
+                <h3 className="mt-4 font-display text-xl text-ink">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{item.text}</p>
+                <Button href={item.href} variant="outline" size="sm" className="mt-5">
+                  {item.cta}
+                  <ArrowRight className="size-4" aria-hidden />
+                </Button>
+              </article>
+            </StaggerItem>
           );
         })}
-      </div>
+      </Stagger>
     </section>
   );
 }

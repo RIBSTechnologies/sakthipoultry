@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { SectionHeading } from "./SectionHeading";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 
 const actions = [
   {
@@ -50,30 +51,33 @@ export function EnquiryHub() {
       className="scroll-mt-28 bg-[#eef6f2] py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          id="enquiry-heading"
-          align="center"
-          eyebrow="Quick Action"
-          title="How Can We Help You?"
-        />
+        <Reveal>
+          <SectionHeading
+            id="enquiry-heading"
+            align="center"
+            eyebrow="Quick Action"
+            title="How Can We Help You?"
+          />
+        </Reveal>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {actions.map((item) => {
             const Icon = item.icon;
             return (
-              <Link
-                key={item.title}
-                href={item.href}
-                className="rounded-2xl border border-line bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg"
-              >
+              <StaggerItem key={item.title}>
+                <Link
+                  href={item.href}
+                  className="block h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg"
+                >
                 <span className="inline-flex size-11 items-center justify-center rounded-full bg-forest text-gold-light">
                   <Icon className="size-5" aria-hidden />
                 </span>
-                <h3 className="mt-4 font-display text-xl text-ink">{item.title}</h3>
-              </Link>
+                  <h3 className="mt-4 font-display text-xl text-ink">{item.title}</h3>
+                </Link>
+              </StaggerItem>
             );
           })}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

@@ -12,37 +12,31 @@ import { SectionHeading } from "./SectionHeading";
 const actions = [
   {
     title: "Broiler Chicks",
-    cta: "Enquire Now",
     href: "/contact?type=product",
     icon: Bird,
   },
   {
     title: "Poultry Feed",
-    cta: "Enquire Now",
     href: "/contact?type=product",
     icon: Wheat,
   },
   {
     title: "Hatching Eggs",
-    cta: "Enquire Now",
     href: "/contact?type=product",
     icon: Egg,
   },
   {
     title: "Become Sakthi Farmer",
-    cta: "Enquire Now",
     href: "/farmers-partners#apply",
     icon: Handshake,
   },
   {
     title: "Poultry Equipment",
-    cta: "Enquire Now",
     href: "/contact?type=product",
     icon: Wrench,
   },
   {
     title: "General Business",
-    cta: "Enquire Now",
     href: "/contact?type=general",
     icon: Building2,
   },
@@ -67,21 +61,16 @@ export function EnquiryHub() {
           {actions.map((item) => {
             const Icon = item.icon;
             return (
-              <article
+              <Link
                 key={item.title}
-                className="group rounded-2xl border border-line bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg"
+                href={item.href}
+                className="rounded-2xl border border-line bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg"
               >
                 <span className="inline-flex size-11 items-center justify-center rounded-full bg-forest text-gold-light">
                   <Icon className="size-5" aria-hidden />
                 </span>
                 <h3 className="mt-4 font-display text-xl text-ink">{item.title}</h3>
-                <Link
-                  href={item.href}
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold transition group-hover:text-forest"
-                >
-                  {item.cta} →
-                </Link>
-              </article>
+              </Link>
             );
           })}
         </div>

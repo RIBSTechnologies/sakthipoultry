@@ -15,6 +15,7 @@ export const site = {
   founded: 2019,
   logo: "/assets/images/logo.png",
   heroVideo: "/assets/videos/hero.mp4",
+  heroYoutubeId: "NFg_VNaDBY8",
   social: {
     facebook: "",
     instagram: "",

@@ -118,26 +118,28 @@ export function ProductsGrid() {
                     {product.badge}
                   </span>
                 </div>
-                <div className="grid flex-1 grid-rows-[auto_auto_1fr_auto] gap-3 p-5">
-                  <h3 className="min-h-[3.25rem] font-display text-xl leading-snug text-ink">
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="font-display text-xl leading-snug text-ink">
                     {product.name}
                   </h3>
-                  <ul className="flex min-h-8 flex-wrap content-start gap-1.5">
-                    {product.tags.map((tag) => (
-                      <li
-                        key={tag}
-                        className="rounded-full bg-cream-2 px-2.5 py-1 text-[11px] font-semibold text-forest"
-                      >
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="line-clamp-4 text-sm leading-relaxed text-muted">
+                  {product.tags.length > 0 ? (
+                    <ul className="mt-3 flex flex-wrap gap-1.5">
+                      {product.tags.map((tag) => (
+                        <li
+                          key={tag}
+                          className="rounded-full bg-cream-2 px-2.5 py-1 text-[11px] font-semibold text-forest"
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
                     {product.detail}
                   </p>
                   <Link
                     href={product.href}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-gold transition hover:text-forest"
+                    className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-gold transition hover:text-forest"
                   >
                     {product.cta}
                     <ArrowRight className="size-4" aria-hidden />

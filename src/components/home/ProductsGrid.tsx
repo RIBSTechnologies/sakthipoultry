@@ -97,48 +97,47 @@ export function ProductsGrid() {
           />
         </Reveal>
 
-        <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        <Stagger className="mt-10 grid auto-rows-fr items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => {
             const Icon = product.icon;
             return (
-              <StaggerItem key={product.name}>
+              <StaggerItem key={product.name} className="h-full">
               <article
-                key={product.name}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-lg"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-lg"
               >
-                <div className="relative h-44 overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <MediaImage
                     src={product.image}
                     alt={product.name}
                     fill
                     className="object-cover transition duration-700 group-hover:scale-105"
-                    sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   />
                   <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-forest-deep/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
                     <Icon className="size-3.5 text-gold-light" aria-hidden />
                     {product.badge}
                   </span>
                 </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <h3 className="font-display text-xl text-ink">{product.name}</h3>
-                  {product.tags.length > 0 ? (
-                    <ul className="mt-3 flex flex-wrap gap-1.5">
-                      {product.tags.map((tag) => (
-                        <li
-                          key={tag}
-                          className="rounded-full bg-cream-2 px-2.5 py-1 text-[11px] font-semibold text-forest"
-                        >
-                          {tag}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                <div className="grid flex-1 grid-rows-[auto_auto_1fr_auto] gap-3 p-5">
+                  <h3 className="min-h-[3.25rem] font-display text-xl leading-snug text-ink">
+                    {product.name}
+                  </h3>
+                  <ul className="flex min-h-8 flex-wrap content-start gap-1.5">
+                    {product.tags.map((tag) => (
+                      <li
+                        key={tag}
+                        className="rounded-full bg-cream-2 px-2.5 py-1 text-[11px] font-semibold text-forest"
+                      >
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="line-clamp-4 text-sm leading-relaxed text-muted">
                     {product.detail}
                   </p>
                   <Link
                     href={product.href}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold transition hover:text-forest"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-gold transition hover:text-forest"
                   >
                     {product.cta}
                     <ArrowRight className="size-4" aria-hidden />

@@ -14,8 +14,7 @@ export const site = {
   cin: "U15134TZ2019PTC033064",
   founded: 2019,
   logo: "/assets/images/logo.png",
-  heroVideo: "/assets/videos/hero.mp4",
-  heroYoutubeId: "NFg_VNaDBY8",
+  heroVideo: "/assets/videos/sakthi-poultry-tamil-nadu-farm-hero.mp4",
   social: {
     facebook: "",
     instagram: "",

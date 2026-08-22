@@ -5,6 +5,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
+import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { site } from "@/lib/site";
 import { asset } from "@/lib/utils";
 
@@ -19,10 +20,22 @@ export function Hero() {
       aria-labelledby="hero-heading"
       className="relative isolate min-h-[88vh] overflow-hidden bg-forest-deep"
     >
-      <YouTubeBackground
-        id={site.heroYoutubeId}
-        poster={asset("aerial-farm-01.jpg")}
-      />
+      {reduce ? (
+        <MediaImage
+          src={asset("aerial-farm-01.jpg")}
+          alt="Sakthi Poultry integrated farm in Tamil Nadu"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+      ) : (
+        <VideoPlayer
+          src={site.heroVideo}
+          poster={asset("aerial-farm-01.jpg")}
+          className="hero-media pointer-events-none absolute inset-0 h-full w-full object-cover"
+        />
+      )}
       <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/90 via-forest-deep/70 to-forest-deep/25" />
       <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-forest-deep/40" />
 
@@ -109,37 +122,3 @@ const item = {
   hidden: { opacity: 0, y: 22 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
 };
-
-function YouTubeBackground({
-  id,
-  poster,
-}: {
-  id: string;
-  poster: string;
-}) {
-  const reduce = useReducedMotion();
-
-  if (reduce) {
-    return (
-      <MediaImage
-        src={poster}
-        alt=""
-        fill
-        priority
-        className="object-cover"
-        sizes="100vw"
-      />
-    );
-  }
-
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-      <iframe
-        src={`https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1&fs=0`}
-        title="Sakthi Poultry farm film"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        className="absolute top-1/2 left-1/2 aspect-video h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 border-0"
-      />
-    </div>
-  );
-}

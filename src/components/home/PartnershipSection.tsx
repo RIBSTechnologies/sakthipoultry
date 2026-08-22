@@ -12,7 +12,6 @@ import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { asset } from "@/lib/utils";
 import { SectionHeading } from "./SectionHeading";
-import { SectionBackdrop } from "./SectionBackdrop";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 
 const benefits = [
@@ -65,13 +64,9 @@ export function PartnershipSection() {
     <section
       id="partners"
       aria-labelledby="partners-heading"
-      className="relative isolate scroll-mt-28 overflow-hidden bg-cream-2 py-20 sm:py-24 lg:py-28"
+      className="scroll-mt-28 bg-cream-2 py-20 sm:py-24 lg:py-28"
     >
-      <SectionBackdrop
-        src={asset("sakthi-poultry-contract-broiler-farm.jpg")}
-        overlay="from-cream-2/92 via-cream-2/88 to-cream-2/90"
-      />
-      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-5">
           <Reveal>
             <div className="relative overflow-hidden rounded-2xl">
@@ -124,7 +119,7 @@ export function PartnershipSection() {
         </div>
       </div>
 
-      <Stagger className="relative z-10 mx-auto mt-10 grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+      <Stagger className="mx-auto mt-10 grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
         {partnerPaths.map((item) => {
           const Icon = item.icon;
           return (

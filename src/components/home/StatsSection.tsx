@@ -8,24 +8,29 @@ import { asset } from "@/lib/utils";
 
 const metrics = [
   {
-    value: "30+",
-    unit: "Years",
-    label: "More Than Three Decades of Poultry Experience",
+    value: "5+",
+    unit: "Veterinarians",
+    label: "Veterinarians Admin",
   },
   {
-    value: "1.50",
+    value: "50+",
+    unit: "Expert Team",
+    label: "25 Years Expert Team",
+  },
+  {
+    value: "200+",
+    unit: "Employees",
+    label: "Skilled Employees",
+  },
+  {
+    value: "500+",
+    unit: "Farmers",
+    label: "Poultry Farmers",
+  },
+  {
+    value: "3.40",
     unit: "Crore",
-    label: "Broiler Birds Annually (Supported by Sakthi Bromix)",
-  },
-  {
-    value: "12,000",
-    unit: "Tonnes",
-    label: "Monthly Feed Production Capacity (Automated Plant)",
-  },
-  {
-    value: "100%",
-    unit: "Integrated",
-    label: "Seamless Connection from Breeding to Market",
+    label: "Annual Broiler Birds Production (kgs)",
   },
 ];
 
@@ -47,11 +52,11 @@ export function StatsSection() {
           />
         </Reveal>
 
-        <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {metrics.map((item) => (
-            <StaggerItem key={item.unit}>
-              <article className="group h-full rounded-2xl border border-white/15 bg-white p-6 shadow-lg transition duration-300 hover:-translate-y-1 hover:border-gold/40">
-                <p className="font-display text-4xl font-medium text-forest sm:text-5xl">
+            <StaggerItem key={`${item.value}-${item.unit}`}>
+              <article className="group h-full rounded-2xl border border-white/15 bg-white p-5 shadow-lg transition duration-300 hover:-translate-y-1 hover:border-gold/40 sm:p-6">
+                <p className="font-display text-4xl font-medium text-forest xl:text-[2.35rem]">
                   <CountUp value={item.value} />
                 </p>
                 <p className="mt-1 text-sm font-semibold uppercase tracking-[0.16em] text-gold">

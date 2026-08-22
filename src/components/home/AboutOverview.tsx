@@ -54,8 +54,8 @@ export function AboutOverview() {
         <Reveal delay={0.1} className="flex flex-col gap-5">
           <div className="relative overflow-hidden rounded-2xl">
             <MediaImage
-              src={asset("sakthi-poultry-modern-hatchery.jpg")}
-              alt="Sakthi Poultry hatchery and farm complex in Tamil Nadu"
+              src={asset("sakthi-poultry-farm-aerial-complex.jpg")}
+              alt="Aerial view of Sakthi Poultry farm sheds and facilities in Tamil Nadu"
               width={900}
               height={620}
               className="h-64 w-full object-cover sm:h-72"

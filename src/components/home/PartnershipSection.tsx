@@ -68,7 +68,7 @@ export function PartnershipSection() {
       className="relative isolate scroll-mt-28 overflow-hidden bg-cream-2 py-20 sm:py-24 lg:py-28"
     >
       <SectionBackdrop
-        src={asset("aerial-farm-04.jpg")}
+        src={asset("sakthi-poultry-contract-broiler-farm.jpg")}
         overlay="from-cream-2/92 via-cream-2/88 to-cream-2/90"
       />
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
@@ -76,7 +76,7 @@ export function PartnershipSection() {
           <Reveal>
             <div className="relative overflow-hidden rounded-2xl">
             <MediaImage
-              src={asset("aerial-farm-04.jpg")}
+              src={asset("sakthi-poultry-contract-broiler-farm.jpg")}
               alt="Contract broiler farms in the Sakthi Poultry network"
               width={900}
               height={720}

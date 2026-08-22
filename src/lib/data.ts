@@ -24,12 +24,12 @@ export const metrics = [
 ];
 
 export const homeStrengths = [
-  { title: "Breeder Farms", image: asset("healthy-birds-01.jpg") },
-  { title: "Hatcheries", image: asset("farm-complex.jpg") },
-  { title: "Broiler Farms", image: asset("aerial-farm-01.jpg") },
-  { title: "Feed Manufacturing", image: asset("feed-bags-chicks.jpg") },
-  { title: "Broiler Sales and Distribution", image: asset("aerial-complex-05.jpg") },
-  { title: "Feed Sales", image: asset("feed-trough.jpg") },
+  { title: "Breeder Farms", image: asset("sakthi-poultry-breeding.jpg") },
+  { title: "Hatcheries", image: asset("sakthi-poultry-modern-hatchery.jpg") },
+  { title: "Broiler Farms", image: asset("sakthi-poultry-contract-broiler-farm.jpg") },
+  { title: "Feed Manufacturing", image: asset("sakthi-poultry-feed-manufacturing.jpg") },
+  { title: "Broiler Sales and Distribution", image: asset("sakthi-poultry-live-birds.jpg") },
+  { title: "Feed Sales", image: asset("sakthi-bromix-broiler-feed.jpg") },
 ];
 
 export const valueChain = [
@@ -38,42 +38,42 @@ export const valueChain = [
     title: "Breeding",
     summary:
       "Quality breeding supported by stringent biosecurity and scientific flock management to maintain healthy and productive flocks.",
-    image: asset("healthy-birds-01.jpg"),
+    image: asset("sakthi-poultry-breeding.jpg"),
   },
   {
     step: "02",
     title: "Modern Hatchery",
     summary:
       "Advanced hatchery operations with in-ovo vaccination technology, controlled processes and high standards of hygiene and biosecurity to deliver quality day-old chicks.",
-    image: asset("farm-complex.jpg"),
+    image: asset("sakthi-poultry-modern-hatchery.jpg"),
   },
   {
     step: "03",
     title: "Feed Manufacturing",
     summary:
       "Quality poultry feed manufactured using carefully selected raw materials and controlled processes to support healthy growth and efficient bird performance.",
-    image: asset("feed-bags-chicks.jpg"),
+    image: asset("sakthi-poultry-feed-manufacturing.jpg"),
   },
   {
     step: "04",
     title: "Contract Broiler Farming",
     summary:
       "A strong contract farming network backed by dedicated veterinary and technical teams, providing farmers with chicks, feed, technical guidance, flock health support and biosecurity practices.",
-    image: asset("aerial-farm-01.jpg"),
+    image: asset("sakthi-poultry-contract-broiler-farm.jpg"),
   },
   {
     step: "05",
     title: "Integrated Logistics",
     summary:
       "Our company-owned fleet supports the transportation of Parent Birds, Hatching Eggs and Broiler Day-Old Chicks, including refrigerated transportation where required, as well as timely delivery of live broiler birds to retail outlets.",
-    image: asset("aerial-complex-02.jpg"),
+    image: asset("sakthi-poultry-logistics-truck.jpg"),
   },
   {
     step: "06",
     title: "Live Bird Sales & Distribution",
     summary:
       "Reliable supply of quality live birds to wholesale traders and retail outlets through dedicated market channels, supported by responsive service and timely delivery.",
-    image: asset("aerial-complex-05.jpg"),
+    image: asset("sakthi-poultry-live-birds.jpg"),
   },
 ];
 
@@ -83,35 +83,35 @@ export const homeProducts = [
     name: "Hatching Eggs",
     short:
       "We supply fertile broiler hatching eggs produced within our own hatching egg production operations, with a focus on quality and uniformity for incubation.",
-    image: asset("healthy-birds-02.jpg"),
+    image: asset("sakthi-poultry-hatching-eggs.jpg"),
   },
   {
     slug: "day-old-chicks",
     name: "Broiler Day-Old Chicks",
     short:
       "Our broiler chicks are incubated and hatched in our own hatcheries, where hygiene and biosecurity are important parts of hatchery operations.",
-    image: asset("feed-bags-chicks.jpg"),
+    image: asset("sakthi-poultry-broiler-chicks.jpg"),
   },
   {
     slug: "live-broilers",
     name: "Broiler Birds",
     short:
       "We supply broiler birds produced through our integrated poultry operations with continued emphasis on quality throughout the production cycle.",
-    image: asset("chickens-feeding.jpg"),
+    image: asset("sakthi-poultry-broiler-birds.jpg"),
   },
   {
     slug: "poultry-feed",
     name: "Breeder Feed",
     short:
       "Our breeder poultry feed is designed to support breeder nutrition and the production of quality fertile eggs and broiler chicks.",
-    image: asset("feed-trough.jpg"),
+    image: asset("sakthi-poultry-breeder-feed.jpg"),
   },
   {
     slug: "poultry-feed",
     name: "Broiler Feed",
     short:
       "Our broiler poultry feed provides nutrition required to support broiler growth and performance.",
-    image: asset("cage-rows.jpg"),
+    image: asset("sakthi-bromix-broiler-feed.jpg"),
   },
 ];
 
@@ -122,7 +122,7 @@ export const products = [
     category: "Genetics",
     short:
       "Uniform, sanitised hatching eggs selected for hatchability and chick quality.",
-    image: asset("healthy-birds-02.jpg"),
+    image: asset("sakthi-poultry-hatching-eggs.jpg"),
     highlights: [
       "High hatchability parent stock",
       "Uniform egg size and shell quality",
@@ -142,7 +142,7 @@ export const products = [
     category: "DOC",
     short:
       "Vaccinated broiler DOC with high livability and rapid-growth genetics.",
-    image: asset("feed-bags-chicks.jpg"),
+    image: asset("sakthi-poultry-broiler-chicks.jpg"),
     highlights: [
       "High livability genetics",
       "Vaccinated hatchery stock",
@@ -162,7 +162,7 @@ export const products = [
     category: "Live birds",
     short:
       "Uniform-weight, high-yield broilers for wholesale, retail and institutional buyers.",
-    image: asset("chickens-feeding.jpg"),
+    image: asset("sakthi-poultry-broiler-birds.jpg"),
     highlights: [
       "Uniform live weight lots",
       "Disease-monitored flocks",
@@ -182,7 +182,7 @@ export const products = [
     category: "Nutrition",
     short:
       "Breeder, broiler and cattle feed manufactured on automated mash and pellet lines.",
-    image: asset("feed-trough.jpg"),
+    image: asset("sakthi-bromix-broiler-feed.jpg"),
     highlights: [
       "Breeder poultry feed",
       "Broiler pre-starter, starter and finisher",
@@ -228,7 +228,7 @@ export const operations = [
   {
     slug: "breeders-hatcheries",
     title: "Breeder Farms & Hatcheries",
-    image: asset("healthy-birds-01.jpg"),
+    image: asset("sakthi-poultry-breeding.jpg"),
     points: [
       "Layered biosecurity zones from perimeter to bird house",
       "Modern incubation, hatcher hygiene and chick grading",
@@ -239,7 +239,7 @@ export const operations = [
   {
     slug: "broiler-network",
     title: "Broiler Farms & Contract Network",
-    image: asset("aerial-farm-03.jpg"),
+    image: asset("sakthi-poultry-contract-broiler-farm.jpg"),
     points: [
       "Controlled housing with ventilation and watering systems",
       "Standard operating procedures for placement to harvest",
@@ -250,7 +250,7 @@ export const operations = [
   {
     slug: "feed",
     title: "Feed Manufacturing",
-    image: asset("feed-bags-chicks.jpg"),
+    image: asset("sakthi-poultry-feed-manufacturing.jpg"),
     points: [
       "Automated milling with mash and pellet capability",
       "Nutritional formulation for breeder, broiler and cattle feed",
@@ -272,7 +272,7 @@ export const operations = [
   {
     slug: "sales",
     title: "Broiler Sales & Distribution",
-    image: asset("aerial-complex-06.jpg"),
+    image: asset("sakthi-poultry-live-birds.jpg"),
     points: [
       "Scheduled live-bird supply to wholesale buyers",
       "Institutional and HORECA-ready lots",
@@ -582,7 +582,7 @@ export const news = [
     title: "Own-mill nutrition on the farm floor",
     excerpt:
       "Vencobb-line breeder grower mash and broiler rations produced for internal use, linking mill QC to flock performance.",
-    image: asset("feed-bags-chicks.jpg"),
+    image: asset("sakthi-bromix-broiler-feed.jpg"),
     tag: "Quality",
   },
   {
@@ -591,7 +591,7 @@ export const news = [
     title: "Contract farming onboarding window",
     excerpt:
       "Sakthi Poultry continues to evaluate shed-ready farmers with water and power for the next placement cycle.",
-    image: asset("aerial-farm-04.jpg"),
+    image: asset("sakthi-poultry-contract-broiler-farm.jpg"),
     tag: "Farmers",
   },
 ];

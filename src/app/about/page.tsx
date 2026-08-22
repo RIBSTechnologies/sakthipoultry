@@ -23,7 +23,7 @@ export default function AboutPage() {
       <PageHero
         title="A family enterprise built for integration"
         description="From a Pollachi registered office to farms, hatchery and feed milling, Sakthi Poultry is structured so quality, biosecurity and supply can scale together."
-        image={asset("farm-complex.jpg")}
+        image={asset("sakthi-poultry-modern-hatchery.jpg")}
         crumbs={[{ label: "About" }]}
       />
 
@@ -158,9 +158,9 @@ export default function AboutPage() {
           />
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {[
-              { img: asset("aerial-farm-01.jpg"), t: "Bio-secured farm environments" },
-              { img: asset("farm-complex.jpg"), t: "Hatchery & support buildings" },
-              { img: asset("feed-bags-chicks.jpg"), t: "Automated feed manufacturing" },
+              { img: asset("sakthi-poultry-breeding.jpg"), t: "Bio-secured farm environments" },
+              { img: asset("sakthi-poultry-modern-hatchery.jpg"), t: "Hatchery & support buildings" },
+              { img: asset("sakthi-poultry-feed-manufacturing.jpg"), t: "Automated feed manufacturing" },
             ].map((c) => (
               <figure key={c.t} className="relative aspect-[4/3] overflow-hidden">
                 <MediaImage src={c.img} alt={c.t} fill className="object-cover" sizes="33vw" />

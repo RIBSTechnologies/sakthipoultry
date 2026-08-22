@@ -18,7 +18,7 @@ export default function ProductsPage() {
       <PageHero
         title="A catalogue built from our own chain"
         description="Genetics, chicks, live birds and nutrition manufactured or grown inside the Sakthi system — with enquiry paths for bulk and scheduled supply."
-        image={asset("feed-trough.jpg")}
+        image={asset("sakthi-bromix-broiler-feed.jpg")}
         crumbs={[{ label: "Products" }]}
       />
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">

@@ -22,7 +22,7 @@ const products = [
     href: "/products#hatching-eggs",
     cta: "Explore Hatching Eggs",
     icon: Egg,
-    image: asset("healthy-birds-02.jpg"),
+    image: asset("sakthi-poultry-hatching-eggs.jpg"),
   },
   {
     name: "Broiler Chicks",
@@ -33,7 +33,7 @@ const products = [
     href: "/products#day-old-chicks",
     cta: "Explore Broiler Chicks",
     icon: Bird,
-    image: asset("feed-bags-chicks.jpg"),
+    image: asset("sakthi-poultry-broiler-chicks.jpg"),
   },
   {
     name: "Sakthi Bromix Broiler Feed",
@@ -44,7 +44,7 @@ const products = [
     href: "/products#poultry-feed",
     cta: "Explore Poultry Feed",
     icon: Wheat,
-    image: asset("feed-trough.jpg"),
+    image: asset("sakthi-bromix-broiler-feed.jpg"),
   },
   {
     name: "Broiler Birds",
@@ -55,7 +55,7 @@ const products = [
     href: "/products#live-broilers",
     cta: "Explore Broiler Birds",
     icon: Bird,
-    image: asset("chickens-feeding.jpg"),
+    image: asset("sakthi-poultry-broiler-birds.jpg"),
   },
   {
     name: "Chicken Meat",
@@ -66,7 +66,7 @@ const products = [
     href: "/contact?type=product",
     cta: "Explore Chicken Products",
     icon: Drumstick,
-    image: asset("aerial-complex-05.jpg"),
+    image: asset("sakthi-poultry-chicken-meat.jpg"),
   },
   {
     name: "Breeder Feed",
@@ -77,7 +77,7 @@ const products = [
     href: "/products#poultry-feed",
     cta: "Explore Breeder Feed",
     icon: Wheat,
-    image: asset("cage-rows.jpg"),
+    image: asset("sakthi-poultry-breeder-feed.jpg"),
   },
 ];
 

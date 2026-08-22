@@ -24,14 +24,14 @@ const pillars = [
     step: "02",
     title: "Hatchery Biosecurity",
     text: "Incubation, hygiene and chick handling follow controlled protocols designed to protect livability from egg receipt through dispatch.",
-    image: asset("farm-complex.jpg"),
+    image: asset("sakthi-poultry-modern-hatchery.jpg"),
     icon: ShieldCheck,
   },
   {
     step: "03",
     title: "Feed Quality",
     text: "Sakthi Bromix is produced in an automated plant with formulation discipline, raw-material checks and stage-specific rations for consistent growth.",
-    image: asset("feed-bags-chicks.jpg"),
+    image: asset("sakthi-bromix-broiler-feed.jpg"),
     icon: Wheat,
   },
   {

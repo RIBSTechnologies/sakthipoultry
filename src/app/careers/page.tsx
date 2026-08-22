@@ -19,7 +19,7 @@ export default function CareersPage() {
       <PageHero
         title="Build the chain with us"
         description="We hire people who respect birds, farmers and process — from hatchery floors to field veterinary routes and the mill."
-        image={asset("farm-complex.jpg")}
+        image={asset("sakthi-poultry-modern-hatchery.jpg")}
         crumbs={[{ label: "Careers" }]}
       />
 

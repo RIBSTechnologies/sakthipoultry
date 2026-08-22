@@ -23,7 +23,7 @@ export default function FarmersPartnersPage() {
       <PageHero
         title="Grow with a system, not a one-off deal"
         description="Contract farmers get chicks, feed, veterinary guidance and buyback. Traders, dealers and institutions get scheduled, uniform supply."
-        image={asset("aerial-farm-04.jpg")}
+        image={asset("sakthi-poultry-contract-broiler-farm.jpg")}
         crumbs={[{ label: "Farmers & Partners" }]}
       />
 

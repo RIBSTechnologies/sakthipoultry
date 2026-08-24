@@ -6,7 +6,7 @@ export function ProductsWhy() {
   return (
     <section
       aria-labelledby="products-why-heading"
-      className="bg-cream-2 py-20 sm:py-24 lg:py-28"
+      className="bg-cream-2 pt-10 pb-20 sm:pt-12 sm:pb-24 lg:pt-14 lg:pb-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>

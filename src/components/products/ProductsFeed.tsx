@@ -58,47 +58,54 @@ export function ProductsFeed() {
         </div>
       </section>
 
-      {feedProducts.map((product, index) => (
-        <section
-          key={product.id}
-          id={product.id}
-          aria-labelledby={`${product.id}-heading`}
-          className={cn(
-            "scroll-mt-32 py-20 sm:py-24 lg:py-28",
-            index % 2 === 0 ? "bg-white" : "bg-cream-2",
-          )}
-        >
-          <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
-            <Reveal className="lg:col-span-7">
-              <SectionHeading
-                id={`${product.id}-heading`}
-                eyebrow={product.eyebrow}
-                title={product.title}
-              />
-              <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
-                {product.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-              <Button href={product.href} variant="accent" className="mt-8">
-                {product.cta}
-              </Button>
-            </Reveal>
-            <Reveal
-              delay={0.08}
-              className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5"
-            >
-              <MediaImage
-                src={product.image}
-                alt={product.alt}
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 40vw, 100vw"
-              />
-            </Reveal>
-          </div>
-        </section>
-      ))}
+      {feedProducts.map((product, index) => {
+        const last = index === feedProducts.length - 1;
+
+        return (
+          <section
+            key={product.id}
+            id={product.id}
+            aria-labelledby={`${product.id}-heading`}
+            className={cn(
+              "scroll-mt-32 py-20 sm:py-24 lg:py-28",
+              index % 2 === 0 ? "bg-white" : "bg-cream-2",
+              last && "pb-10 sm:pb-12 lg:pb-14",
+            )}
+          >
+            <div className="mx-auto grid max-w-7xl items-stretch gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
+              <Reveal className="flex h-full flex-col lg:col-span-7">
+                <SectionHeading
+                  id={`${product.id}-heading`}
+                  eyebrow={product.eyebrow}
+                  title={product.title}
+                />
+                <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
+                  {product.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+                <div className="mt-8 self-start lg:mt-auto lg:pt-8">
+                  <Button href={product.href} variant="accent">
+                    {product.cta}
+                  </Button>
+                </div>
+              </Reveal>
+              <Reveal
+                delay={0.08}
+                className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5"
+              >
+                <MediaImage
+                  src={product.image}
+                  alt={product.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                />
+              </Reveal>
+            </div>
+          </section>
+        );
+      })}
     </>
   );
 }

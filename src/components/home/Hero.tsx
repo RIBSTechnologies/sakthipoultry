@@ -36,8 +36,8 @@ export function Hero() {
           className="hero-media pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/90 via-forest-deep/70 to-forest-deep/25" />
-      <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-forest-deep/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/45 via-forest-deep/20 to-forest-deep/5" />
+      <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/55 via-transparent to-forest-deep/15" />
 
       <motion.div
         className="relative z-10 mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-4 pb-16 pt-36 sm:px-6 sm:pb-20 lg:px-8"

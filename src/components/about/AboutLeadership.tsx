@@ -1,29 +1,22 @@
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { SectionHeading } from "@/components/home/SectionHeading";
 import { leadershipPrinciples } from "@/lib/about";
 
 export function AboutLeadership() {
   return (
     <section
       aria-labelledby="about-leadership-heading"
-      className="bg-white py-20 sm:py-24 lg:py-32"
+      className="bg-white py-20 sm:py-24 lg:py-28"
     >
-      <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-12 lg:gap-20 lg:px-8">
-        <Reveal className="lg:col-span-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-gold">
-            03 — Leadership
-          </p>
-          <h2
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <SectionHeading
             id="about-leadership-heading"
-            className="mt-5 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl lg:text-[2.6rem] lg:leading-tight"
-          >
-            Dedicated people across commercial broiler poultry integration
-          </h2>
-          <div className="mt-8 space-y-5 text-base leading-[1.85] text-muted sm:text-lg">
-            <p>
-              Sakthi Poultry is supported by a dedicated team of professionals
-              with experience across different areas of commercial broiler
-              poultry integration.
-            </p>
+            eyebrow="Leadership"
+            title="Dedicated People Across Commercial Broiler Poultry Integration"
+            subtitle="Sakthi Poultry is supported by a dedicated team of professionals with experience across different areas of commercial broiler poultry integration."
+          />
+          <div className="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
             <p>
               Our people bring together knowledge in breeding, hatchery
               management, poultry nutrition, broiler farming, veterinary support
@@ -39,25 +32,23 @@ export function AboutLeadership() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.08} className="lg:col-span-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-forest">
-            Our leadership philosophy is built around
-          </p>
-          <Stagger className="mt-6 border-t border-line">
-            {leadershipPrinciples.map((item, index) => (
-              <StaggerItem key={item}>
-                <article className="grid grid-cols-[4rem_1fr] items-baseline gap-4 border-b border-line py-6">
-                  <span className="font-display text-2xl text-gold">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="font-display text-2xl text-ink sm:text-[1.65rem]">
-                    {item}
-                  </h3>
-                </article>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </Reveal>
+        <p className="mt-10 text-[11px] font-semibold uppercase tracking-[0.22em] text-forest">
+          Our leadership philosophy is built around
+        </p>
+        <Stagger className="mt-4 grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {leadershipPrinciples.map((item, index) => (
+            <StaggerItem key={item} className="h-full">
+              <article className="flex h-full flex-col rounded-2xl border border-line bg-cream-2 p-5 shadow-sm">
+                <span className="font-display text-lg text-gold">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-3 font-display text-lg leading-snug text-ink">
+                  {item}
+                </h3>
+              </article>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </div>
     </section>
   );

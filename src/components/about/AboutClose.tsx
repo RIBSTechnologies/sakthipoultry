@@ -1,23 +1,35 @@
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionBackdrop } from "@/components/home/SectionBackdrop";
 import { aboutLinks } from "@/lib/about";
+import { asset } from "@/lib/utils";
 
 export function AboutClose() {
   return (
     <section
       aria-labelledby="about-close-heading"
-      className="border-t border-line bg-[#f7f4ef] py-20 sm:py-24"
+      className="relative isolate overflow-hidden bg-forest py-20 sm:py-24 lg:py-28"
     >
-      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <SectionBackdrop
+        src={asset("sakthi-poultry-farm-aerial-complex.jpg")}
+        overlay="from-forest/90 via-forest/82 to-forest-deep/88"
+      />
+      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <Reveal>
-          <span className="mx-auto block h-px w-16 bg-gold" />
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-light">
+            Quality Forever
+          </p>
           <h2
             id="about-close-heading"
-            className="mt-8 font-display text-5xl text-forest sm:text-6xl"
+            className="mt-3 font-display text-3xl font-medium text-white sm:text-5xl"
           >
             Quality Forever
           </h2>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+            Together, our people, infrastructure, farmer network and integrated
+            operations support one consistent commitment.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             {aboutLinks.map((link, index) => (
               <Link
                 key={link.href}
@@ -25,7 +37,7 @@ export function AboutClose() {
                 className={
                   index === 0
                     ? "inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-[#92400e]"
-                    : "inline-flex rounded-full border-2 border-forest-deep px-6 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-forest-deep transition hover:bg-forest-deep hover:text-white"
+                    : "inline-flex rounded-full border-2 border-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-white hover:text-forest-deep"
                 }
               >
                 {link.label}

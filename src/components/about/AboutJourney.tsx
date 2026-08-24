@@ -1,46 +1,22 @@
 import { MediaImage } from "@/components/ui/MediaImage";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionHeading } from "@/components/home/SectionHeading";
 import { asset } from "@/lib/utils";
 
 export function AboutJourney() {
   return (
     <section
       aria-labelledby="about-journey-heading"
-      className="relative isolate overflow-hidden bg-forest-deep py-20 text-white sm:py-24 lg:py-32"
+      className="bg-cream-2 py-20 sm:py-24 lg:py-28"
     >
-      <div className="pointer-events-none absolute -right-8 top-10 select-none font-display text-[12rem] leading-none text-white/5 sm:text-[16rem] lg:text-[20rem]">
-        33
-      </div>
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
-        <Reveal className="lg:col-span-5">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-gold-light">
-            02 — Our Journey
-          </p>
-          <p className="mt-8 font-display text-8xl leading-none tracking-tight text-gold-light sm:text-9xl">
-            33
-          </p>
-          <p className="mt-3 text-sm font-semibold uppercase tracking-[0.22em] text-white/70">
-            Years in broiler poultry integration
-          </p>
-          <div className="relative mt-10 aspect-[4/3] overflow-hidden">
-            <MediaImage
-              src={asset("sakthi-poultry-farm-aerial-complex.jpg")}
-              alt="Sakthi Poultry farm complex in Tamil Nadu"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 40vw, 100vw"
-            />
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.08} className="lg:col-span-7">
-          <h2
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
+        <Reveal className="lg:col-span-7">
+          <SectionHeading
             id="about-journey-heading"
-            className="font-display text-3xl font-medium tracking-tight sm:text-4xl lg:text-[2.6rem] lg:leading-tight"
-          >
-            For more than three decades, grown around integration and quality
-          </h2>
-          <div className="mt-8 space-y-5 text-base leading-[1.85] text-white/75 sm:text-lg">
+            eyebrow="Our Journey"
+            title="More Than Three Decades in Broiler Poultry Integration"
+          />
+          <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
             <p>
               For more than three decades, Sakthi Poultry has grown with a clear
               focus on the broiler poultry industry, integrated operations and
@@ -65,6 +41,29 @@ export function AboutJourney() {
               poultry production chain while maintaining high standards of
               quality, bird health, safety and responsible farming.
             </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1} className="lg:col-span-5">
+          <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
+            <div className="relative h-56">
+              <MediaImage
+                src={asset("sakthi-poultry-farm-aerial-complex.jpg")}
+                alt="Sakthi Poultry farm complex in Tamil Nadu"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+              />
+            </div>
+            <div className="p-7 sm:p-8">
+              <p className="font-display text-6xl text-forest">33</p>
+              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-gold">
+                Years of experience
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-muted">
+                More than 33 years of experience in broiler poultry integration.
+              </p>
+            </div>
           </div>
         </Reveal>
       </div>

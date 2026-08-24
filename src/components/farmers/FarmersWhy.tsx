@@ -16,7 +16,7 @@ export function FarmersWhy() {
           />
         </Reveal>
         <Stagger className="mt-10 grid auto-rows-fr items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {whyPartner.map((item) => (
+          {whyPartner.map((item, index) => (
             <StaggerItem key={item.title} className="h-full">
               <article className="flex h-full flex-col rounded-2xl border border-line bg-cream-2 p-6 shadow-sm sm:p-8">
                 <span className="font-display text-lg text-gold">

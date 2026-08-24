@@ -108,7 +108,7 @@ export function QualityPractice() {
           </Stagger>
 
           <Reveal delay={0.08}>
-            <div className="mt-10 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
+            <div className="mt-10 space-y-4 text-base leading-relaxed text-muted">
               <p>
                 Our farmer network also receives technical guidance to help
                 improve awareness of proper husbandry practices and modern

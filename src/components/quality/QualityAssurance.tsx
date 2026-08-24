@@ -50,7 +50,7 @@ export function QualityAssurance() {
         </Stagger>
 
         <Reveal delay={0.08}>
-          <p className="mt-10 max-w-3xl text-base leading-relaxed text-muted">
+          <p className="mt-10 text-base leading-relaxed text-muted">
             By maintaining quality awareness throughout these interconnected
             operations, we work to support the consistency expected from an
             integrated poultry company. Quality begins at the farm and continues

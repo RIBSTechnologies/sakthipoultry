@@ -62,7 +62,7 @@ export function QualityLab() {
         </Stagger>
 
         <Reveal delay={0.08}>
-          <p className="mt-10 max-w-3xl text-base leading-relaxed text-muted">
+          <p className="mt-10 text-base leading-relaxed text-muted">
             These laboratory capabilities support our broader focus on poultry
             nutrition, bird health and quality across our integrated production
             system.

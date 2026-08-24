@@ -62,7 +62,7 @@ export function QualitySustain() {
         </Stagger>
 
         <Reveal delay={0.08}>
-          <div className="mt-10 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
+          <div className="mt-10 space-y-4 text-base leading-relaxed text-muted">
             <p>
               We continue to focus on improving our sustainability initiatives
               and supporting a better future for our farming partners and their

@@ -44,7 +44,7 @@ export function FarmersBusiness() {
               eyebrow="For Business Partners"
               title="Building Strong Poultry Business Partnerships"
             />
-            <div className="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
               <p>
                 A successful poultry value chain depends on strong relationships
                 across production, supply and market channels.
@@ -59,6 +59,10 @@ export function FarmersBusiness() {
                 distributors, suppliers and institutional buyers looking to
                 explore business opportunities with Sakthi Poultry.
               </p>
+              <p>
+                If you are a trader or retailer looking to discuss poultry
+                product requirements, connect with our team.
+              </p>
             </div>
           </Reveal>
         </div>
@@ -69,8 +73,8 @@ export function FarmersBusiness() {
         aria-labelledby="farmers-traders-heading"
         className="scroll-mt-32 bg-white py-20 sm:py-24 lg:py-28"
       >
-        <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
-          <Reveal className="lg:col-span-7">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
             <SectionHeading
               id="farmers-traders-heading"
               eyebrow="Traders & Retailers"
@@ -88,25 +92,9 @@ export function FarmersBusiness() {
               <p>Our product portfolio includes:</p>
             </div>
             <ProductList />
-            <p className="mt-8 text-base leading-relaxed text-muted">
-              If you are a trader or retailer looking to discuss poultry product
-              requirements, connect with our team.
-            </p>
             <Button href={farmerEnquire.trader} variant="accent" className="mt-8">
               Trader / Retailer Enquiry
             </Button>
-          </Reveal>
-          <Reveal
-            delay={0.08}
-            className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5"
-          >
-            <MediaImage
-              src={farmerImages.traders}
-              alt="Broiler birds supplied through Sakthi Poultry trader and retailer channels"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 40vw, 100vw"
-            />
           </Reveal>
         </div>
       </section>

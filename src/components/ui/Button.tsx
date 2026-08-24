@@ -6,7 +6,10 @@ const variants = {
   primary: "bg-forest text-white hover:bg-forest-deep",
   gold: "bg-gold text-white hover:bg-[#92400e]",
   accent: "bg-gold text-white hover:bg-[#92400e]",
-  outline: "border-2 border-forest-deep text-forest-deep bg-transparent hover:bg-forest-deep hover:text-white",
+  outline:
+    "border-2 border-forest-deep text-forest-deep bg-transparent hover:bg-forest-deep hover:text-white",
+  outlineLight:
+    "border-2 border-white bg-transparent text-white hover:bg-white hover:text-forest-deep",
   ghost: "text-forest hover:text-gold",
   dark: "bg-forest-deep text-white hover:bg-forest",
   white: "bg-white text-forest-deep hover:bg-cream",

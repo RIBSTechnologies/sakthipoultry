@@ -1,5 +1,5 @@
 import { Quote } from "lucide-react";
-import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionBackdrop } from "@/components/home/SectionBackdrop";
 import { qualityLinks } from "@/lib/quality";
@@ -47,17 +47,13 @@ export function QualityClose() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             {qualityLinks.map((link, index) => (
-              <Link
+              <Button
                 key={link.href}
                 href={link.href}
-                className={
-                  index === 0
-                    ? "inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-[#92400e]"
-                    : "inline-flex rounded-full border-2 border-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-white hover:text-forest-deep"
-                }
+                variant={index === 0 ? "accent" : "outlineLight"}
               >
                 {link.label}
-              </Link>
+              </Button>
             ))}
           </div>
           <p className="mt-10 text-sm font-semibold uppercase tracking-[0.16em] text-gold-light">

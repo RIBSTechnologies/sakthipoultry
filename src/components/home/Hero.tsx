@@ -87,12 +87,7 @@ export function Hero() {
           <Button href="/contact?type=product" variant="accent" size="lg">
             Product Enquiry
           </Button>
-          <Button
-            href="/farmers-partners"
-            variant="outline"
-            size="lg"
-            className="border-white text-white hover:bg-white hover:text-forest-deep"
-          >
+          <Button href="/farmers-partners" variant="outlineLight" size="lg">
             Partner With Us
           </Button>
           <Link

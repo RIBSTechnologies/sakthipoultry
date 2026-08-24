@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 import { SectionBackdrop } from "./SectionBackdrop";
 import { Reveal } from "@/components/ui/Reveal";
 import { asset } from "@/lib/utils";
@@ -48,17 +48,13 @@ export function ClosingCTA() {
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           {links.map((link, i) => (
-            <Link
+            <Button
               key={link.href}
               href={link.href}
-              className={
-                i === 0
-                  ? "inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-[#92400e]"
-                  : "inline-flex rounded-full border-2 border-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-white hover:text-forest-deep"
-              }
+              variant={i === 0 ? "accent" : "outlineLight"}
             >
               {link.label}
-            </Link>
+            </Button>
           ))}
         </div>
         </div>

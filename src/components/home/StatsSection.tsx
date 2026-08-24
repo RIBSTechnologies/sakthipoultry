@@ -71,9 +71,9 @@ export function StatsSection() {
         <Reveal delay={0.15}>
           <Button
             href="/operations"
-            variant="outline"
+            variant="outlineLight"
             size="lg"
-            className="mt-10 border-white text-white hover:bg-white hover:text-forest-deep"
+            className="mt-10"
           >
             Discover Our Capabilities
             <ArrowRight className="size-4" aria-hidden />

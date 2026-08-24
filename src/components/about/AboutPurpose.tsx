@@ -1,44 +1,41 @@
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { coreValues } from "@/lib/about";
 
 export function AboutPurpose() {
-  const featured = coreValues[0];
-  const rest = coreValues.slice(1);
-
   return (
     <section
       aria-labelledby="about-purpose-heading"
-      className="bg-white py-20 sm:py-24 lg:py-32"
+      className="bg-[#f7f4ef] py-20 sm:py-24 lg:py-32"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-gold">
             04 — Vision, Mission & Values
           </p>
           <h2
             id="about-purpose-heading"
-            className="mt-4 max-w-3xl font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl lg:text-[2.75rem] lg:leading-tight"
+            className="mt-5 max-w-3xl font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl lg:text-[2.6rem] lg:leading-tight"
           >
-            A trusted poultry enterprise, guided by one standard
+            A trusted and responsible integrated poultry enterprise
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-px overflow-hidden border border-line bg-line lg:grid-cols-2">
-          <Reveal className="bg-cream-2 p-8 sm:p-12 lg:p-14">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+        <div className="mt-14 grid gap-12 border-y border-line py-12 lg:grid-cols-2 lg:gap-20">
+          <Reveal>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">
               Our Vision
             </p>
-            <p className="mt-6 font-display text-2xl leading-snug text-ink sm:text-3xl">
+            <p className="mt-5 font-display text-2xl leading-snug text-ink sm:text-[1.85rem]">
               To build a trusted and responsible integrated poultry enterprise
               that consistently delivers quality while creating long-term value
               for customers, farmers, partners and communities.
             </p>
           </Reveal>
-          <Reveal delay={0.08} className="bg-forest p-8 text-white sm:p-12 lg:p-14">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-light">
+          <Reveal delay={0.08}>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">
               Our Mission
             </p>
-            <p className="mt-6 font-display text-2xl leading-snug sm:text-3xl">
+            <p className="mt-5 font-display text-2xl leading-snug text-ink sm:text-[1.85rem]">
               To strengthen every stage of the poultry value chain through
               quality-focused operations, efficient production, technical
               expertise, responsible farming practices and mutually beneficial
@@ -48,40 +45,29 @@ export function AboutPurpose() {
         </div>
 
         <Reveal>
-          <p className="mt-16 text-[11px] font-semibold uppercase tracking-[0.22em] text-forest">
+          <p className="mt-14 text-[11px] font-semibold uppercase tracking-[0.28em] text-forest">
             Our values are reflected in the way we operate every day
           </p>
         </Reveal>
 
-        <article className="mt-8 border border-gold/40 bg-cream-2 p-8 sm:p-10">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-            01
-          </p>
-          <h3 className="mt-3 font-display text-2xl text-ink sm:text-3xl">
-            {featured.title}
-          </h3>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
-            {featured.text}
-          </p>
-        </article>
-
-        <Stagger className="mt-px grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-          {rest.map((item, index) => (
-            <StaggerItem key={item.title} className="h-full">
-              <article className="flex h-full flex-col bg-white p-7 sm:p-8">
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
-                  {String(index + 2).padStart(2, "0")}
+        <dl className="mt-8 divide-y divide-line border-y border-line">
+          {coreValues.map((item, index) => (
+            <div
+              key={item.title}
+              className="grid gap-3 py-7 sm:grid-cols-12 sm:items-baseline sm:gap-8"
+            >
+              <dt className="flex items-baseline gap-4 sm:col-span-5">
+                <span className="font-display text-lg text-gold">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-4 font-display text-xl text-ink">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">
-                  {item.text}
-                </p>
-              </article>
-            </StaggerItem>
+                <span className="font-display text-2xl text-ink">{item.title}</span>
+              </dt>
+              <dd className="text-base leading-relaxed text-muted sm:col-span-7">
+                {item.text}
+              </dd>
+            </div>
           ))}
-        </Stagger>
+        </dl>
       </div>
     </section>
   );

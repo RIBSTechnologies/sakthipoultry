@@ -1,27 +1,22 @@
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionBackdrop } from "@/components/home/SectionBackdrop";
 import { aboutLinks } from "@/lib/about";
-import { asset } from "@/lib/utils";
 
 export function AboutClose() {
   return (
     <section
       aria-labelledby="about-close-heading"
-      className="relative isolate overflow-hidden bg-forest py-20 sm:py-24 lg:py-28"
+      className="border-t border-line bg-[#f7f4ef] py-20 sm:py-24"
     >
-      <SectionBackdrop
-        src={asset("sakthi-poultry-farm-aerial-complex.jpg")}
-        overlay="from-forest-deep/92 via-forest/86 to-forest-deep/90"
-      />
-      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <Reveal>
-          <p
+          <span className="mx-auto block h-px w-16 bg-gold" />
+          <h2
             id="about-close-heading"
-            className="font-display text-4xl text-white sm:text-5xl"
+            className="mt-8 font-display text-5xl text-forest sm:text-6xl"
           >
             Quality Forever
-          </p>
+          </h2>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             {aboutLinks.map((link, index) => (
               <Link
@@ -30,7 +25,7 @@ export function AboutClose() {
                 className={
                   index === 0
                     ? "inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-[#92400e]"
-                    : "inline-flex rounded-full border-2 border-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-white hover:text-forest-deep"
+                    : "inline-flex rounded-full border-2 border-forest-deep px-6 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-forest-deep transition hover:bg-forest-deep hover:text-white"
                 }
               >
                 {link.label}

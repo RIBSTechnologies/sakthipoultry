@@ -5,20 +5,20 @@ export function AboutLeadership() {
   return (
     <section
       aria-labelledby="about-leadership-heading"
-      className="bg-forest-deep py-20 text-white sm:py-24 lg:py-32"
+      className="bg-white py-20 sm:py-24 lg:py-32"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-light">
+      <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-12 lg:gap-20 lg:px-8">
+        <Reveal className="lg:col-span-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-gold">
             03 — Leadership
           </p>
           <h2
             id="about-leadership-heading"
-            className="mt-4 max-w-4xl font-display text-3xl font-medium tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-tight"
+            className="mt-5 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl lg:text-[2.6rem] lg:leading-tight"
           >
             Dedicated people across commercial broiler poultry integration
           </h2>
-          <div className="mt-6 max-w-3xl space-y-5 text-base leading-relaxed text-white/75 sm:text-lg">
+          <div className="mt-8 space-y-5 text-base leading-[1.85] text-muted sm:text-lg">
             <p>
               Sakthi Poultry is supported by a dedicated team of professionals
               with experience across different areas of commercial broiler
@@ -32,11 +32,6 @@ export function AboutLeadership() {
               continually improving quality and productivity.
             </p>
             <p>
-              Our leadership philosophy is built around quality-driven
-              decision-making, operational discipline, technical knowledge,
-              continuous improvement and long-term partnerships.
-            </p>
-            <p>
               We believe sustainable growth comes not only from infrastructure
               and scale, but from experienced people working together with
               farmers, customers, suppliers and partners toward shared success.
@@ -44,20 +39,25 @@ export function AboutLeadership() {
           </div>
         </Reveal>
 
-        <Stagger className="mt-12 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-5">
-          {leadershipPrinciples.map((item, index) => (
-            <StaggerItem key={item} className="h-full">
-              <article className="flex h-full flex-col bg-forest-deep p-6 sm:p-7">
-                <span className="font-display text-sm text-gold-light">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-4 font-display text-lg leading-snug">
-                  {item}
-                </h3>
-              </article>
-            </StaggerItem>
-          ))}
-        </Stagger>
+        <Reveal delay={0.08} className="lg:col-span-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-forest">
+            Our leadership philosophy is built around
+          </p>
+          <Stagger className="mt-6 border-t border-line">
+            {leadershipPrinciples.map((item, index) => (
+              <StaggerItem key={item}>
+                <article className="grid grid-cols-[4rem_1fr] items-baseline gap-4 border-b border-line py-6">
+                  <span className="font-display text-2xl text-gold">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-display text-2xl text-ink sm:text-[1.65rem]">
+                    {item}
+                  </h3>
+                </article>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </Reveal>
       </div>
     </section>
   );

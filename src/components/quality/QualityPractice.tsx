@@ -80,10 +80,10 @@ export function QualityPractice() {
             </Reveal>
             <Reveal delay={0.08} className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5">
               <MediaImage
-                src={asset("sakthi-poultry-welfare-bird.jpg")}
+                src={asset("sakthi-poultry-about-live-bird.jpg")}
                 alt="Healthy broiler birds raised with attention to well-being"
                 fill
-                className="object-cover object-[center_40%]"
+                className="object-cover object-[center_35%]"
                 sizes="(min-width: 1024px) 40vw, 100vw"
               />
             </Reveal>

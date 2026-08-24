@@ -1,11 +1,13 @@
 import Link from "next/link";
+import { Quote } from "lucide-react";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { Button } from "@/components/ui/Button";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import {
   farmerEnquire,
   farmerImages,
+  partnerAudiences,
   partnerProductRange,
 } from "@/lib/farmers";
 
@@ -44,26 +46,52 @@ export function FarmersBusiness() {
               eyebrow="For Business Partners"
               title="Building Strong Poultry Business Partnerships"
             />
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
-              <p>
-                A successful poultry value chain depends on strong relationships
-                across production, supply and market channels.
-              </p>
-              <p>
-                Sakthi Poultry believes in fair, mutually beneficial and
-                long-term relationships with the businesses and stakeholders
-                connected to our operations.
-              </p>
-              <p>
-                We welcome relevant enquiries from traders, retailers, feed
-                distributors, suppliers and institutional buyers looking to
-                explore business opportunities with Sakthi Poultry.
-              </p>
-              <p>
-                If you are a trader or retailer looking to discuss poultry
-                product requirements, connect with our team.
-              </p>
-            </div>
+            <p className="mt-6 text-base leading-relaxed text-muted">
+              A successful poultry value chain depends on strong relationships
+              across production, supply and market channels.
+            </p>
+            <aside className="mt-8 rounded-2xl bg-forest-deep p-7 text-white shadow-lg sm:p-9">
+              <div className="flex items-start gap-3">
+                <Quote className="mt-1 size-7 shrink-0 text-gold-light" aria-hidden />
+                <p className="font-display text-2xl leading-snug sm:text-3xl">
+                  Sakthi Poultry believes in fair, mutually beneficial and
+                  long-term relationships with the businesses and stakeholders
+                  connected to our operations.
+                </p>
+              </div>
+            </aside>
+            <p className="mt-10 text-base leading-relaxed text-muted">
+              We welcome relevant enquiries from traders, retailers, feed
+              distributors, suppliers and institutional buyers looking to
+              explore business opportunities with Sakthi Poultry.
+            </p>
+          </Reveal>
+
+          <Stagger className="mt-8 grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {partnerAudiences.map((item, index) => (
+              <StaggerItem key={item.title} className="h-full">
+                <Link href={item.href} className="block h-full">
+                  <article className="flex h-full items-start gap-3 rounded-2xl border border-line bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-md">
+                    <span className="font-display text-lg text-gold">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-display text-lg leading-snug text-ink">
+                      {item.title}
+                    </h3>
+                  </article>
+                </Link>
+              </StaggerItem>
+            ))}
+          </Stagger>
+
+          <Reveal delay={0.08}>
+            <p className="mt-10 text-base leading-relaxed text-muted">
+              If you are a trader or retailer looking to discuss poultry product
+              requirements, connect with our team.
+            </p>
+            <Button href={farmerEnquire.trader} variant="accent" className="mt-8">
+              Trader / Retailer Enquiry
+            </Button>
           </Reveal>
         </div>
       </section>

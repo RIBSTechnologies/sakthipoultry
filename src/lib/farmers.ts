@@ -72,6 +72,14 @@ export const farmerEnquireWho = [
   "Farming families interested in working with an integrated poultry business",
 ];
 
+export const partnerAudiences = [
+  { title: "Traders", href: "#traders" },
+  { title: "Retailers", href: "#traders" },
+  { title: "Feed distributors", href: "#feed-distributors" },
+  { title: "Suppliers", href: "#suppliers" },
+  { title: "Institutional buyers", href: "#institutional" },
+];
+
 export const partnerProductRange = [
   { title: "Hatching Eggs", href: "/products#hatching-eggs" },
   { title: "Broiler Day-Old Chicks", href: "/products#day-old-chicks" },

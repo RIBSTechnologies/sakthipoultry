@@ -1,5 +1,3 @@
-import { asset } from "./utils";
-
 export const operationsSeo = {
   title: "Integrated Poultry Operations in South India | Sakthi Poultry",
   description:
@@ -7,30 +5,12 @@ export const operationsSeo = {
 };
 
 export const valueChainAreas = [
-  {
-    title: "Breeder Farms",
-    image: asset("sakthi-poultry-live-birds.jpg"),
-  },
-  {
-    title: "Poultry Hatcheries",
-    image: asset("sakthi-poultry-broiler-chicks.jpg"),
-  },
-  {
-    title: "Broiler Farms",
-    image: asset("sakthi-poultry-contract-broiler-farm.jpg"),
-  },
-  {
-    title: "Poultry Feed Manufacturing",
-    image: asset("sakthi-poultry-feed-manufacturing.jpg"),
-  },
-  {
-    title: "Broiler Sales & Distribution",
-    image: asset("sakthi-poultry-logistics-truck.jpg"),
-  },
-  {
-    title: "Poultry Feed Sales",
-    image: asset("sakthi-bromix-broiler-feed.jpg"),
-  },
+  { title: "Breeder Farms", href: "#breeder-farms" },
+  { title: "Poultry Hatcheries", href: "#hatcheries" },
+  { title: "Broiler Farms", href: "#broiler-farms" },
+  { title: "Poultry Feed Manufacturing", href: "#feed-manufacturing" },
+  { title: "Broiler Sales & Distribution", href: "#broiler-sales" },
+  { title: "Poultry Feed Sales", href: "#feed-sales" },
 ];
 
 export const capabilities = [

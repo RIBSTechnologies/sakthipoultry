@@ -1,4 +1,4 @@
-import { MediaImage } from "@/components/ui/MediaImage";
+import Link from "next/link";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import { valueChainAreas } from "@/lib/operations";
@@ -22,26 +22,19 @@ export function OpsChain() {
         <p className="mt-10 text-[11px] font-semibold uppercase tracking-[0.22em] text-forest">
           Our integrated operational areas include
         </p>
-        <Stagger className="mt-4 grid auto-rows-fr items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <Stagger className="mt-4 grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {valueChainAreas.map((item, index) => (
             <StaggerItem key={item.title} className="h-full">
-              <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <MediaImage
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  />
-                </div>
-                <div className="flex items-baseline gap-3 p-5">
-                  <span className="font-display text-sm text-gold">
+              <Link href={item.href} className="block h-full">
+                <article className="flex h-full items-center gap-4 rounded-2xl border border-line bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-md">
+                  <span className="font-display text-2xl text-gold">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-display text-xl text-ink">{item.title}</h3>
-                </div>
-              </article>
+                  <h3 className="font-display text-xl leading-snug text-ink">
+                    {item.title}
+                  </h3>
+                </article>
+              </Link>
             </StaggerItem>
           ))}
         </Stagger>

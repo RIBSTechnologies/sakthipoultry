@@ -10,14 +10,14 @@ export function AboutProfile() {
       aria-labelledby="about-profile-heading"
       className="bg-white py-20 sm:py-24 lg:py-28"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
+      <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
+        <Reveal className="lg:col-span-7">
           <SectionHeading
             id="about-profile-heading"
             eyebrow="Company Profile"
             title="An Integrated Poultry Company in Tamil Nadu"
           />
-          <div className="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
+          <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
             <p>
               Sakthi Poultry Private Limited is an established integrated
               poultry company in Tamil Nadu, operating across the broiler
@@ -49,28 +49,24 @@ export function AboutProfile() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.08}>
-          <div className="relative mt-10 overflow-hidden rounded-2xl">
+        <Reveal delay={0.1} className="lg:col-span-5">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
             <MediaImage
               src={asset("sakthi-poultry-live-birds.jpg")}
-              alt="Broiler birds at a Sakthi Poultry farm"
-              width={1600}
-              height={900}
-              className="h-[22rem] w-full object-cover sm:h-[28rem] lg:h-[36rem]"
+              alt="A broiler bird at a Sakthi Poultry farm"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </div>
-        </Reveal>
-
-        <Reveal delay={0.12}>
-          <aside className="mt-5 rounded-2xl bg-forest-deep p-7 text-white shadow-lg sm:p-10">
+          <aside className="mt-5 rounded-2xl bg-forest-deep p-7 text-white shadow-lg sm:p-8">
             <Quote className="size-8 text-gold-light" aria-hidden />
-            <p className="mt-4 max-w-3xl font-display text-2xl leading-snug sm:text-3xl">
+            <p className="mt-4 font-display text-2xl leading-snug sm:text-3xl">
               “Quality Forever”
             </p>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/80 sm:text-base">
-              Quality begins from the parent stock and continues through
-              breeder farms, hatcheries, feed production and commercial broiler
-              farms.
+            <p className="mt-4 text-sm leading-relaxed text-white/80">
+              Quality begins from the parent stock and continues through breeder
+              farms, hatcheries, feed production and commercial broiler farms.
             </p>
           </aside>
         </Reveal>

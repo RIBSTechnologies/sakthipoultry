@@ -1,8 +1,7 @@
-import { MediaImage } from "@/components/ui/MediaImage";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/home/SectionHeading";
-import { farmerEnquireWho, farmerImages } from "@/lib/farmers";
+import { farmerEnquireWho } from "@/lib/farmers";
 
 export function FarmersApply() {
   return (
@@ -49,15 +48,6 @@ export function FarmersApply() {
           <p className="mt-6 text-base leading-relaxed text-muted">
             Joining Sakthi Poultry begins with a conversation.
           </p>
-          <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl">
-            <MediaImage
-              src={farmerImages.apply}
-              alt="Farm sheds in the Sakthi Poultry production network"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 40vw, 100vw"
-            />
-          </div>
         </Reveal>
         <Reveal delay={0.08} className="lg:col-span-7">
           <div className="rounded-2xl border border-line bg-cream-2 p-6 shadow-sm sm:p-8">

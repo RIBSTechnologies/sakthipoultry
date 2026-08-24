@@ -12,7 +12,6 @@ export const farmerImages = {
   intro: asset("sakthi-poultry-contract-broiler-farm.jpg"),
   contract: asset("sakthi-poultry-contract-broiler-farm.jpg"),
   technical: asset("sakthi-poultry-broiler-chicks.jpg"),
-  apply: asset("aerial-farm-05.jpg"),
   feed: asset("sakthi-poultry-feed-manufacturing.jpg"),
   suppliers: asset("sakthi-poultry-farm-aerial-complex.jpg"),
   institutional: asset("sakthi-poultry-hatching-eggs.jpg"),

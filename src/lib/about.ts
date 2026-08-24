@@ -1,37 +1,8 @@
-import { asset } from "./utils";
-
 export const aboutSeo = {
   title: "About Sakthi Poultry | Integrated Poultry Company in Tamil Nadu",
   description:
     "Learn about Sakthi Poultry Private Limited, an integrated poultry company in Tamil Nadu with experience across breeder farms, hatcheries, poultry feed, broiler farming and poultry production, driven by its philosophy of Quality Forever.",
 };
-
-export const integratedOperations = [
-  {
-    title: "Parent Breeder Farms",
-    image: asset("sakthi-poultry-breeding.jpg"),
-  },
-  {
-    title: "Hatching Eggs",
-    image: asset("sakthi-poultry-hatching-eggs.jpg"),
-  },
-  {
-    title: "Hatcheries",
-    image: asset("sakthi-poultry-modern-hatchery.jpg"),
-  },
-  {
-    title: "Poultry Feed Production",
-    image: asset("sakthi-poultry-feed-manufacturing.jpg"),
-  },
-  {
-    title: "Broiler Farming",
-    image: asset("sakthi-poultry-contract-broiler-farm.jpg"),
-  },
-  {
-    title: "Market Distribution",
-    image: asset("sakthi-poultry-logistics-truck.jpg"),
-  },
-];
 
 export const leadershipPrinciples = [
   "Quality-driven decision-making",

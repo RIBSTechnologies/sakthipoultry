@@ -432,27 +432,27 @@ export const partnerSegments = [
   {
     id: "retailer",
     title: "Retailers",
-    text: "Discuss broiler bird requirements with our team.",
+    text: "Connect with us regarding poultry product requirements.",
   },
   {
     id: "trader",
     title: "Traders",
-    text: "Connect with us regarding broiler bird requirements.",
+    text: "Connect with us regarding poultry product requirements.",
   },
   {
     id: "feed-distributor",
     title: "Feed distributors",
-    text: "Connect with us regarding broiler poultry feed requirements.",
+    text: "Explore poultry feed distribution opportunities.",
   },
   {
     id: "supplier",
     title: "Suppliers",
-    text: "Connect with us as a supplier or service provider.",
+    text: "Submit your business details for relevant supply opportunities.",
   },
   {
     id: "institutional",
     title: "Institutional buyers",
-    text: "Discuss broiler bird requirements with our team.",
+    text: "Discuss your poultry product requirements with our team.",
   },
 ];
 

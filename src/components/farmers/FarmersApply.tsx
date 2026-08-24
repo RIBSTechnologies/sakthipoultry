@@ -1,8 +1,8 @@
 import { MediaImage } from "@/components/ui/MediaImage";
 import { LeadForm } from "@/components/forms/LeadForm";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/home/SectionHeading";
-import { farmerImages } from "@/lib/farmers";
+import { farmerEnquireWho, farmerImages } from "@/lib/farmers";
 
 export function FarmersApply() {
   return (
@@ -15,20 +15,40 @@ export function FarmersApply() {
         <Reveal className="lg:col-span-5">
           <SectionHeading
             id="farmers-apply-heading"
-            eyebrow="Become Sakthi Farmer"
-            title="Tell us about your farm"
+            eyebrow="Become a Sakthi Farmer"
+            title="Interested in Building Your Future in Poultry Farming?"
           />
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
             <p>
-              Our broiler chicks are intended for commercial poultry farming
-              operations seeking chicks produced within an integrated poultry
-              system.
+              If you are interested in broiler poultry farming and would like to
+              explore a farmer partnership with Sakthi Poultry, we welcome your
+              enquiry.
             </p>
             <p>
-              If you are looking for a broiler chicks supplier in South India,
-              connect with Sakthi Poultry to discuss your requirement.
+              Our team can understand your farming background, location and
+              proposed poultry farming requirements and guide you regarding the
+              next appropriate step.
             </p>
           </div>
+          <h3 className="mt-8 font-display text-xl text-ink">Who Can Enquire?</h3>
+          <p className="mt-3 text-base leading-relaxed text-muted">
+            We welcome enquiries from:
+          </p>
+          <Stagger className="mt-4 grid gap-3">
+            {farmerEnquireWho.map((item, index) => (
+              <StaggerItem key={item}>
+                <article className="flex items-start gap-3 rounded-2xl border border-line bg-cream-2 p-4 shadow-sm">
+                  <span className="font-display text-lg text-gold">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <p className="font-display text-lg leading-snug text-ink">{item}</p>
+                </article>
+              </StaggerItem>
+            ))}
+          </Stagger>
+          <p className="mt-6 text-base leading-relaxed text-muted">
+            Joining Sakthi Poultry begins with a conversation.
+          </p>
           <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl">
             <MediaImage
               src={farmerImages.apply}
@@ -40,8 +60,11 @@ export function FarmersApply() {
           </div>
         </Reveal>
         <Reveal delay={0.08} className="lg:col-span-7">
-          <div className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
-            <LeadForm type="farmer" />
+          <div className="rounded-2xl border border-line bg-cream-2 p-6 shadow-sm sm:p-8">
+            <h3 className="font-display text-2xl text-ink">Become a Sakthi Farmer</h3>
+            <div className="mt-6">
+              <LeadForm type="farmer" />
+            </div>
           </div>
         </Reveal>
       </div>

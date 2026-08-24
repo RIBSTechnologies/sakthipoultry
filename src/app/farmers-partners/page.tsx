@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/ui/PageHero";
 import { FarmersIntro } from "@/components/farmers/FarmersIntro";
+import { FarmersContract } from "@/components/farmers/FarmersContract";
+import { FarmersBenefits } from "@/components/farmers/FarmersBenefits";
+import { FarmersTechnical } from "@/components/farmers/FarmersTechnical";
 import { FarmersApply } from "@/components/farmers/FarmersApply";
-import { FarmersPartners } from "@/components/farmers/FarmersPartners";
+import { FarmersBusiness } from "@/components/farmers/FarmersBusiness";
+import { FarmersWhy } from "@/components/farmers/FarmersWhy";
 import { FarmersClose } from "@/components/farmers/FarmersClose";
-import { ProductsRange } from "@/components/products/ProductsRange";
-import { ProductsDetail } from "@/components/products/ProductsDetail";
-import { ProductsFeed } from "@/components/products/ProductsFeed";
-import { ProductsWhy } from "@/components/products/ProductsWhy";
-import { ProductsJourney } from "@/components/products/ProductsJourney";
-import { ProductsEnquire } from "@/components/products/ProductsEnquire";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { farmerImages, farmersSeo } from "@/lib/farmers";
 
@@ -31,20 +29,18 @@ export default function FarmersPartnersPage() {
         items={[{ name: "Farmers & Partners", path: "/farmers-partners" }]}
       />
       <PageHero
-        title="Poultry Products in South India"
-        description="Sakthi Poultry Private Limited offers a focused range of poultry products supporting different stages of commercial broiler production."
+        title="Poultry Contract Farming & Business Partnerships"
+        description="At Sakthi Poultry Private Limited, strong relationships are an important part of building a sustainable poultry ecosystem."
         image={farmerImages.hero}
         crumbs={[{ label: "Farmers & Partners" }]}
       />
       <FarmersIntro />
-      <ProductsRange />
-      <ProductsDetail />
-      <ProductsFeed />
-      <ProductsWhy />
-      <ProductsJourney />
-      <ProductsEnquire />
+      <FarmersContract />
+      <FarmersBenefits />
+      <FarmersTechnical />
       <FarmersApply />
-      <FarmersPartners />
+      <FarmersBusiness />
+      <FarmersWhy />
       <FarmersClose />
     </>
   );

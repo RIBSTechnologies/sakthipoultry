@@ -58,7 +58,7 @@ export function QualityPractice() {
         className="bg-white py-20 sm:py-24 lg:py-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
             <Reveal className="lg:col-span-7">
               <SectionHeading
                 id="quality-welfare-heading"
@@ -83,7 +83,7 @@ export function QualityPractice() {
                 src={asset("sakthi-poultry-live-birds.jpg")}
                 alt="Healthy broiler birds raised with attention to well-being"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="(min-width: 1024px) 40vw, 100vw"
               />
             </Reveal>

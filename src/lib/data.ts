@@ -431,28 +431,28 @@ export const farmerSteps = [
 export const partnerSegments = [
   {
     id: "retailer",
-    title: "Retailers & butcher shops",
-    text: "Reliable live-bird supply for neighbourhood and town markets.",
+    title: "Retailers",
+    text: "Discuss broiler bird requirements with our team.",
   },
   {
     id: "trader",
-    title: "Traders & wholesale buyers",
-    text: "Volume lots with uniform weight for redistribution.",
+    title: "Traders",
+    text: "Connect with us regarding broiler bird requirements.",
   },
   {
     id: "feed-distributor",
     title: "Feed distributors",
-    text: "Sakthi feed range for farms in your catchment.",
+    text: "Connect with us regarding broiler poultry feed requirements.",
   },
   {
     id: "supplier",
-    title: "Raw material suppliers",
-    text: "Grains, additives and packing vendors for the mill.",
+    title: "Suppliers",
+    text: "Connect with us as a supplier or service provider.",
   },
   {
     id: "institutional",
     title: "Institutional buyers",
-    text: "Scheduled supply for processors, hotels and organised retail.",
+    text: "Discuss broiler bird requirements with our team.",
   },
 ];
 

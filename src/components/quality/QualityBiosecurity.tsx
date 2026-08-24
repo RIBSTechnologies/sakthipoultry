@@ -1,6 +1,8 @@
+import { MediaImage } from "@/components/ui/MediaImage";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import { biosecurityAreas } from "@/lib/quality";
+import { asset } from "@/lib/utils";
 
 export function QualityBiosecurity() {
   return (
@@ -9,33 +11,44 @@ export function QualityBiosecurity() {
       className="bg-white py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <SectionHeading
-            id="quality-biosecurity-heading"
-            eyebrow="Poultry Biosecurity"
-            title="Protecting the Poultry Production Environment"
-          />
-          <div className="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
-            <p>
-              Poultry biosecurity and hygiene are important parts of responsible
-              poultry production.
-            </p>
-            <p>
-              Our own hatcheries operate with a strong focus on hygiene and
-              biosecurity as broiler chicks move through the incubation and
-              hatching process.
-            </p>
-            <p>
-              Clean production environments are also an important part of our
-              wider approach to breeder and broiler operations.
-            </p>
-            <p>
-              By keeping biosecurity and hygiene at the centre of poultry
-              management, we support our broader commitment to bird health,
-              welfare and consistent poultry production.
-            </p>
-          </div>
-        </Reveal>
+        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
+          <Reveal className="lg:col-span-7">
+            <SectionHeading
+              id="quality-biosecurity-heading"
+              eyebrow="Poultry Biosecurity"
+              title="Protecting the Poultry Production Environment"
+            />
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
+              <p>
+                Poultry biosecurity and hygiene are important parts of
+                responsible poultry production.
+              </p>
+              <p>
+                Our own hatcheries operate with a strong focus on hygiene and
+                biosecurity as broiler chicks move through the incubation and
+                hatching process.
+              </p>
+              <p>
+                Clean production environments are also an important part of our
+                wider approach to breeder and broiler operations.
+              </p>
+              <p>
+                By keeping biosecurity and hygiene at the centre of poultry
+                management, we support our broader commitment to bird health,
+                welfare and consistent poultry production.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.08} className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5">
+            <MediaImage
+              src={asset("sakthi-poultry-broiler-chicks.jpg")}
+              alt="Day-old broiler chicks from biosecure hatchery operations"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+            />
+          </Reveal>
+        </div>
 
         <p className="mt-10 text-[11px] font-semibold uppercase tracking-[0.22em] text-forest">
           Biosecurity Across Our Operations

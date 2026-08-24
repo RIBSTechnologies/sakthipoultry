@@ -19,54 +19,32 @@ export function AboutInfrastructure() {
           />
         </Reveal>
 
-        <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-12">
-          <Reveal className="h-full lg:col-span-7">
-            <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
-              <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[280px] lg:flex-1">
-                <MediaImage
-                  src={asset("sakthi-poultry-breeding.jpg")}
-                  alt="Parent breeder farm operations at Sakthi Poultry"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 58vw, 100vw"
-                />
-              </div>
-              <div className="p-6 sm:p-8">
-                <h3 className="font-display text-2xl text-ink">
-                  Parent Breeder Farms
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                  Sakthi Poultry&apos;s breeder operations support the
-                  management of parent stock under carefully maintained
-                  conditions, with focus on bird health, nutrition, breeding
-                  performance and biosecurity.
-                </p>
-              </div>
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+          <Reveal>
+            <article className="h-full rounded-2xl border border-line bg-cream-2 p-6 shadow-sm sm:p-8">
+              <h3 className="font-display text-2xl text-ink">
+                Parent Breeder Farms
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
+                Sakthi Poultry&apos;s breeder operations support the management
+                of parent stock under carefully maintained conditions, with
+                focus on bird health, nutrition, breeding performance and
+                biosecurity.
+              </p>
             </article>
           </Reveal>
-          <Reveal delay={0.08} className="h-full lg:col-span-5">
-            <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
-              <div className="relative aspect-[3/4] min-h-[28rem] lg:min-h-0 lg:flex-1">
-                <MediaImage
-                  src={asset("sakthi-poultry-modern-hatchery.jpg")}
-                  alt="Sakthi Poultry hatchery incubator corridor"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                />
-              </div>
-              <div className="p-6 sm:p-8">
-                <h3 className="font-display text-2xl text-ink">
-                  Poultry Hatchery
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                  Our poultry hatchery uses modern incubation and climate-control
-                  systems to manage temperature, humidity and ventilation,
-                  supported by dedicated facilities for egg storage, sorting and
-                  grading. Biosecurity and hygiene protocols are incorporated
-                  throughout the hatchery process.
-                </p>
-              </div>
+          <Reveal delay={0.08}>
+            <article className="h-full rounded-2xl border border-line bg-cream-2 p-6 shadow-sm sm:p-8">
+              <h3 className="font-display text-2xl text-ink">
+                Poultry Hatchery
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
+                Our poultry hatchery uses modern incubation and climate-control
+                systems to manage temperature, humidity and ventilation,
+                supported by dedicated facilities for egg storage, sorting and
+                grading. Biosecurity and hygiene protocols are incorporated
+                throughout the hatchery process.
+              </p>
             </article>
           </Reveal>
         </div>

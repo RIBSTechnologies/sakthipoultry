@@ -62,14 +62,17 @@ export function AboutProfile() {
           </aside>
         </Reveal>
 
-        <Reveal delay={0.1} className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5">
-          <MediaImage
-            src={asset("sakthi-poultry-welfare-bird.jpg")}
-            alt="A broiler bird at a Sakthi Poultry farm"
-            fill
-            className="object-cover object-[center_40%]"
-            sizes="(min-width: 1024px) 40vw, 100vw"
-          />
+        <Reveal delay={0.1} className="lg:col-span-5">
+          <div className="overflow-hidden rounded-2xl">
+            <MediaImage
+              src={asset("sakthi-poultry-about-live-bird.jpg")}
+              alt="A broiler bird at a Sakthi Poultry farm"
+              width={743}
+              height={1024}
+              className="h-auto w-full"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+            />
+          </div>
         </Reveal>
       </div>
     </section>

@@ -10,8 +10,8 @@ export function AboutProfile() {
       aria-labelledby="about-profile-heading"
       className="bg-white py-20 sm:py-24 lg:py-28"
     >
-      <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
-        <Reveal className="lg:col-span-7">
+      <div className="mx-auto grid max-w-7xl items-stretch gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-8 lg:px-8">
+        <Reveal className="flex h-full flex-col lg:col-span-7">
           <SectionHeading
             id="about-profile-heading"
             eyebrow="Company Profile"
@@ -47,10 +47,19 @@ export function AboutProfile() {
               protein.
             </p>
           </div>
+          <div className="relative mt-8 min-h-[280px] flex-1 overflow-hidden rounded-2xl sm:min-h-[320px]">
+            <MediaImage
+              src={asset("sakthi-poultry-contract-broiler-farm.jpg")}
+              alt="Contract broiler farms in the Sakthi Poultry network"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 58vw, 100vw"
+            />
+          </div>
         </Reveal>
 
-        <Reveal delay={0.1} className="lg:col-span-5">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+        <Reveal delay={0.1} className="flex h-full flex-col gap-5 lg:col-span-5">
+          <div className="relative min-h-[320px] flex-1 overflow-hidden rounded-2xl">
             <MediaImage
               src={asset("sakthi-poultry-live-birds.jpg")}
               alt="A broiler bird at a Sakthi Poultry farm"
@@ -59,7 +68,7 @@ export function AboutProfile() {
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </div>
-          <aside className="mt-5 rounded-2xl bg-forest-deep p-7 text-white shadow-lg sm:p-8">
+          <aside className="rounded-2xl bg-forest-deep p-7 text-white shadow-lg sm:p-8">
             <Quote className="size-8 text-gold-light" aria-hidden />
             <p className="mt-4 font-display text-2xl leading-snug sm:text-3xl">
               “Quality Forever”

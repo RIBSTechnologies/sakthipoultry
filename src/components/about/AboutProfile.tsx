@@ -10,8 +10,8 @@ export function AboutProfile() {
       aria-labelledby="about-profile-heading"
       className="bg-white py-20 sm:py-24 lg:py-28"
     >
-      <div className="mx-auto grid max-w-7xl items-stretch gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
-        <Reveal className="flex h-full flex-col lg:col-span-7">
+      <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
+        <Reveal className="lg:col-span-7">
           <SectionHeading
             id="about-profile-heading"
             eyebrow="Company Profile"
@@ -48,7 +48,7 @@ export function AboutProfile() {
             </p>
           </div>
 
-          <aside className="mt-8 flex flex-1 flex-col justify-center rounded-2xl bg-forest-deep p-7 text-white shadow-lg sm:p-9">
+          <aside className="mt-8 rounded-2xl bg-forest-deep p-7 text-white shadow-lg sm:p-9">
             <div className="flex items-center gap-3">
               <Quote className="size-7 shrink-0 text-gold-light" aria-hidden />
               <p className="whitespace-nowrap font-display text-2xl leading-none sm:text-3xl">
@@ -62,16 +62,14 @@ export function AboutProfile() {
           </aside>
         </Reveal>
 
-        <Reveal delay={0.1} className="lg:col-span-5">
-          <div className="relative min-h-[22rem] overflow-hidden rounded-2xl lg:h-full">
-            <MediaImage
-              src={asset("sakthi-poultry-live-birds.jpg")}
-              alt="A broiler bird at a Sakthi Poultry farm"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 40vw, 100vw"
-            />
-          </div>
+        <Reveal delay={0.1} className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5">
+          <MediaImage
+            src={asset("sakthi-poultry-welfare-bird.jpg")}
+            alt="A broiler bird at a Sakthi Poultry farm"
+            fill
+            className="object-cover object-[center_40%]"
+            sizes="(min-width: 1024px) 40vw, 100vw"
+          />
         </Reveal>
       </div>
     </section>

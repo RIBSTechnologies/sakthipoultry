@@ -8,7 +8,7 @@ export function AboutClose() {
   return (
     <section
       aria-labelledby="about-close-heading"
-      className="relative isolate overflow-hidden bg-forest py-20 sm:py-24 lg:py-32"
+      className="relative isolate overflow-hidden bg-forest py-20 sm:py-24 lg:py-28"
     >
       <SectionBackdrop
         src={asset("sakthi-poultry-farm-aerial-complex.jpg")}
@@ -16,24 +16,11 @@ export function AboutClose() {
       />
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-light">
-            Quality Forever
-          </p>
-          <h2
+          <p
             id="about-close-heading"
-            className="mt-4 font-display text-3xl font-medium text-white sm:text-5xl"
+            className="font-display text-4xl text-white sm:text-5xl"
           >
-            Building the Future of Poultry Through Quality & Partnership
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
-            For more than three decades, Sakthi Poultry&apos;s business has
-            evolved around poultry expertise, farmer relationships and
-            integrated operations.
-          </p>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
-            Today, we continue to strengthen our role as an integrated poultry
-            company in Tamil Nadu, serving the poultry ecosystem through
-            quality-focused production and long-term partnerships.
+            Quality Forever
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             {aboutLinks.map((link, index) => (

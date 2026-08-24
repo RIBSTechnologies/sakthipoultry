@@ -21,15 +21,15 @@ export function AboutHero() {
         <Reveal y={24}>
           <Breadcrumbs items={[{ label: "About" }]} />
           <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-light">
-            About Sakthi Poultry
+            Company Profile
           </p>
           <h1 className="mt-4 max-w-4xl font-display text-4xl font-medium tracking-tight text-white sm:text-5xl lg:text-7xl lg:leading-[1.05]">
-            Building an Integrated Poultry Business Around Quality
+            About Sakthi Poultry
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
-            Sakthi Poultry Private Limited is a quality-focused broiler poultry
-            company in Tamil Nadu, operating across key stages of the poultry
-            production value chain.
+            An established integrated poultry company in Tamil Nadu, operating
+            across the broiler chicken value chain with a strong commitment to
+            quality, efficiency and responsible poultry production.
           </p>
           <span className="mt-8 block h-px w-24 bg-gold" />
         </Reveal>

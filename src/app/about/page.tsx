@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { AboutHero } from "@/components/about/AboutHero";
-import { AboutStory } from "@/components/about/AboutStory";
 import { AboutProfile } from "@/components/about/AboutProfile";
 import { AboutJourney } from "@/components/about/AboutJourney";
 import { AboutLeadership } from "@/components/about/AboutLeadership";
@@ -30,7 +29,6 @@ export default function AboutPage() {
     <>
       <BreadcrumbJsonLd items={[{ name: "About", path: "/about" }]} />
       <AboutHero />
-      <AboutStory />
       <AboutProfile />
       <AboutJourney />
       <AboutLeadership />

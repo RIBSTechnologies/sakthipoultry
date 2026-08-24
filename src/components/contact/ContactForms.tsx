@@ -13,6 +13,7 @@ export function ContactForms() {
   const params = useSearchParams();
   const raw = params.get("type") ?? "product";
   const type: EnquiryId = allowed.has(raw) ? (raw as EnquiryId) : "product";
+  const productSlug = params.get("product") ?? undefined;
 
   return (
     <div>
@@ -34,7 +35,7 @@ export function ContactForms() {
         ))}
       </div>
       <div className="mt-8 border border-line bg-white p-6 sm:p-8">
-        <LeadForm type={type} />
+        <LeadForm type={type} productSlug={type === "product" ? productSlug : undefined} />
       </div>
     </div>
   );

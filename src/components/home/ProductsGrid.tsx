@@ -41,7 +41,7 @@ const products = [
     tags: ["Pre-Starter Crumble", "Starter Crumble", "Finisher Pellet"],
     detail:
       "Stage-specific broiler nutrition from our automated plant, formulated to support growth, gut health and feed conversion.",
-    href: "/products#poultry-feed",
+    href: "/products#broiler-feed",
     cta: "Explore Poultry Feed",
     icon: Wheat,
     image: asset("sakthi-bromix-broiler-feed.jpg"),
@@ -74,7 +74,7 @@ const products = [
     tags: [] as string[],
     detail:
       "Our breeder poultry feed is designed to support breeder nutrition and the production of quality fertile eggs and broiler chicks.",
-    href: "/products#poultry-feed",
+    href: "/products#breeder-feed",
     cta: "Explore Breeder Feed",
     icon: Wheat,
     image: asset("sakthi-poultry-breeder-feed.jpg"),

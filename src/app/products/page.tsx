@@ -1,14 +1,26 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/ui/PageHero";
-import { ProductGrid } from "@/components/products/ProductGrid";
+import { ProductsIntro } from "@/components/products/ProductsIntro";
+import { ProductsRange } from "@/components/products/ProductsRange";
+import { ProductsDetail } from "@/components/products/ProductsDetail";
+import { ProductsFeed } from "@/components/products/ProductsFeed";
+import { ProductsWhy } from "@/components/products/ProductsWhy";
+import { ProductsJourney } from "@/components/products/ProductsJourney";
+import { ProductsEnquire } from "@/components/products/ProductsEnquire";
+import { ProductsClose } from "@/components/products/ProductsClose";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { productsSeo } from "@/lib/products";
 import { asset } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Products",
-  description:
-    "Hatching eggs, broiler day-old chicks, live broiler birds, and poultry & livestock feed including breeder, broiler and cattle rations.",
+  title: { absolute: productsSeo.title },
+  description: productsSeo.description,
   alternates: { canonical: "/products" },
+  openGraph: {
+    title: productsSeo.title,
+    description: productsSeo.description,
+    images: ["/assets/images/sakthi-poultry-hatching-eggs.jpg"],
+  },
 };
 
 export default function ProductsPage() {
@@ -16,14 +28,19 @@ export default function ProductsPage() {
     <>
       <BreadcrumbJsonLd items={[{ name: "Products", path: "/products" }]} />
       <PageHero
-        title="A catalogue built from our own chain"
-        description="Genetics, chicks, live birds and nutrition manufactured or grown inside the Sakthi system — with enquiry paths for bulk and scheduled supply."
-        image={asset("sakthi-bromix-broiler-feed.jpg")}
+        title="Poultry Products in South India"
+        description="Sakthi Poultry Private Limited offers a focused range of poultry products supporting different stages of commercial broiler production."
+        image={asset("sakthi-poultry-hatching-eggs.jpg")}
         crumbs={[{ label: "Products" }]}
       />
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <ProductGrid />
-      </div>
+      <ProductsIntro />
+      <ProductsRange />
+      <ProductsDetail />
+      <ProductsFeed />
+      <ProductsWhy />
+      <ProductsJourney />
+      <ProductsEnquire />
+      <ProductsClose />
     </>
   );
 }

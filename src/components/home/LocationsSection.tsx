@@ -1,25 +1,10 @@
 import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
-import { site } from "@/lib/site";
+import { locations } from "@/lib/data";
 import { asset } from "@/lib/utils";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
-
-const hubs = [
-  {
-    title: "Head Office — Pollachi",
-    text: `${site.address.city}, ${site.address.district}, Tamil Nadu`,
-  },
-  {
-    title: "Production Hub",
-    text: "South Singampunari, Sivagangai — farms, feed and hatchery operations",
-  },
-  {
-    title: "Market Reach",
-    text: "Distribution routes serving the South Indian poultry market",
-  },
-];
 
 export function LocationsSection() {
   return (
@@ -47,18 +32,20 @@ export function LocationsSection() {
             id="locations-heading"
             eyebrow="Regional Reach"
             title="Rooted in Tamil Nadu. Serving the South Indian Poultry Market."
-            subtitle="Regional hub presence bringing together farms, feed mills, hatcheries, and distribution routes."
+            subtitle="Corporate Office in Pollachi, Feed Mill at Kariyapatti, and Dindigul."
             />
           </Reveal>
 
           <Stagger className="mt-8 space-y-3">
-            {hubs.map((hub) => (
-              <StaggerItem key={hub.title}>
+            {locations.map((loc) => (
+              <StaggerItem key={loc.id}>
                 <div className="flex gap-3 rounded-2xl border border-line bg-white p-4">
                   <MapPin className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden />
                   <div>
-                    <p className="font-semibold text-ink">{hub.title}</p>
-                    <p className="mt-0.5 text-sm text-muted">{hub.text}</p>
+                    <p className="font-semibold text-ink">
+                      {loc.type || loc.name}
+                    </p>
+                    <p className="mt-0.5 text-sm text-muted">{loc.lines.join(", ")}</p>
                   </div>
                 </div>
               </StaggerItem>

@@ -73,7 +73,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-white/45 sm:flex-row sm:justify-between sm:px-6 lg:px-8">
           <p>© {new Date().getFullYear()} {site.legalName}. All rights reserved.</p>
-          <p>Pollachi · Sivagangai · Tamil Nadu</p>
+          <p>Pollachi · Kariyapatti · Dindigul</p>
         </div>
       </div>
     </footer>

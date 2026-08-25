@@ -44,11 +44,7 @@ export default function ContactPage() {
             <Mail className="mt-1 size-5 shrink-0 text-gold" />
             {site.email}
           </a>
-          <p className="mt-6 text-sm text-muted">
-            CIN {site.cin}
-            <br />
-            Production: South Singampunari, Sivagangai District
-          </p>
+          <p className="mt-6 text-sm text-muted">CIN {site.cin}</p>
           <iframe
             title="Sakthi Poultry head office map"
             className="mt-8 h-64 w-full border border-line"

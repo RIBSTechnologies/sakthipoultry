@@ -1,79 +1,59 @@
-"use client";
-
-import { useMemo, useState } from "react";
-import { locationTypes, locations } from "@/lib/data";
-import { mapsHref } from "@/lib/site";
 import { MapPin } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/Button";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { SectionHeading } from "@/components/home/SectionHeading";
+import { locations } from "@/lib/data";
 
 export function LocationDirectory() {
-  const [filter, setFilter] = useState<(typeof locationTypes)[number]>("All");
-  const list = useMemo(
-    () => (filter === "All" ? locations : locations.filter((l) => l.type === filter)),
-    [filter],
-  );
-  const mapLoc = list[0] ?? locations[0];
-  const src = `https://maps.google.com/maps?q=${encodeURIComponent(mapLoc.mapQuery)}&z=11&output=embed`;
-
   return (
-    <div className="grid gap-10 lg:grid-cols-12">
-      <div className="lg:col-span-7">
-        <div className="flex flex-wrap gap-2">
-          {locationTypes.map((t) => (
-            <button
-              key={t}
-              type="button"
-              onClick={() => setFilter(t)}
-              className={cn(
-                "rounded-sm border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em]",
-                filter === t
-                  ? "border-forest bg-forest text-white"
-                  : "border-line bg-white text-forest hover:border-gold",
-              )}
-            >
-              {t}
-            </button>
-          ))}
-        </div>
-        <ul className="mt-6 grid gap-4">
-          {list.map((loc) => (
-            <li key={loc.id} className="border border-line bg-white p-6">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
-                {loc.type} · {loc.region}
-              </p>
-              <h2 className="mt-2 flex gap-2 text-xl font-semibold text-forest">
-                <MapPin className="mt-1 size-5 shrink-0 text-brand" />
-                {loc.name}
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{loc.address}</p>
-              <p className="mt-2 text-sm text-forest">{loc.notes}</p>
-              <a
-                href={mapsHref(loc.mapQuery)}
-                className="mt-3 inline-block text-xs font-semibold uppercase tracking-[0.16em] text-brand"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open in Maps
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="lg:col-span-5">
-        <div className="sticky top-28 overflow-hidden border border-line bg-white">
-          <iframe
-            title={`Map of ${mapLoc.name}`}
-            src={src}
-            className="h-[420px] w-full"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+    <section
+      aria-labelledby="locations-directory-heading"
+      className="bg-white py-20 sm:py-24 lg:py-28"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <SectionHeading
+            id="locations-directory-heading"
+            eyebrow="Our Locations"
+            title="Corporate Office, Feed Mill and Dindigul"
           />
-          <p className="p-4 text-sm text-muted">
-            Showing {mapLoc.name}. Switch filters to focus the directory; each card
-            has a Maps link for the exact pin.
-          </p>
-        </div>
+        </Reveal>
+
+        <Stagger className="mt-10 grid auto-rows-fr items-stretch gap-5 lg:grid-cols-3">
+          {locations.map((loc, index) => (
+            <StaggerItem key={loc.id} className="h-full">
+              <article className="flex h-full flex-col rounded-2xl border border-line bg-cream-2 p-6 shadow-sm sm:p-8">
+                <span className="font-display text-lg text-gold">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                {loc.type ? (
+                  <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+                    {loc.type}
+                  </p>
+                ) : null}
+                <h2 className="mt-2 flex gap-2 font-display text-xl text-ink">
+                  <MapPin className="mt-1 size-5 shrink-0 text-gold" aria-hidden />
+                  {loc.name}
+                </h2>
+                <address className="mt-4 flex-1 text-sm not-italic leading-relaxed text-muted sm:text-base">
+                  {loc.lines.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </address>
+                <Button
+                  href={loc.mapsUrl}
+                  variant="outline"
+                  className="mt-8 self-start"
+                >
+                  Open in Maps
+                </Button>
+              </article>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </div>
-    </div>
+    </section>
   );
 }

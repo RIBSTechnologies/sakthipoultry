@@ -456,73 +456,45 @@ export const partnerSegments = [
   },
 ];
 
-export const locationTypes = [
-  "All",
-  "Head Office",
-  "Hatchery & Farms",
-  "Feed Mill",
-  "Distribution",
-] as const;
-
 export const locations = [
   {
-    id: "ho-pollachi",
-    type: "Head Office",
-    name: "Corporate & Head Office",
-    address:
-      "No. 7, Om Shanthi Nagar, 1st Cross, Opp. Lathangi School, T. Kottampatti, Pollachi, Coimbatore, Tamil Nadu 642002",
-    region: "Coimbatore",
-    mapQuery: "T.Kottampatti Pollachi Coimbatore 642002",
-    lat: 10.658,
-    lng: 77.008,
-    notes: "Registered office, enquiries, farmer onboarding and commercial coordination.",
+    id: "corporate-office",
+    type: "Corporate Office",
+    name: "Sakthi Poultry Pvt Ltd",
+    lines: [
+      "7, Om Shanti Nagar 1st cross",
+      "Opp. Lathangi School",
+      "T. Kottampatti",
+      "Pollachi 642 002",
+      "Coimbatore District",
+    ],
+    mapsUrl: "https://maps.app.goo.gl/FDihvGsxyzdTsPbC7?g_st=aw",
   },
   {
-    id: "singampunari",
-    type: "Hatchery & Farms",
-    name: "Production Complex — Singampunari",
-    address:
-      "South Singampunari Village, Singampunari Taluk, Sivagangai District, Tamil Nadu",
-    region: "Sivagangai",
-    mapQuery: "South Singampunari Village Singampunari Sivagangai Tamil Nadu",
-    lat: 10.18,
-    lng: 78.43,
-    notes:
-      "Poultry, hatchery and farm operations serving the southern Tamil Nadu production belt.",
-  },
-  {
-    id: "feed-unit",
+    id: "feed-mill",
     type: "Feed Mill",
-    name: "Automated Feed Manufacturing",
-    address: "Integrated feed mill, Tamil Nadu",
-    region: "Tamil Nadu",
-    mapQuery: "Pollachi Tamil Nadu",
-    lat: 10.658,
-    lng: 77.008,
-    notes:
-      "Mash (8–10 TPH) and pellet (20–25 TPH) lines for breeder, broiler and cattle feed.",
+    name: "Sakthi Poultry Pvt Ltd",
+    lines: [
+      "C/o Amba feeds",
+      "SF.no.2/109",
+      "Meenakshipuram",
+      "Kambikudi (po)",
+      "Kariyapatti 626 115",
+      "Virudhunagar district",
+    ],
+    mapsUrl: "https://maps.app.goo.gl/7r4BCmPCy2mNBy9N8",
   },
   {
-    id: "distribution-west",
-    type: "Distribution",
-    name: "Western TN sales corridor",
-    address: "Pollachi – Coimbatore catchment",
-    region: "Coimbatore",
-    mapQuery: "Pollachi Coimbatore",
-    lat: 10.66,
-    lng: 77.01,
-    notes: "Live broiler and feed distribution to wholesale and retail butcher networks.",
-  },
-  {
-    id: "distribution-south",
-    type: "Distribution",
-    name: "Southern TN sales corridor",
-    address: "Sivagangai and adjoining districts",
-    region: "Sivagangai",
-    mapQuery: "Sivagangai Tamil Nadu",
-    lat: 10.18,
-    lng: 78.43,
-    notes: "Regional offtake for contract farm harvests and institutional buyers.",
+    id: "dindigul",
+    type: "",
+    name: "Sakthi Poultry Pvt Ltd",
+    lines: [
+      "81, Thadikombu Main Road",
+      "Kamakshipuram",
+      "Kallipatti (Po)",
+      "Dindigul 624 004",
+    ],
+    mapsUrl: "https://maps.app.goo.gl/wdXTXn7X7Cy8sDJQ9",
   },
 ];
 

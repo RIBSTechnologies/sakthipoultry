@@ -469,6 +469,7 @@ export const locations = [
       "Coimbatore District",
     ],
     mapsUrl: "https://maps.app.goo.gl/FDihvGsxyzdTsPbC7?g_st=aw",
+    tab: "Corporate Office",
   },
   {
     id: "feed-mill",
@@ -483,6 +484,7 @@ export const locations = [
       "Virudhunagar district",
     ],
     mapsUrl: "https://maps.app.goo.gl/7r4BCmPCy2mNBy9N8",
+    tab: "Feed Mill",
   },
   {
     id: "dindigul",
@@ -495,6 +497,7 @@ export const locations = [
       "Dindigul 624 004",
     ],
     mapsUrl: "https://maps.app.goo.gl/wdXTXn7X7Cy8sDJQ9",
+    tab: "Dindigul",
   },
 ];
 

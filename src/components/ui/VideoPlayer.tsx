@@ -25,12 +25,15 @@ export function VideoPlayer({
       loop={!controls}
       playsInline
       controls={controls}
-      preload="auto"
+      preload={controls ? "metadata" : "auto"}
       poster={poster}
       aria-hidden={!controls}
       onError={() => setFailed(true)}
     >
-      <source src={src} type="video/mp4" />
+      <source
+        src={src}
+        type={src.endsWith(".mov") ? "video/quicktime" : "video/mp4"}
+      />
     </video>
   );
 }

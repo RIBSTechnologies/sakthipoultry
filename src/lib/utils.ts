@@ -6,6 +6,10 @@ export function asset(file: string) {
   return `/assets/images/${file}`;
 }
 
+export function videoAsset(file: string) {
+  return `/assets/videos/${file}`;
+}
+
 export function formatDate(iso: string) {
   return new Intl.DateTimeFormat("en-IN", {
     day: "numeric",

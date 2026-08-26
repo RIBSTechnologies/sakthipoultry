@@ -7,7 +7,7 @@ import { asset } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Locations",
   description:
-    "Sakthi Poultry Pvt Ltd locations — Corporate Office in Pollachi, Feed Mill at Kariyapatti, and Dindigul.",
+    "Sakthi Poultry Pvt Ltd locations — Corporate Office in Pollachi, and Feed Mills at Kariyapatti and Dindigul.",
   alternates: { canonical: "/locations" },
 };
 
@@ -17,7 +17,7 @@ export default function LocationsPage() {
       <BreadcrumbJsonLd items={[{ name: "Locations", path: "/locations" }]} />
       <PageHero
         title="Locations"
-        description="Corporate Office in Pollachi, Feed Mill at Kariyapatti, and Dindigul."
+        description="Corporate Office in Pollachi, and Feed Mills at Kariyapatti and Dindigul."
         image={asset("aerial-complex-08.jpg")}
         crumbs={[{ label: "Locations" }]}
       />

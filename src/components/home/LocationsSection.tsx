@@ -32,7 +32,7 @@ export function LocationsSection() {
             id="locations-heading"
             eyebrow="Regional Reach"
             title="Rooted in Tamil Nadu. Serving the South Indian Poultry Market."
-            subtitle="Corporate Office in Pollachi, Feed Mill at Kariyapatti, and Dindigul."
+            subtitle="Corporate Office in Pollachi, and Feed Mills at Kariyapatti and Dindigul."
             />
           </Reveal>
 

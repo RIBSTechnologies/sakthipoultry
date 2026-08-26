@@ -488,7 +488,7 @@ export const locations = [
   },
   {
     id: "dindigul",
-    type: "",
+    type: "Feed Mill",
     name: "Sakthi Poultry Pvt Ltd",
     lines: [
       "81, Thadikombu Main Road",
@@ -497,7 +497,7 @@ export const locations = [
       "Dindigul 624 004",
     ],
     mapsUrl: "https://maps.app.goo.gl/wdXTXn7X7Cy8sDJQ9",
-    tab: "Dindigul",
+    tab: "Feed Mill",
   },
 ];
 

@@ -21,7 +21,9 @@ export default function NewsEventsPage() {
         image={asset("aerial-complex-04.jpg")}
         crumbs={[{ label: "News & Events" }]}
       />
-      <NewsGallery />
+      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <NewsGallery />
+      </div>
     </>
   );
 }

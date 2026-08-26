@@ -5,17 +5,41 @@ import { jobs } from "@/lib/data";
 import { Modal } from "@/components/ui/Modal";
 import { CareerForm } from "@/components/forms/CareerForm";
 import { Button } from "@/components/ui/Button";
+import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const teams = ["All", ...Array.from(new Set(jobs.map((j) => j.team)))];
 
 export function JobBoard() {
   const [team, setTeam] = useState("All");
-  const [apply, setApply] = useState<string>("");
+  const [apply, setApply] = useState("");
   const list = useMemo(
     () => (team === "All" ? jobs : jobs.filter((j) => j.team === team)),
     [team],
   );
+
+  if (jobs.length === 0) {
+    return (
+      <div className="border border-line bg-white p-8 sm:p-10">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+          Openings
+        </p>
+        <h2 className="mt-3 font-display text-2xl text-ink sm:text-3xl">
+          There are no career opportunities at this time
+        </h2>
+        <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+          Please check back later. You can also write to us at{" "}
+          <a
+            href={`mailto:${site.email}`}
+            className="font-semibold text-forest hover:text-gold"
+          >
+            {site.email}
+          </a>
+          .
+        </p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -26,7 +50,7 @@ export function JobBoard() {
             type="button"
             onClick={() => setTeam(t)}
             className={cn(
-              "rounded-sm border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em]",
+              "rounded-md border px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em]",
               team === t
                 ? "border-forest bg-forest text-white"
                 : "border-line bg-white text-forest",
@@ -49,7 +73,11 @@ export function JobBoard() {
               </p>
               <p className="mt-3 max-w-2xl text-sm text-muted">{job.summary}</p>
             </div>
-            <Button type="button" variant="gold" onClick={() => setApply(job.title)}>
+            <Button
+              type="button"
+              variant="gold"
+              onClick={() => setApply(job.title)}
+            >
               Apply online
             </Button>
           </li>

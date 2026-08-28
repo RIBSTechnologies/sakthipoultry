@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
-import { asset } from "@/lib/utils";
+import { asset, birdFaceAsset, birdFaceImageClass, cn } from "@/lib/utils";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 
@@ -54,7 +54,8 @@ const steps = [
     title: "Live Bird Sales & Distribution",
     text: "Reliable supply of quality live birds to wholesale traders and retail outlets through dedicated market channels, supported by responsive service and timely delivery.",
     icon: Store,
-    image: asset("sakthi-poultry-live-birds.jpg"),
+    image: birdFaceAsset(),
+    imageClass: birdFaceImageClass,
   },
 ];
 
@@ -101,7 +102,12 @@ export function ValueChain() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover transition duration-700 hover:scale-105"
+                      className={cn(
+                        "transition duration-700 hover:scale-105",
+                        "imageClass" in item && item.imageClass
+                          ? item.imageClass
+                          : "object-cover",
+                      )}
                       sizes="(min-width: 1024px) 200px, (min-width: 640px) 184px, 100vw"
                     />
                     <span className="absolute top-3 left-3 inline-flex size-10 items-center justify-center rounded-full bg-forest text-sm font-bold text-white">

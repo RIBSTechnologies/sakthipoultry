@@ -2,7 +2,7 @@ import { Quote } from "lucide-react";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/home/SectionHeading";
-import { asset } from "@/lib/utils";
+import { birdFaceAsset } from "@/lib/utils";
 
 export function AboutProfile() {
   return (
@@ -65,7 +65,7 @@ export function AboutProfile() {
         <Reveal delay={0.1} className="lg:col-span-5">
           <div className="overflow-hidden rounded-2xl">
             <MediaImage
-              src={asset("sakthi-poultry-about-live-bird.jpg")}
+              src={birdFaceAsset()}
               alt="A broiler bird at a Sakthi Poultry farm"
               width={743}
               height={1024}

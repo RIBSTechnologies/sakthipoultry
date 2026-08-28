@@ -28,7 +28,7 @@ export const homeStrengths = [
   { title: "Hatcheries", image: asset("sakthi-poultry-modern-hatchery.jpg") },
   { title: "Broiler Farms", image: asset("sakthi-poultry-contract-broiler-farm.jpg") },
   { title: "Feed Manufacturing", image: asset("sakthi-poultry-feed-manufacturing.jpg") },
-  { title: "Broiler Sales and Distribution", image: asset("sakthi-poultry-live-birds.jpg") },
+  { title: "Broiler Sales and Distribution", image: asset("sakthi-poultry-bird-face.jpg") },
   { title: "Feed Sales", image: asset("sakthi-bromix-broiler-feed.jpg") },
 ];
 
@@ -73,7 +73,7 @@ export const valueChain = [
     title: "Live Bird Sales & Distribution",
     summary:
       "Reliable supply of quality live birds to wholesale traders and retail outlets through dedicated market channels, supported by responsive service and timely delivery.",
-    image: asset("sakthi-poultry-live-birds.jpg"),
+    image: asset("sakthi-poultry-bird-face.jpg"),
   },
 ];
 
@@ -97,7 +97,7 @@ export const homeProducts = [
     name: "Broiler Birds",
     short:
       "We supply broiler birds produced through our integrated poultry operations with continued emphasis on quality throughout the production cycle.",
-    image: asset("sakthi-poultry-broiler-birds.jpg"),
+    image: asset("sakthi-poultry-bird-face.jpg"),
   },
   {
     slug: "poultry-feed",
@@ -160,7 +160,7 @@ export const products = [
     category: "Live birds",
     short:
       "Broiler birds produced through our integrated commercial poultry operations.",
-    image: asset("sakthi-poultry-broiler-birds.jpg"),
+    image: asset("sakthi-poultry-bird-face.jpg"),
     highlights: [
       "Integrated commercial poultry operations",
       "Clean environments and balanced nutrition",
@@ -257,7 +257,7 @@ export const operations = [
   {
     slug: "sales",
     title: "Broiler Sales & Distribution",
-    image: asset("sakthi-poultry-live-birds.jpg"),
+    image: asset("sakthi-poultry-bird-face.jpg"),
     points: [
       "Scheduled live-bird supply to wholesale buyers",
       "Institutional and HORECA-ready lots",
@@ -525,10 +525,7 @@ export const gallery = {
     { src: asset("cage-rows.jpg"), alt: "Rows of birds in managed housing", tag: "Flock" },
     { src: asset("healthy-birds-01.jpg"), alt: "Birds in a poultry house", tag: "Flock" },
     { src: asset("healthy-birds-02.jpg"), alt: "Birds inside a poultry house", tag: "Flock" },
-    { src: asset("sakthi-poultry-about-live-bird.jpg"), alt: "A broiler bird at a Sakthi Poultry farm", tag: "Flock" },
-    { src: asset("sakthi-poultry-welfare-bird.jpg"), alt: "A bird at a Sakthi Poultry farm", tag: "Flock" },
-    { src: asset("sakthi-poultry-live-birds.jpg"), alt: "Live broiler birds", tag: "Flock" },
-    { src: asset("sakthi-poultry-broiler-birds.jpg"), alt: "Broiler birds", tag: "Flock" },
+    { src: asset("sakthi-poultry-bird-face.jpg"), alt: "A broiler bird at a Sakthi Poultry farm", tag: "Flock" },
     { src: asset("sakthi-poultry-broiler-chicks.jpg"), alt: "Broiler day-old chicks", tag: "Flock" },
     { src: asset("sakthi-poultry-breeding.jpg"), alt: "Birds in a poultry house", tag: "Flock" },
     { src: asset("feed-bags-chicks.jpg"), alt: "Sakthi feed bags and chick rearing cages", tag: "Feed" },

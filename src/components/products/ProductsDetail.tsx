@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import { productDetails } from "@/lib/products";
-import { cn } from "@/lib/utils";
+import { cn, birdFaceImageClass } from "@/lib/utils";
 
 export function ProductsDetail() {
   return (
@@ -42,7 +42,11 @@ export function ProductsDetail() {
                 src={product.image}
                 alt={product.alt}
                 fill
-                className="object-cover"
+                className={
+                  product.id === "live-broilers"
+                    ? birdFaceImageClass
+                    : "object-cover"
+                }
                 sizes="(min-width: 1024px) 40vw, 100vw"
               />
             </Reveal>

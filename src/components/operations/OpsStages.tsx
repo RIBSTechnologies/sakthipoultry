@@ -2,15 +2,16 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { Reveal } from "@/components/ui/Reveal";
-import { asset } from "@/lib/utils";
+import { asset, birdFaceAsset, birdFaceImageClass } from "@/lib/utils";
 
 const stages = [
   {
     id: "breeder-farms",
     eyebrow: "Breeder Farms",
     title: "Building Quality from the Beginning",
-    image: asset("sakthi-poultry-live-birds.jpg"),
-    alt: "Parent stock and broiler birds in Sakthi Poultry operations",
+    image: birdFaceAsset(),
+    alt: "A broiler bird at a Sakthi Poultry farm",
+    imageClass: birdFaceImageClass,
     paragraphs: [
       "Our commitment to quality begins at our breeder farms, where parent birds form the foundation of the broiler production cycle.",
       "Careful management at this stage supports the production of fertile hatching eggs and contributes to the overall quality of the broiler poultry chain.",
@@ -99,7 +100,11 @@ export function OpsStages() {
                 src={stage.image}
                 alt={stage.alt}
                 fill
-                className="object-cover"
+                className={
+                  "imageClass" in stage && stage.imageClass
+                    ? stage.imageClass
+                    : "object-cover"
+                }
                 sizes="(min-width: 1024px) 48vw, 100vw"
               />
             </Reveal>

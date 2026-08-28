@@ -1,4 +1,4 @@
-import { asset } from "./utils";
+import { asset, birdFaceAsset } from "./utils";
 
 export const productsSeo = {
   title: "Poultry Products in South India | Sakthi Poultry",
@@ -26,7 +26,7 @@ export const productRange = [
   {
     title: "Broiler Birds",
     href: "#live-broilers",
-    image: asset("sakthi-poultry-broiler-birds.jpg"),
+    image: birdFaceAsset(),
   },
   {
     title: "Breeder Poultry Feed",
@@ -85,7 +85,7 @@ export const productDetails = [
     ],
     cta: "Broiler Bird Enquiry",
     href: productEnquireHref("live-broilers"),
-    image: asset("sakthi-poultry-broiler-birds.jpg"),
+    image: birdFaceAsset(),
     alt: "Broiler birds produced through Sakthi Poultry operations",
   },
 ];

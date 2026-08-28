@@ -2,7 +2,7 @@ import { MediaImage } from "@/components/ui/MediaImage";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import { welfarePoints } from "@/lib/quality";
-import { asset } from "@/lib/utils";
+import { asset, birdFaceAsset, birdFaceImageClass } from "@/lib/utils";
 
 export function QualityPractice() {
   return (
@@ -80,10 +80,10 @@ export function QualityPractice() {
             </Reveal>
             <Reveal delay={0.08} className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5">
               <MediaImage
-                src={asset("sakthi-poultry-about-live-bird.jpg")}
+                src={birdFaceAsset()}
                 alt="Healthy broiler birds raised with attention to well-being"
                 fill
-                className="object-cover object-[center_35%]"
+                className={birdFaceImageClass}
                 sizes="(min-width: 1024px) 40vw, 100vw"
               />
             </Reveal>

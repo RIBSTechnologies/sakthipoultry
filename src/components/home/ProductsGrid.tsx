@@ -8,7 +8,7 @@ import {
 import Link from "next/link";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { Button } from "@/components/ui/Button";
-import { asset } from "@/lib/utils";
+import { asset, birdFaceAsset, birdFaceImageClass, cn } from "@/lib/utils";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 
@@ -55,7 +55,8 @@ const products = [
     href: "/products#live-broilers",
     cta: "Explore Broiler Birds",
     icon: Bird,
-    image: asset("sakthi-poultry-broiler-birds.jpg"),
+    image: birdFaceAsset(),
+    imageClass: birdFaceImageClass,
   },
   {
     name: "Chicken Meat",
@@ -110,7 +111,12 @@ export function ProductsGrid() {
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover transition duration-700 group-hover:scale-105"
+                    className={cn(
+                      "transition duration-700 group-hover:scale-105",
+                      "imageClass" in product && product.imageClass
+                        ? product.imageClass
+                        : "object-cover",
+                    )}
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   />
                   <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-forest-deep/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">

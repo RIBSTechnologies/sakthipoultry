@@ -6,18 +6,10 @@ import { useState } from "react";
 import { leadSchema, type LeadInput } from "@/lib/validations";
 import { Button } from "@/components/ui/Button";
 import { products, partnerSegments } from "@/lib/data";
+import { enquiryLabel } from "@/lib/enquiries";
 import { cn } from "@/lib/utils";
 import { site } from "@/lib/site";
 import { FormCaptcha, type CaptchaValue } from "@/components/forms/FormCaptcha";
-
-const labels: Record<LeadInput["type"], string> = {
-  product: "Product / bulk purchase",
-  farmer: "Farmer onboarding",
-  dealer: "Dealer & feed distribution",
-  vendor: "Vendor / supplier",
-  general: "General enquiry",
-  career: "Career application",
-};
 
 type Props = {
   type: LeadInput["type"];
@@ -104,7 +96,7 @@ export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props)
       </div>
 
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-        {labels[type]}
+        {enquiryLabel(type)}
       </p>
 
       <div className={cn("grid gap-4", !compact && "sm:grid-cols-2")}>

@@ -1,4 +1,6 @@
 import nodemailer from "nodemailer";
+import { products } from "@/lib/data";
+import { enquiryLabel } from "@/lib/enquiries";
 import type { LeadInput } from "@/lib/validations";
 
 type MailConfig = {
@@ -167,13 +169,18 @@ export async function sendSiteMail(options: SendMailOptions) {
 }
 
 const enquiryTypeLabels: Record<LeadInput["type"], string> = {
-  product: "Product / bulk purchase",
-  farmer: "Farmer onboarding",
-  dealer: "Dealer & feed distribution",
-  vendor: "Vendor / supplier",
-  general: "General enquiry",
-  career: "Career application",
+  product: enquiryLabel("product"),
+  farmer: enquiryLabel("farmer"),
+  dealer: enquiryLabel("dealer"),
+  vendor: enquiryLabel("vendor"),
+  general: enquiryLabel("general"),
+  career: enquiryLabel("career"),
 };
+
+function productNameFromSlug(slug?: string | null) {
+  if (!slug?.trim()) return null;
+  return products.find((item) => item.slug === slug.trim())?.name ?? slug.trim();
+}
 
 function line(label: string, value?: string | null) {
   if (!value?.trim()) return null;
@@ -181,15 +188,20 @@ function line(label: string, value?: string | null) {
 }
 
 export function formatEnquiryEmail(data: LeadInput) {
+  const enquiryType = enquiryTypeLabels[data.type];
+  const productName = productNameFromSlug(data.product);
+
   const lines = [
-    "New website enquiry",
+    "Website enquiry received",
     "",
-    line("Type", enquiryTypeLabels[data.type]),
+    `Enquiry type: ${enquiryType}`,
+    "----------------------------------------",
+    "",
     line("Name", data.name),
     line("Phone", data.phone),
     line("Email", data.email),
     line("Organisation", data.organisation),
-    line("Product", data.product),
+    line("Product of interest", productName),
     line("Role", data.role),
     line("Partner segment", data.partnerSegment),
     line("GSTIN", data.gstin),
@@ -203,7 +215,7 @@ export function formatEnquiryEmail(data: LeadInput) {
   ].filter(Boolean);
 
   return {
-    subject: `[Sakthi Poultry] ${enquiryTypeLabels[data.type]} — ${data.name}`,
+    subject: `[${enquiryType}] Sakthi Poultry website form — ${data.name}`,
     text: lines.join("\n"),
     replyTo: data.email?.trim() || undefined,
   };
@@ -217,8 +229,12 @@ export function formatCareerEmail(input: {
   message: string;
   resumeFile?: string;
 }) {
+  const enquiryType = enquiryLabel("career");
   const lines = [
-    "New career application",
+    "Website enquiry received",
+    "",
+    `Enquiry type: ${enquiryType}`,
+    "----------------------------------------",
     "",
     line("Name", input.name),
     line("Phone", input.phone),
@@ -231,7 +247,7 @@ export function formatCareerEmail(input: {
   ].filter(Boolean);
 
   return {
-    subject: `[Sakthi Poultry] Career application — ${input.name}`,
+    subject: `[${enquiryType}] Sakthi Poultry website form — ${input.name}`,
     text: lines.join("\n"),
     replyTo: input.email,
   };

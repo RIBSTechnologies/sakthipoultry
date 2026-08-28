@@ -7,6 +7,7 @@ import { leadSchema, type LeadInput } from "@/lib/validations";
 import { Button } from "@/components/ui/Button";
 import { products, partnerSegments } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { site } from "@/lib/site";
 
 const labels: Record<LeadInput["type"], string> = {
   product: "Product / bulk purchase",
@@ -219,7 +220,7 @@ export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props)
       ) : null}
       {status === "err" ? (
         <p className="rounded-sm bg-red-50 px-3 py-2 text-sm text-red-800" role="alert">
-          Something went wrong. Please email us at sakthichicken_ho@yahoo.com.
+          Something went wrong. Please email us at {site.email}.
         </p>
       ) : null}
 

@@ -3,6 +3,7 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { jobs } from "@/lib/data";
+import { site } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 
 export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
@@ -119,7 +120,7 @@ export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
       ) : null}
       {status === "err" ? (
         <p className="rounded-sm bg-red-50 px-3 py-2 text-sm text-red-800">
-          Could not submit. Please email your resume to sakthichicken_ho@yahoo.com.
+          Could not submit. Please email your resume to {site.email}.
         </p>
       ) : null}
       <Button type="submit" variant="gold" size="lg" disabled={isSubmitting}>

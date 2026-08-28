@@ -7,7 +7,7 @@ export const site = {
   description:
     "Sakthi Poultry Private Limited is an integrated poultry company in Tamil Nadu focused on delivering quality across the broiler poultry value chain — from breeder farms and hatcheries to feed production and commercial broiler farms.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3001",
-  email: "sakthichicken_ho@yahoo.com",
+  email: "enquiry@sakthipoultry.com",
   /** Update with the official enquiry / WhatsApp number. Leave blank to hide call buttons. */
   phone: "" as string,
   whatsapp: "" as string,

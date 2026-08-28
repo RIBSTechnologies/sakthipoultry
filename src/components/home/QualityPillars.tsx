@@ -17,14 +17,14 @@ const pillars = [
     step: "01",
     title: "Breeder Management",
     text: "Parent stock is managed with biosecurity zoning, nutrition and flock monitoring so the next generation starts from a disciplined genetic and health foundation.",
-    image: asset("sakthi-poultry-quality-breeder-management.jpg"),
+    image: asset("sakthi-poultry-quality-hatchery-entrance.jpg"),
     icon: Home,
   },
   {
     step: "02",
     title: "Hatchery Biosecurity",
     text: "Incubation, hygiene and chick handling follow controlled protocols designed to protect livability from egg receipt through dispatch.",
-    image: asset("sakthi-poultry-quality-hatchery-entrance.jpg"),
+    image: asset("sakthi-poultry-quality-hatchery-sign.jpg"),
     icon: ShieldCheck,
   },
   {

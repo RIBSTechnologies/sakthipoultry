@@ -67,9 +67,9 @@ export function AboutProfile() {
             <MediaImage
               src={birdFaceAsset()}
               alt="A broiler bird at a Sakthi Poultry farm"
-              width={743}
-              height={1024}
-              className="h-auto w-full"
+              width={900}
+              height={900}
+              className="aspect-square h-auto w-full object-cover object-center"
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </div>

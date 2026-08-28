@@ -10,8 +10,8 @@ export function birdFaceAsset() {
   return asset("sakthi-poultry-bird-face.jpg");
 }
 
-/** Keeps the full bird face visible in cropped image containers. */
-export const birdFaceImageClass = "object-contain bg-cream-2 object-center";
+/** Face-focused square crop — fills image containers without side gaps. */
+export const birdFaceImageClass = "object-cover object-center";
 
 export function videoAsset(file: string) {
   return `/assets/videos/${file}`;

@@ -29,6 +29,7 @@ type Props = {
 
 export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props) {
   const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const [captcha, setCaptcha] = useState<CaptchaValue | null>(null);
   const [captchaKey, setCaptchaKey] = useState(0);
   const {
@@ -49,7 +50,9 @@ export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props)
 
   const onSubmit = async (values: LeadInput) => {
     setStatus("idle");
+    setErrorMessage("");
     if (!captcha?.token || !captcha.answer.trim()) {
+      setErrorMessage("Please enter the security code before submitting.");
       setStatus("err");
       return;
     }
@@ -63,6 +66,18 @@ export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props)
       }),
     });
     if (!res.ok) {
+      let message = `Something went wrong. Please email us at ${site.email}.`;
+      try {
+        const data = (await res.json()) as { error?: string; code?: string };
+        if (data.code === "captcha") {
+          message = "The security code was incorrect or expired. Please try again.";
+        } else if (data.error) {
+          message = `${data.error} Please email us at ${site.email} if this continues.`;
+        }
+      } catch {
+        // Keep generic fallback message.
+      }
+      setErrorMessage(message);
       setCaptcha(null);
       setCaptchaKey((key) => key + 1);
       setStatus("err");
@@ -221,6 +236,8 @@ export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props)
         </label>
       ) : null}
 
+      <FormCaptcha key={captchaKey} onChange={setCaptcha} />
+
       <label className="block">
         <span className="mb-1 block text-xs font-medium uppercase tracking-wider text-muted">
           Message
@@ -235,13 +252,9 @@ export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props)
       ) : null}
       {status === "err" ? (
         <p className="rounded-sm bg-red-50 px-3 py-2 text-sm text-red-800" role="alert">
-          {!captcha?.answer.trim()
-            ? "Please enter the security code before submitting."
-            : `Something went wrong. Please email us at ${site.email}.`}
+          {errorMessage || `Something went wrong. Please email us at ${site.email}.`}
         </p>
       ) : null}
-
-      <FormCaptcha key={captchaKey} onChange={setCaptcha} />
 
       <Button
         type="submit"

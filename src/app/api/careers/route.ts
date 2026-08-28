@@ -2,7 +2,14 @@ import { NextResponse } from "next/server";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { verifyCaptchaResponse } from "@/lib/captcha";
-import { formatCareerEmail, sendSiteMail } from "@/lib/mail";
+import {
+  formatCareerEmail,
+  isMailConfigured,
+  mailDeliveryErrorMessage,
+  sendSiteMail,
+} from "@/lib/mail";
+
+export const maxDuration = 30;
 
 async function persistApplication(data: Record<string, unknown>) {
   try {
@@ -43,7 +50,20 @@ export async function POST(request: Request) {
   }
 
   if (!verifyCaptchaResponse(captchaToken, captchaAnswer)) {
-    return NextResponse.json({ error: "Captcha verification failed" }, { status: 403 });
+    return NextResponse.json(
+      { error: "Captcha verification failed", code: "captcha" },
+      { status: 403 },
+    );
+  }
+
+  if (!isMailConfigured()) {
+    return NextResponse.json(
+      {
+        error: "Email delivery is not configured on the server yet.",
+        code: "mail_config",
+      },
+      { status: 503 },
+    );
   }
 
   let resumeFile = "";
@@ -86,9 +106,13 @@ export async function POST(request: Request) {
       ...mail,
       attachments: resumeAttachment ? [resumeAttachment] : undefined,
     });
-  } catch {
+  } catch (error) {
+    console.error("[careers] mail delivery failed", error);
     return NextResponse.json(
-      { error: "Could not send application email" },
+      {
+        error: mailDeliveryErrorMessage(error),
+        code: "mail_delivery",
+      },
       { status: 503 },
     );
   }

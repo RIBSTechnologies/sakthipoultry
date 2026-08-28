@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 
 export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
   const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const [captcha, setCaptcha] = useState<CaptchaValue | null>(null);
   const [captchaKey, setCaptchaKey] = useState(0);
   const {
@@ -38,6 +39,7 @@ export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
     website: string;
   }) => {
     if (!captcha?.token || !captcha.answer.trim()) {
+      setErrorMessage("Please enter the security code before submitting.");
       setStatus("err");
       return;
     }
@@ -54,6 +56,18 @@ export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
 
     const res = await fetch("/api/careers", { method: "POST", body: data });
     if (!res.ok) {
+      let message = `Could not submit. Please email your resume to ${site.email}.`;
+      try {
+        const data = (await res.json()) as { error?: string; code?: string };
+        if (data.code === "captcha") {
+          message = "The security code was incorrect or expired. Please try again.";
+        } else if (data.error) {
+          message = `${data.error} Please email ${site.email} if this continues.`;
+        }
+      } catch {
+        // Keep generic fallback message.
+      }
+      setErrorMessage(message);
       setCaptcha(null);
       setCaptchaKey((key) => key + 1);
       setStatus("err");
@@ -129,6 +143,9 @@ export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
           {...register("resume")}
         />
       </label>
+
+      <FormCaptcha key={captchaKey} onChange={setCaptcha} />
+
       <label className="block">
         <span className="mb-1 block text-xs font-medium uppercase tracking-wider text-muted">
           Cover note
@@ -142,13 +159,9 @@ export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
       ) : null}
       {status === "err" ? (
         <p className="rounded-sm bg-red-50 px-3 py-2 text-sm text-red-800">
-          {!captcha?.answer.trim()
-            ? "Please enter the security code before submitting."
-            : `Could not submit. Please email your resume to ${site.email}.`}
+          {errorMessage || `Could not submit. Please email your resume to ${site.email}.`}
         </p>
       ) : null}
-
-      <FormCaptcha key={captchaKey} onChange={setCaptcha} />
 
       <Button
         type="submit"

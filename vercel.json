@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "src/app/api/enquiry/route.ts": {
+      "maxDuration": 30
+    },
+    "src/app/api/careers/route.ts": {
+      "maxDuration": 30
+    }
+  }
+}

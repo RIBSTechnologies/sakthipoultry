@@ -10,27 +10,6 @@ type MailConfig = {
   from: string;
 };
 
-function getMailConfig(): MailConfig | null {
-  const host = process.env.SMTP_HOST;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-
-  if (!host || !user || !pass) return null;
-
-  return {
-    host,
-    port: Number(process.env.SMTP_PORT ?? 465),
-    user,
-    pass,
-    to: process.env.MAIL_TO ?? user,
-    from: process.env.MAIL_FROM ?? user,
-  };
-}
-
-export function isMailConfigured() {
-  return getMailConfig() !== null;
-}
-
 type SendMailOptions = {
   subject: string;
   text: string;
@@ -38,30 +17,153 @@ type SendMailOptions = {
   attachments?: Array<{ filename: string; content: Buffer }>;
 };
 
+function getMailTargets() {
+  const user = process.env.SMTP_USER;
+  return {
+    to: process.env.MAIL_TO ?? user ?? "",
+    from: process.env.MAIL_FROM ?? user ?? "",
+  };
+}
+
+function getMailConfig(): MailConfig | null {
+  const host = process.env.SMTP_HOST;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+  const targets = getMailTargets();
+
+  if (!targets.to || !targets.from) return null;
+
+  if (!host || !user || !pass) {
+    if (getRelayConfig()) {
+      return {
+        host: "",
+        port: 465,
+        user: user ?? targets.from,
+        pass: pass ?? "",
+        to: targets.to,
+        from: targets.from,
+      };
+    }
+    return null;
+  }
+
+  return {
+    host,
+    port: Number(process.env.SMTP_PORT ?? 465),
+    user,
+    pass,
+    to: targets.to,
+    from: targets.from,
+  };
+}
+
+function getRelayConfig() {
+  const url = process.env.MAIL_RELAY_URL?.trim();
+  const secret = process.env.MAIL_RELAY_SECRET?.trim();
+  if (!url || !secret) return null;
+  return { url, secret };
+}
+
+export function isMailConfigured() {
+  return getMailConfig() !== null || getRelayConfig() !== null;
+}
+
+async function sendViaRelay(config: MailConfig, options: SendMailOptions) {
+  const relay = getRelayConfig();
+  if (!relay) return false;
+
+  const response = await fetch(relay.url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${relay.secret}`,
+    },
+    body: JSON.stringify({
+      to: config.to,
+      from: config.from,
+      subject: options.subject,
+      text: options.text,
+      replyTo: options.replyTo,
+    }),
+  });
+
+  if (!response.ok) {
+    const detail = await response.text().catch(() => "");
+    throw new Error(`Mail relay failed (${response.status})${detail ? `: ${detail}` : ""}`);
+  }
+
+  return true;
+}
+
+async function sendViaSmtp(config: MailConfig, options: SendMailOptions) {
+  const transportOptions = [
+    { port: config.port, secure: config.port === 465 },
+    { port: 587, secure: false },
+  ];
+
+  let lastError: unknown;
+
+  for (const transport of transportOptions) {
+    try {
+      const transporter = nodemailer.createTransport({
+        host: config.host,
+        port: transport.port,
+        secure: transport.secure,
+        requireTLS: !transport.secure,
+        auth: {
+          user: config.user,
+          pass: config.pass,
+        },
+        connectionTimeout: 15_000,
+        greetingTimeout: 15_000,
+        socketTimeout: 20_000,
+        tls: {
+          minVersion: "TLSv1.2",
+          servername: config.host,
+        },
+      });
+
+      await transporter.sendMail({
+        from: config.from,
+        to: config.to,
+        replyTo: options.replyTo,
+        subject: options.subject,
+        text: options.text,
+        attachments: options.attachments,
+      });
+
+      return;
+    } catch (error) {
+      lastError = error;
+      console.error("[mail] SMTP attempt failed", {
+        host: config.host,
+        port: transport.port,
+        message: error instanceof Error ? error.message : "Unknown SMTP error",
+      });
+    }
+  }
+
+  throw lastError instanceof Error
+    ? lastError
+    : new Error("Could not deliver email through SMTP");
+}
+
 export async function sendSiteMail(options: SendMailOptions) {
   const config = getMailConfig();
   if (!config) {
     throw new Error("SMTP is not configured");
   }
 
-  const transporter = nodemailer.createTransport({
-    host: config.host,
-    port: config.port,
-    secure: config.port === 465,
-    auth: {
-      user: config.user,
-      pass: config.pass,
-    },
-  });
+  if (getRelayConfig()) {
+    await sendViaRelay(config, options);
+    return;
+  }
 
-  await transporter.sendMail({
-    from: config.from,
-    to: config.to,
-    replyTo: options.replyTo,
-    subject: options.subject,
-    text: options.text,
-    attachments: options.attachments,
-  });
+  if (!config.host || !config.pass) {
+    throw new Error("SMTP is not configured");
+  }
+
+  await sendViaSmtp(config, options);
 }
 
 const enquiryTypeLabels: Record<LeadInput["type"], string> = {
@@ -133,4 +235,11 @@ export function formatCareerEmail(input: {
     text: lines.join("\n"),
     replyTo: input.email,
   };
+}
+
+export function mailDeliveryErrorMessage(error: unknown) {
+  if (error instanceof Error && error.message.includes("SMTP is not configured")) {
+    return "Email delivery is not configured on the server yet.";
+  }
+  return "We could not deliver your enquiry email right now.";
 }

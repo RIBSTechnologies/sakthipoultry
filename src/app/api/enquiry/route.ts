@@ -2,8 +2,10 @@ import { NextResponse } from "next/server";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { verifyCaptchaResponse } from "@/lib/captcha";
-import { formatEnquiryEmail, sendSiteMail } from "@/lib/mail";
+import { formatEnquiryEmail, isMailConfigured, mailDeliveryErrorMessage, sendSiteMail } from "@/lib/mail";
 import { leadSchema } from "@/lib/validations";
+
+export const maxDuration = 30;
 
 async function persistEnquiry(data: Record<string, unknown>) {
   try {
@@ -53,16 +55,33 @@ export async function POST(request: Request) {
   }
 
   if (!verifyCaptchaResponse(captchaToken, captchaAnswer)) {
-    return NextResponse.json({ error: "Captcha verification failed" }, { status: 403 });
+    return NextResponse.json(
+      { error: "Captcha verification failed", code: "captcha" },
+      { status: 403 },
+    );
+  }
+
+  if (!isMailConfigured()) {
+    return NextResponse.json(
+      {
+        error: "Email delivery is not configured on the server yet.",
+        code: "mail_config",
+      },
+      { status: 503 },
+    );
   }
 
   const mail = formatEnquiryEmail(parsed.data);
 
   try {
     await sendSiteMail(mail);
-  } catch {
+  } catch (error) {
+    console.error("[enquiry] mail delivery failed", error);
     return NextResponse.json(
-      { error: "Could not send enquiry email" },
+      {
+        error: mailDeliveryErrorMessage(error),
+        code: "mail_delivery",
+      },
       { status: 503 },
     );
   }

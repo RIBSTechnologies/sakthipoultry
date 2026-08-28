@@ -1,7 +1,26 @@
 import { NextResponse } from "next/server";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { formatEnquiryEmail, sendSiteMail } from "@/lib/mail";
 import { leadSchema } from "@/lib/validations";
+
+async function persistEnquiry(data: Record<string, unknown>) {
+  try {
+    const dir = path.join(process.cwd(), "data");
+    await mkdir(dir, { recursive: true });
+    const file = path.join(dir, "enquiries.json");
+    let existing: unknown[] = [];
+    try {
+      existing = JSON.parse(await readFile(file, "utf8")) as unknown[];
+    } catch {
+      existing = [];
+    }
+    existing.push({ ...data, receivedAt: new Date().toISOString() });
+    await writeFile(file, JSON.stringify(existing, null, 2));
+  } catch {
+    // Optional local backup only — email delivery is the primary path.
+  }
+}
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -23,17 +42,18 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const dir = path.join(process.cwd(), "data");
-  await mkdir(dir, { recursive: true });
-  const file = path.join(dir, "enquiries.json");
-  let existing: unknown[] = [];
+  const mail = formatEnquiryEmail(parsed.data);
+
   try {
-    existing = JSON.parse(await readFile(file, "utf8")) as unknown[];
+    await sendSiteMail(mail);
   } catch {
-    existing = [];
+    return NextResponse.json(
+      { error: "Could not send enquiry email" },
+      { status: 503 },
+    );
   }
-  existing.push({ ...parsed.data, receivedAt: new Date().toISOString() });
-  await writeFile(file, JSON.stringify(existing, null, 2));
+
+  await persistEnquiry(parsed.data);
 
   return NextResponse.json({ ok: true });
 }

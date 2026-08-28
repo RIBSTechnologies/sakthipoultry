@@ -1,6 +1,25 @@
 import { NextResponse } from "next/server";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { formatCareerEmail, sendSiteMail } from "@/lib/mail";
+
+async function persistApplication(data: Record<string, unknown>) {
+  try {
+    const metaDir = path.join(process.cwd(), "data");
+    await mkdir(metaDir, { recursive: true });
+    const metaPath = path.join(metaDir, "applications.json");
+    let existing: unknown[] = [];
+    try {
+      existing = JSON.parse(await readFile(metaPath, "utf8")) as unknown[];
+    } catch {
+      existing = [];
+    }
+    existing.push({ ...data, receivedAt: new Date().toISOString() });
+    await writeFile(metaPath, JSON.stringify(existing, null, 2));
+  } catch {
+    // Optional local backup only — email delivery is the primary path.
+  }
+}
 
 export async function POST(request: Request) {
   const form = await request.formData();
@@ -15,41 +34,61 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
-  const stamp = Date.now();
-  const dir = path.join(process.cwd(), "uploads", "resumes");
-  await mkdir(dir, { recursive: true });
-
   let resumeFile = "";
+  let resumeAttachment: { filename: string; content: Buffer } | undefined;
+
   if (resume instanceof File && resume.size > 0) {
     if (resume.size > 5 * 1024 * 1024) {
       return NextResponse.json({ error: "Resume too large" }, { status: 400 });
     }
     const safe = resume.name.replace(/[^\w.\-]+/g, "_");
-    resumeFile = `${stamp}-${safe}`;
-    const buffer = Buffer.from(await resume.arrayBuffer());
-    await writeFile(path.join(dir, resumeFile), buffer);
+    resumeFile = safe;
+    resumeAttachment = {
+      filename: safe,
+      content: Buffer.from(await resume.arrayBuffer()),
+    };
+
+    try {
+      const dir = path.join(process.cwd(), "uploads", "resumes");
+      await mkdir(dir, { recursive: true });
+      await writeFile(
+        path.join(dir, `${Date.now()}-${safe}`),
+        resumeAttachment.content,
+      );
+    } catch {
+      // Optional local backup only.
+    }
   }
 
-  const metaDir = path.join(process.cwd(), "data");
-  await mkdir(metaDir, { recursive: true });
-  const metaPath = path.join(metaDir, "applications.json");
-  const { readFile } = await import("node:fs/promises");
-  let existing: unknown[] = [];
+  const mail = formatCareerEmail({
+    name,
+    phone,
+    email,
+    role,
+    message,
+    resumeFile: resumeFile || undefined,
+  });
+
   try {
-    existing = JSON.parse(await readFile(metaPath, "utf8")) as unknown[];
+    await sendSiteMail({
+      ...mail,
+      attachments: resumeAttachment ? [resumeAttachment] : undefined,
+    });
   } catch {
-    existing = [];
+    return NextResponse.json(
+      { error: "Could not send application email" },
+      { status: 503 },
+    );
   }
-  existing.push({
+
+  await persistApplication({
     name,
     phone,
     email,
     role,
     message,
     resumeFile,
-    receivedAt: new Date().toISOString(),
   });
-  await writeFile(metaPath, JSON.stringify(existing, null, 2));
 
   return NextResponse.json({ ok: true });
 }

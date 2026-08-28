@@ -4,10 +4,15 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { jobs } from "@/lib/data";
 import { site } from "@/lib/site";
+import { isCaptchaEnabled } from "@/lib/captcha-client";
+import { FormCaptcha } from "@/components/forms/FormCaptcha";
 import { Button } from "@/components/ui/Button";
 
 export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
   const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [captchaKey, setCaptchaKey] = useState(0);
+  const captchaRequired = isCaptchaEnabled();
   const {
     register,
     handleSubmit,
@@ -20,8 +25,9 @@ export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
     role: string;
     message: string;
     resume: FileList;
+    website: string;
   }>({
-    defaultValues: { role: defaultRole },
+    defaultValues: { role: defaultRole, website: "" },
   });
 
   const onSubmit = async (values: {
@@ -31,21 +37,32 @@ export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
     role: string;
     message: string;
     resume: FileList;
+    website: string;
   }) => {
+    if (captchaRequired && !captchaToken) {
+      setStatus("err");
+      return;
+    }
     const data = new FormData();
     data.set("name", values.name);
     data.set("phone", values.phone);
     data.set("email", values.email);
     data.set("role", values.role);
     data.set("message", values.message ?? "");
+    data.set("website", values.website ?? "");
+    if (captchaToken) data.set("captchaToken", captchaToken);
     if (values.resume?.[0]) data.set("resume", values.resume[0]);
 
     const res = await fetch("/api/careers", { method: "POST", body: data });
     if (!res.ok) {
+      setCaptchaToken(null);
+      setCaptchaKey((key) => key + 1);
       setStatus("err");
       return;
     }
     setStatus("ok");
+    setCaptchaToken(null);
+    setCaptchaKey((key) => key + 1);
     reset();
   };
 
@@ -54,6 +71,12 @@ export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4">
+      <div className="hidden" aria-hidden>
+        <label>
+          Website
+          <input tabIndex={-1} autoComplete="off" {...register("website")} />
+        </label>
+      </div>
       <label className="block">
         <span className="mb-1 block text-xs font-medium uppercase tracking-wider text-muted">
           Full name *
@@ -120,10 +143,24 @@ export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
       ) : null}
       {status === "err" ? (
         <p className="rounded-sm bg-red-50 px-3 py-2 text-sm text-red-800">
-          Could not submit. Please email your resume to {site.email}.
+          {captchaRequired && !captchaToken
+            ? "Please complete the security check before submitting."
+            : `Could not submit. Please email your resume to ${site.email}.`}
         </p>
       ) : null}
-      <Button type="submit" variant="gold" size="lg" disabled={isSubmitting}>
+
+      <FormCaptcha
+        key={captchaKey}
+        action="career_application"
+        onTokenChange={setCaptchaToken}
+      />
+
+      <Button
+        type="submit"
+        variant="gold"
+        size="lg"
+        disabled={isSubmitting || (captchaRequired && !captchaToken)}
+      >
         {isSubmitting ? "Uploading…" : "Apply online"}
       </Button>
     </form>

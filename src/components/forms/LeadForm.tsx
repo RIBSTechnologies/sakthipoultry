@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/Button";
 import { products, partnerSegments } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { site } from "@/lib/site";
+import { isCaptchaEnabled } from "@/lib/captcha-client";
+import { FormCaptcha } from "@/components/forms/FormCaptcha";
 
 const labels: Record<LeadInput["type"], string> = {
   product: "Product / bulk purchase",
@@ -28,6 +30,9 @@ type Props = {
 
 export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props) {
   const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [captchaKey, setCaptchaKey] = useState(0);
+  const captchaRequired = isCaptchaEnabled();
   const {
     register,
     handleSubmit,
@@ -46,16 +51,24 @@ export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props)
 
   const onSubmit = async (values: LeadInput) => {
     setStatus("idle");
+    if (captchaRequired && !captchaToken) {
+      setStatus("err");
+      return;
+    }
     const res = await fetch("/api/enquiry", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
+      body: JSON.stringify({ ...values, captchaToken }),
     });
     if (!res.ok) {
+      setCaptchaToken(null);
+      setCaptchaKey((key) => key + 1);
       setStatus("err");
       return;
     }
     setStatus("ok");
+    setCaptchaToken(null);
+    setCaptchaKey((key) => key + 1);
     reset();
     onSuccess?.();
   };
@@ -220,11 +233,24 @@ export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props)
       ) : null}
       {status === "err" ? (
         <p className="rounded-sm bg-red-50 px-3 py-2 text-sm text-red-800" role="alert">
-          Something went wrong. Please email us at {site.email}.
+          {captchaRequired && !captchaToken
+            ? "Please complete the security check before submitting."
+            : `Something went wrong. Please email us at ${site.email}.`}
         </p>
       ) : null}
 
-      <Button type="submit" variant="gold" size="lg" disabled={isSubmitting}>
+      <FormCaptcha
+        key={captchaKey}
+        action={`enquiry_${type}`}
+        onTokenChange={setCaptchaToken}
+      />
+
+      <Button
+        type="submit"
+        variant="gold"
+        size="lg"
+        disabled={isSubmitting || (captchaRequired && !captchaToken)}
+      >
         {isSubmitting ? "Sending…" : "Submit enquiry"}
       </Button>
     </form>

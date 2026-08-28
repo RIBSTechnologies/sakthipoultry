@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { getClientIp, verifyCaptchaToken } from "@/lib/captcha";
 import { formatEnquiryEmail, sendSiteMail } from "@/lib/mail";
 import { leadSchema } from "@/lib/validations";
 
@@ -38,8 +39,18 @@ export async function POST(request: Request) {
     );
   }
 
+  const captchaToken =
+    typeof (body as { captchaToken?: unknown }).captchaToken === "string"
+      ? (body as { captchaToken: string }).captchaToken
+      : null;
+
   if (parsed.data.website) {
     return NextResponse.json({ ok: true });
+  }
+
+  const captchaOk = await verifyCaptchaToken(captchaToken, getClientIp(request));
+  if (!captchaOk) {
+    return NextResponse.json({ error: "Captcha verification failed" }, { status: 403 });
   }
 
   const mail = formatEnquiryEmail(parsed.data);

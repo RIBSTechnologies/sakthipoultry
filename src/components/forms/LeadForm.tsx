@@ -8,8 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { products, partnerSegments } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { site } from "@/lib/site";
-import { isCaptchaEnabled } from "@/lib/captcha-client";
-import { FormCaptcha } from "@/components/forms/FormCaptcha";
+import { FormCaptcha, type CaptchaValue } from "@/components/forms/FormCaptcha";
 
 const labels: Record<LeadInput["type"], string> = {
   product: "Product / bulk purchase",
@@ -30,9 +29,8 @@ type Props = {
 
 export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props) {
   const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [captcha, setCaptcha] = useState<CaptchaValue | null>(null);
   const [captchaKey, setCaptchaKey] = useState(0);
-  const captchaRequired = isCaptchaEnabled();
   const {
     register,
     handleSubmit,
@@ -51,23 +49,27 @@ export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props)
 
   const onSubmit = async (values: LeadInput) => {
     setStatus("idle");
-    if (captchaRequired && !captchaToken) {
+    if (!captcha?.token || !captcha.answer.trim()) {
       setStatus("err");
       return;
     }
     const res = await fetch("/api/enquiry", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...values, captchaToken }),
+      body: JSON.stringify({
+        ...values,
+        captchaToken: captcha.token,
+        captchaAnswer: captcha.answer,
+      }),
     });
     if (!res.ok) {
-      setCaptchaToken(null);
+      setCaptcha(null);
       setCaptchaKey((key) => key + 1);
       setStatus("err");
       return;
     }
     setStatus("ok");
-    setCaptchaToken(null);
+    setCaptcha(null);
     setCaptchaKey((key) => key + 1);
     reset();
     onSuccess?.();
@@ -233,23 +235,19 @@ export function LeadForm({ type, productSlug, role, compact, onSuccess }: Props)
       ) : null}
       {status === "err" ? (
         <p className="rounded-sm bg-red-50 px-3 py-2 text-sm text-red-800" role="alert">
-          {captchaRequired && !captchaToken
-            ? "Please complete the security check before submitting."
+          {!captcha?.answer.trim()
+            ? "Please enter the security code before submitting."
             : `Something went wrong. Please email us at ${site.email}.`}
         </p>
       ) : null}
 
-      <FormCaptcha
-        key={captchaKey}
-        action={`enquiry_${type}`}
-        onTokenChange={setCaptchaToken}
-      />
+      <FormCaptcha key={captchaKey} onChange={setCaptcha} />
 
       <Button
         type="submit"
         variant="gold"
         size="lg"
-        disabled={isSubmitting || (captchaRequired && !captchaToken)}
+        disabled={isSubmitting || !captcha?.token || !captcha.answer.trim()}
       >
         {isSubmitting ? "Sending…" : "Submit enquiry"}
       </Button>

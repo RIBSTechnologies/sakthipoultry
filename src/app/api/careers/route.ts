@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { getClientIp, verifyCaptchaToken } from "@/lib/captcha";
+import { verifyCaptchaResponse } from "@/lib/captcha";
 import { formatCareerEmail, sendSiteMail } from "@/lib/mail";
 
 async function persistApplication(data: Record<string, unknown>) {
@@ -31,6 +31,7 @@ export async function POST(request: Request) {
   const message = String(form.get("message") ?? "").trim();
   const website = String(form.get("website") ?? "").trim();
   const captchaToken = String(form.get("captchaToken") ?? "").trim();
+  const captchaAnswer = String(form.get("captchaAnswer") ?? "").trim();
   const resume = form.get("resume");
 
   if (website) {
@@ -41,11 +42,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
-  const captchaOk = await verifyCaptchaToken(
-    captchaToken || null,
-    getClientIp(request),
-  );
-  if (!captchaOk) {
+  if (!verifyCaptchaResponse(captchaToken, captchaAnswer)) {
     return NextResponse.json({ error: "Captcha verification failed" }, { status: 403 });
   }
 

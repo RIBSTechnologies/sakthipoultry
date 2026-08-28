@@ -4,15 +4,13 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { jobs } from "@/lib/data";
 import { site } from "@/lib/site";
-import { isCaptchaEnabled } from "@/lib/captcha-client";
-import { FormCaptcha } from "@/components/forms/FormCaptcha";
+import { FormCaptcha, type CaptchaValue } from "@/components/forms/FormCaptcha";
 import { Button } from "@/components/ui/Button";
 
 export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
   const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [captcha, setCaptcha] = useState<CaptchaValue | null>(null);
   const [captchaKey, setCaptchaKey] = useState(0);
-  const captchaRequired = isCaptchaEnabled();
   const {
     register,
     handleSubmit,
@@ -39,7 +37,7 @@ export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
     resume: FileList;
     website: string;
   }) => {
-    if (captchaRequired && !captchaToken) {
+    if (!captcha?.token || !captcha.answer.trim()) {
       setStatus("err");
       return;
     }
@@ -50,18 +48,19 @@ export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
     data.set("role", values.role);
     data.set("message", values.message ?? "");
     data.set("website", values.website ?? "");
-    if (captchaToken) data.set("captchaToken", captchaToken);
+    data.set("captchaToken", captcha.token);
+    data.set("captchaAnswer", captcha.answer);
     if (values.resume?.[0]) data.set("resume", values.resume[0]);
 
     const res = await fetch("/api/careers", { method: "POST", body: data });
     if (!res.ok) {
-      setCaptchaToken(null);
+      setCaptcha(null);
       setCaptchaKey((key) => key + 1);
       setStatus("err");
       return;
     }
     setStatus("ok");
-    setCaptchaToken(null);
+    setCaptcha(null);
     setCaptchaKey((key) => key + 1);
     reset();
   };
@@ -143,23 +142,19 @@ export function CareerForm({ defaultRole = "" }: { defaultRole?: string }) {
       ) : null}
       {status === "err" ? (
         <p className="rounded-sm bg-red-50 px-3 py-2 text-sm text-red-800">
-          {captchaRequired && !captchaToken
-            ? "Please complete the security check before submitting."
+          {!captcha?.answer.trim()
+            ? "Please enter the security code before submitting."
             : `Could not submit. Please email your resume to ${site.email}.`}
         </p>
       ) : null}
 
-      <FormCaptcha
-        key={captchaKey}
-        action="career_application"
-        onTokenChange={setCaptchaToken}
-      />
+      <FormCaptcha key={captchaKey} onChange={setCaptcha} />
 
       <Button
         type="submit"
         variant="gold"
         size="lg"
-        disabled={isSubmitting || (captchaRequired && !captchaToken)}
+        disabled={isSubmitting || !captcha?.token || !captcha.answer.trim()}
       >
         {isSubmitting ? "Uploading…" : "Apply online"}
       </Button>

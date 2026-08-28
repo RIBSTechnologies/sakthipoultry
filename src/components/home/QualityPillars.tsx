@@ -84,8 +84,8 @@ export function QualityPillars() {
         <div className="mt-12 overflow-hidden rounded-[1.75rem] border border-line bg-white shadow-sm lg:grid lg:grid-cols-12">
           <aside className="relative isolate min-h-[22rem] overflow-hidden lg:col-span-5 lg:min-h-full">
             <MediaImage
-              src={asset("farm-aerial-sheds.jpg")}
-              alt="Biosecure poultry housing with controlled farm access"
+              src={asset("sakthi-poultry-quality-farm-aerial.jpg")}
+              alt="Aerial view of Sakthi Poultry farm sheds among coconut groves"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 42vw, 100vw"

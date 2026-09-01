@@ -33,6 +33,8 @@ export default function AboutPage() {
         title="About Sakthi Poultry"
         description="An established integrated poultry company in Tamil Nadu, operating across the broiler chicken value chain with a strong commitment to quality, efficiency and responsible poultry production."
         image={asset("sakthi-poultry-about-hero-team.jpg")}
+        imageClassName="object-cover object-[center_35%]"
+        overlayClassName="bg-gradient-to-t from-ink/75 via-ink/25 to-transparent"
         crumbs={[{ label: "About" }]}
       />
       <AboutProfile />

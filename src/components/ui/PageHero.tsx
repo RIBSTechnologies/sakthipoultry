@@ -7,11 +7,15 @@ export function PageHero({
   description,
   image,
   crumbs,
+  imageClassName = "object-cover opacity-80",
+  overlayClassName = "bg-gradient-to-t from-ink via-ink/55 to-ink/20",
 }: {
   title: string;
   description: string;
   image: string;
   crumbs: { href?: string; label: string }[];
+  imageClassName?: string;
+  overlayClassName?: string;
 }) {
   return (
     <section className="relative isolate min-h-[48vh] overflow-hidden bg-ink">
@@ -20,10 +24,10 @@ export function PageHero({
         alt=""
         fill
         priority
-        className="object-cover opacity-80"
+        className={imageClassName}
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/20" />
+      <div className={`absolute inset-0 ${overlayClassName}`} />
       <div className="relative mx-auto flex min-h-[48vh] max-w-7xl flex-col justify-end px-4 pb-14 pt-36 sm:px-6 lg:px-8">
         <Reveal y={20}>
           <Breadcrumbs items={crumbs} />

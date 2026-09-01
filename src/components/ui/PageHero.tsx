@@ -41,7 +41,7 @@ export function PageHero({
             <h1 className="mt-5 max-w-4xl font-display text-4xl font-medium tracking-tight text-white sm:text-5xl lg:text-6xl">
               {title}
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
               {description}
             </p>
             <span className="mt-6 inline-block h-1.5 w-16 bg-gold" />

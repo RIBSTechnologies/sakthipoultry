@@ -36,6 +36,7 @@ export default function AboutPage() {
         imageClassName="object-cover object-[center_68%]"
         overlayClassName="bg-gradient-to-b from-ink/75 via-ink/15 to-transparent"
         contentClassName="justify-start pb-16 pt-28 sm:pt-32"
+        contentPanelClassName="max-w-3xl rounded-2xl bg-black/45 px-6 py-6 backdrop-blur-sm sm:px-8 sm:py-8"
         crumbs={[{ label: "About" }]}
       />
       <AboutProfile />

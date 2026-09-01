@@ -597,7 +597,62 @@ export type Job = {
   summary: string;
 };
 
-export const jobs: Job[] = [];
+export const jobs: Job[] = [
+  {
+    id: "vet-officer",
+    title: "Veterinary Officer",
+    team: "Health & Biosecurity",
+    location: "Tamil Nadu (field + hatchery)",
+    type: "Full-time",
+    summary:
+      "Lead flock health protocols, diagnostics liaison and farmer field visits across breeder, hatchery and broiler units.",
+  },
+  {
+    id: "hatchery-supervisor",
+    title: "Hatchery Supervisor",
+    team: "Hatchery",
+    location: "Sivagangai / production sites",
+    type: "Full-time",
+    summary:
+      "Own incubation hygiene, chick grading, vaccination and dispatch discipline on shift.",
+  },
+  {
+    id: "feed-mill-tech",
+    title: "Feed Mill Technician",
+    team: "Nutrition",
+    location: "Feed manufacturing unit",
+    type: "Full-time",
+    summary:
+      "Operate and maintain mash/pellet lines, sampling and batch documentation.",
+  },
+  {
+    id: "farm-supervisor",
+    title: "Farm Supervisor",
+    team: "Production",
+    location: "Company & contract farms",
+    type: "Full-time",
+    summary:
+      "Implement SOPs for brooding, environment, biosecurity and harvest readiness.",
+  },
+  {
+    id: "sales-exec",
+    title: "Sales Executive — Broiler & Feed",
+    team: "Commercial",
+    location: "Pollachi / Coimbatore / regional",
+    type: "Full-time",
+    summary:
+      "Develop wholesale, butcher and dealer relationships; coordinate supply slots.",
+  },
+  {
+    id: "qc-analyst",
+    title: "Quality Control Analyst",
+    team: "Laboratory",
+    location: "Integrated units",
+    type: "Full-time",
+    summary:
+      "Raw material and finished feed testing, farm sample logging and exception reporting.",
+  },
+];
 
 export const enquiryTypes = [
   {

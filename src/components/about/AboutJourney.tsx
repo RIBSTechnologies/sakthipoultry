@@ -48,8 +48,8 @@ export function AboutJourney() {
           <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
             <div className="relative h-56">
               <MediaImage
-                src={asset("sakthi-poultry-farm-aerial-complex.jpg")}
-                alt="Sakthi Poultry farm complex in Tamil Nadu"
+                src={asset("sakthi-poultry-journey-team.jpg")}
+                alt="Sakthi Poultry leadership team reviewing operations"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 40vw, 100vw"

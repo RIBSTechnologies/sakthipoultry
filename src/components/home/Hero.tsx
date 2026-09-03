@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
@@ -84,19 +83,12 @@ export function Hero() {
         </motion.p>
 
         <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
-          <Button href="/contact?type=product" variant="accent" size="lg">
-            Product Enquiry
-          </Button>
           <Button href="/farmers-partners" variant="outlineLight" size="lg">
             Partner With Us
           </Button>
-          <Link
-            href="#value-chain"
-            className="inline-flex items-center gap-2 px-3 py-3 text-sm font-semibold text-white/90 underline-offset-4 transition hover:text-gold-light hover:underline"
-          >
+          <Button href="#value-chain" variant="outlineLight" size="lg">
             Explore Our Business
-            <ArrowRight className="size-4" aria-hidden />
-          </Link>
+          </Button>
         </motion.div>
       </motion.div>
 

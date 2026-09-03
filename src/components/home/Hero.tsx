@@ -83,7 +83,7 @@ export function Hero() {
         </motion.p>
 
         <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
-          <Button href="/farmers-partners" variant="outlineLight" size="lg">
+          <Button href="/farmers-partners" variant="accent" size="lg">
             Partner With Us
           </Button>
           <Button href="#value-chain" variant="outlineLight" size="lg">

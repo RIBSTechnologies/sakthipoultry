@@ -47,8 +47,7 @@ export function StatsSection() {
           <SectionHeading
             id="stats-heading"
             invert
-            eyebrow="Strength & Scale"
-            title="Built for Scale. Designed for Consistency."
+            title="Strength & Scale"
           />
         </Reveal>
 

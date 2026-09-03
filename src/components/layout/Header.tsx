@@ -83,7 +83,7 @@ export function Header() {
 
         <div className="ml-auto flex shrink-0 items-center gap-2 lg:ml-0">
           <Button href="/contact" variant="gold" size="sm" className="hidden sm:inline-flex">
-            Enquire Now
+            Enquiry
           </Button>
           <button
             type="button"
@@ -116,7 +116,7 @@ export function Header() {
           </nav>
           <div className="mt-6">
             <Button href="/contact" variant="gold" size="lg" className="w-full">
-              Enquire Now
+              Enquiry
             </Button>
           </div>
         </div>

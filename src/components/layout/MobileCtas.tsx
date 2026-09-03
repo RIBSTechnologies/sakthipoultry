@@ -13,7 +13,7 @@ export function MobileCtas() {
         Become a Farmer
       </Button>
       <Button href="/contact" variant="dark" size="sm">
-        Enquire Now
+        Enquiry
       </Button>
     </div>
   );

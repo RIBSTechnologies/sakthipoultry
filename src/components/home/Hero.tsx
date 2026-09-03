@@ -69,7 +69,7 @@ export function Hero() {
           variants={item}
           className="mt-4 max-w-2xl text-lg font-medium text-white sm:text-xl"
         >
-          Quality Poultry from an Integrated Poultry Company in Tamil Nadu
+          Nourishing Families with quality poultry
         </motion.p>
 
         <motion.p

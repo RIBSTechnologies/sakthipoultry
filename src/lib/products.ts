@@ -123,33 +123,6 @@ export const feedProducts = [
   },
 ];
 
-export const whyChoose = [
-  {
-    title: "Integrated Poultry Operations",
-    text: "Our products are supported by an operational chain that connects breeder farms, hatcheries, feed production and commercial broiler farms.",
-  },
-  {
-    title: "Quality-Focused Approach",
-    text: "Our commitment to “Quality forever” extends throughout our day-to-day poultry operations and product journey.",
-  },
-  {
-    title: "Own Hatchery Operations",
-    text: "Our broiler day-old chicks are incubated and hatched through our own hatcheries, with attention to hygiene and biosecurity.",
-  },
-  {
-    title: "Focus on Poultry Nutrition",
-    text: "Breeder and broiler nutrition are integrated into our wider poultry production approach.",
-  },
-  {
-    title: "Experienced Poultry Team",
-    text: "Our dedicated team brings knowledge and experience across different areas of commercial broiler integration.",
-  },
-  {
-    title: "Farmer & Business Relationships",
-    text: "We believe in fair, mutually beneficial and long-term relationships with farmers, retailers, suppliers, service providers and other associates connected to our poultry business.",
-  },
-];
-
 export const productJourney = [
   "Breeder Farms",
   "Hatching Eggs",

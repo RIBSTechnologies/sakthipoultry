@@ -1,35 +1,24 @@
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/home/SectionHeading";
-import { whyChoose } from "@/lib/products";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function ProductsWhy() {
   return (
     <section
       aria-labelledby="products-why-heading"
-      className="bg-cream-2 pt-10 pb-20 sm:pt-12 sm:pb-24 lg:pt-14 lg:pb-28"
+      className="bg-cream-2 py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <SectionHeading
+          <h2
             id="products-why-heading"
-            title="Why Choose Sakthi Poultry Products?"
-          />
+            className="font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl lg:text-[2.75rem] lg:leading-tight"
+          >
+            Quality You Can Trace
+          </h2>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
+            Our products are backed by an integrated poultry value chain—from
+            breeding and nutrition to farming and market supply.
+          </p>
         </Reveal>
-        <Stagger className="mt-10 grid auto-rows-fr items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {whyChoose.map((item, index) => (
-            <StaggerItem key={item.title} className="h-full">
-              <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
-                <span className="font-display text-lg text-gold">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-3 font-display text-xl text-ink">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                  {item.text}
-                </p>
-              </article>
-            </StaggerItem>
-          ))}
-        </Stagger>
       </div>
     </section>
   );

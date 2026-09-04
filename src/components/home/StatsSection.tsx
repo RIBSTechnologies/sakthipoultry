@@ -9,27 +9,22 @@ const metrics = [
   {
     value: "5+",
     unit: "Veterinarians",
-    label: "Veterinarians Admin",
   },
   {
     value: "50+",
     unit: "Expert Team",
-    label: "25 Years Expert Team",
   },
   {
     value: "200+",
     unit: "Employees",
-    label: "Skilled Employees",
   },
   {
     value: "500+",
-    unit: "Farmers",
-    label: "Poultry Farmers",
+    unit: "Poultry Farmers",
   },
   {
     value: "3.40",
-    unit: "Crore",
-    label: "Annual Broiler Birds Production (kgs)",
+    unit: "Core KG Broiler Production Per Annum",
   },
 ];
 
@@ -58,10 +53,9 @@ export function StatsSection() {
                 <p className="font-display text-4xl font-medium text-forest xl:text-[2.35rem]">
                   <CountUp value={item.value} />
                 </p>
-                <p className="mt-1 text-sm font-semibold uppercase tracking-[0.16em] text-gold">
+                <p className="mt-1 text-sm font-semibold uppercase tracking-[0.12em] text-gold leading-snug">
                   {item.unit}
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-muted">{item.label}</p>
               </article>
             </StaggerItem>
           ))}

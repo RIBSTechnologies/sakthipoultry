@@ -27,7 +27,7 @@ const benefits = [
   },
   {
     title: "Feed Support",
-    text: "Direct access to targeted nutrition.",
+    text: "Access to Nutrition Specialist",
     icon: Wheat,
   },
   {

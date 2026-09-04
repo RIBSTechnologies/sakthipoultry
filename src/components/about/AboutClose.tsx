@@ -16,12 +16,9 @@ export function AboutClose() {
       />
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-light">
-            Quality Forever
-          </p>
           <h2
             id="about-close-heading"
-            className="mt-3 font-display text-3xl font-medium text-white sm:text-5xl"
+            className="font-display text-3xl font-medium text-white sm:text-5xl"
           >
             Quality Forever
           </h2>

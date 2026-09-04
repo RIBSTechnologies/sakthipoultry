@@ -54,9 +54,6 @@ export function AboutJourney() {
               <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-gold">
                 Years of experience
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-muted">
-                More than 33 years of experience in broiler poultry integration.
-              </p>
             </div>
           </div>
         </Reveal>

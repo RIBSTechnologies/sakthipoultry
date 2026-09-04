@@ -18,16 +18,24 @@ export function AboutLeadership() {
           />
           <div className="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
             <p>
-              Our people bring together knowledge in breeding, hatchery
-              management, poultry nutrition, broiler farming, veterinary support
-              and production management. This diverse operational expertise
-              enables the company to manage an integrated poultry business while
-              continually improving quality and productivity.
+              Our Managing Director,{" "}
+              <strong className="font-semibold text-ink">Mr. A. Nagarajan</strong>,
+              provides strong leadership with a focus on quality, operational
+              excellence and sustainable growth.
             </p>
             <p>
-              We believe sustainable growth comes not only from infrastructure
-              and scale, but from experienced people working together with
-              farmers, customers, suppliers and partners toward shared success.
+              Our experienced team brings expertise across breeding, hatchery
+              management, poultry nutrition, broiler farming, veterinary support
+              and production management, enabling us to operate an integrated and
+              efficient poultry business.
+            </p>
+            <p>
+              Sakthi Poultry continues to embrace{" "}
+              <strong className="font-semibold text-ink">
+                technology, innovation and professional management
+              </strong>{" "}
+              while working closely with farmers, customers, suppliers and
+              partners to achieve shared success.
             </p>
           </div>
         </Reveal>

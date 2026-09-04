@@ -3,6 +3,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { OpsIntro } from "@/components/operations/OpsIntro";
 import { OpsChain } from "@/components/operations/OpsChain";
 import { OpsStages } from "@/components/operations/OpsStages";
+import { OpsLogistics } from "@/components/operations/OpsLogistics";
 import { OpsCapabilities } from "@/components/operations/OpsCapabilities";
 import { OpsMarket } from "@/components/operations/OpsMarket";
 import { OpsClose } from "@/components/operations/OpsClose";
@@ -34,6 +35,7 @@ export default function OperationsPage() {
       <OpsIntro />
       <OpsChain />
       <OpsStages />
+      <OpsLogistics />
       <OpsCapabilities />
       <OpsMarket />
       <OpsClose />

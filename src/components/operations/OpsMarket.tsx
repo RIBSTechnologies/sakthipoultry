@@ -50,8 +50,8 @@ export function OpsMarket() {
           </Reveal>
           <Reveal delay={0.08} className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-6">
             <MediaImage
-              src={asset("sakthi-poultry-logistics-truck.jpg")}
-              alt="Sakthi Poultry broiler sales and distribution logistics"
+              src={asset("sakthi-poultry-live-birds.jpg")}
+              alt="Sakthi Poultry broiler birds for sales and distribution"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 48vw, 100vw"

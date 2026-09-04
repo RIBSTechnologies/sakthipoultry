@@ -9,6 +9,7 @@ export const valueChainAreas = [
   { title: "Poultry Hatcheries", href: "#hatcheries" },
   { title: "Broiler Farms", href: "#broiler-farms" },
   { title: "Poultry Feed Manufacturing", href: "#feed-manufacturing" },
+  { title: "Integrated Logistics", href: "#integrated-logistics" },
   { title: "Broiler Sales & Distribution", href: "#broiler-sales" },
   { title: "Poultry Feed Sales", href: "#feed-sales" },
 ];

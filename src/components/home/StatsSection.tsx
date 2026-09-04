@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { SectionHeading } from "./SectionHeading";
 import { SectionBackdrop } from "./SectionBackdrop";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/ui/CountUp";
@@ -44,11 +43,12 @@ export function StatsSection() {
       <SectionBackdrop src={asset("aerial-farm-03.jpg")} />
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <SectionHeading
+          <h2
             id="stats-heading"
-            invert
-            title="Strength & Scale"
-          />
+            className="font-display text-3xl font-medium tracking-tight text-gold-light sm:text-4xl lg:text-[2.75rem] lg:leading-tight"
+          >
+            Strength & Scale
+          </h2>
         </Reveal>
 
         <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">

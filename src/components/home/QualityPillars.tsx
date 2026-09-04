@@ -96,7 +96,7 @@ export function QualityPillars() {
                 <ShieldCheck className="size-3.5" aria-hidden />
                 Five quality gates
               </span>
-              <p className="mt-5 font-display text-3xl leading-tight sm:text-4xl">
+              <p className="mt-5 font-display text-[2.7rem] leading-tight">
                 Quality is a chain.
                 <span className="block text-gold-light">
                   Biosecurity is the lock.

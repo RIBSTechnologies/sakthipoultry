@@ -59,7 +59,7 @@ export function Hero() {
         <motion.h1
           id="hero-heading"
           variants={item}
-          className="mt-6 max-w-4xl font-display text-4xl font-medium leading-[1.12] text-white sm:text-5xl lg:text-6xl"
+          className="mt-6 max-w-4xl font-display text-[2.7rem] font-medium leading-tight text-white"
         >
           Integrated Poultry Excellence.{" "}
           <span className="italic text-gold-light">Quality at Every Stage.</span>

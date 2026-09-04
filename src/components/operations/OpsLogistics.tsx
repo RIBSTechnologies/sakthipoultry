@@ -26,7 +26,7 @@ export function OpsLogistics() {
             </p>
             <h2
               id="ops-logistics-heading"
-              className="mt-3 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl"
+              className="mt-3 font-display text-[2.7rem] font-medium tracking-tight leading-tight text-ink"
             >
               Integrated Logistics
             </h2>

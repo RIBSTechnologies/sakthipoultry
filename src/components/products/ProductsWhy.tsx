@@ -10,7 +10,7 @@ export function ProductsWhy() {
         <Reveal>
           <h2
             id="products-why-heading"
-            className="font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl lg:text-[2.75rem] lg:leading-tight"
+            className="font-display text-[2.7rem] font-medium tracking-tight leading-tight text-ink"
           >
             Quality You Can Trace
           </h2>

@@ -16,7 +16,7 @@ export function OpsMarket() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
               Broiler Sales & Distribution
             </p>
-            <h2 className="mt-3 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl">
+            <h2 className="mt-3 font-display text-[2.7rem] font-medium tracking-tight leading-tight text-ink">
               Connecting Poultry Production with the Market
             </h2>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
@@ -67,7 +67,7 @@ export function OpsMarket() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-light">
               Poultry Feed Sales
             </p>
-            <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">
+            <h2 className="mt-3 font-display text-[2.7rem] font-medium tracking-tight leading-tight">
               Breeder Feed & Broiler Feed for Poultry Operations
             </h2>
             <p className="mt-5 text-base leading-relaxed text-white/75">

@@ -34,7 +34,7 @@ export function OpsIntro() {
           <aside className="mt-8 flex flex-1 flex-col justify-center rounded-2xl bg-forest-deep p-7 text-white shadow-lg sm:p-9">
             <div className="flex items-center gap-3">
               <Quote className="size-7 shrink-0 text-gold-light" aria-hidden />
-              <p className="whitespace-nowrap font-display text-2xl leading-none sm:text-3xl">
+              <p className="whitespace-nowrap font-display text-[2.7rem] leading-tight">
                 Quality forever.
               </p>
             </div>

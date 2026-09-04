@@ -19,7 +19,7 @@ export function OpsClose() {
             </p>
             <h2
               id="ops-quality-heading"
-              className="mt-3 font-display text-3xl font-medium text-ink sm:text-4xl"
+              className="mt-3 font-display text-[2.7rem] font-medium tracking-tight leading-tight text-ink"
             >
               Quality is not treated as a single checkpoint
             </h2>
@@ -36,7 +36,7 @@ export function OpsClose() {
             </p>
             <div className="mt-8 inline-flex items-center gap-3">
               <Quote className="size-6 text-gold" aria-hidden />
-              <p className="whitespace-nowrap font-display text-3xl text-forest">
+              <p className="whitespace-nowrap font-display text-[2.7rem] leading-tight text-forest">
                 Quality Forever
               </p>
             </div>
@@ -59,7 +59,7 @@ export function OpsClose() {
             </p>
             <h2
               id="ops-partner-heading"
-              className="mt-3 font-display text-3xl font-medium text-white sm:text-5xl"
+              className="mt-3 font-display text-[2.7rem] font-medium leading-tight text-white"
             >
               Connect with our team
             </h2>

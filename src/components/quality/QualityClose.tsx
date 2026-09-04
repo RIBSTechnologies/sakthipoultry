@@ -22,7 +22,7 @@ export function QualityClose() {
           </p>
           <h2
             id="quality-close-heading"
-            className="mt-3 font-display text-3xl font-medium text-white sm:text-5xl"
+            className="mt-3 font-display text-[2.7rem] font-medium leading-tight text-white"
           >
             Quality connects every part of Sakthi Poultry
           </h2>
@@ -37,7 +37,7 @@ export function QualityClose() {
           </p>
           <div className="mt-8 inline-flex items-center gap-3">
             <Quote className="size-6 text-gold-light" aria-hidden />
-            <p className="whitespace-nowrap font-display text-3xl text-white sm:text-4xl">
+            <p className="whitespace-nowrap font-display text-[2.7rem] leading-tight text-white">
               Quality Forever
             </p>
           </div>

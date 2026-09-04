@@ -27,7 +27,9 @@ export default function ContactPage() {
 
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:px-8">
         <aside className="lg:col-span-4">
-          <h2 className="text-2xl font-semibold text-forest">Head office</h2>
+          <h2 className="font-display text-[2.7rem] font-medium leading-tight text-forest">
+            Head office
+          </h2>
           <a
             href={mapsHref()}
             className="mt-4 flex gap-3 text-muted hover:text-forest"

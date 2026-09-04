@@ -37,7 +37,7 @@ export function ClosingCTA() {
         </p>
         <h2
           id="closing-heading"
-          className="mt-3 font-display text-3xl font-medium text-white sm:text-5xl"
+          className="mt-3 font-display text-[2.7rem] font-medium leading-tight text-white"
         >
           Quality Begins at the Source
         </h2>

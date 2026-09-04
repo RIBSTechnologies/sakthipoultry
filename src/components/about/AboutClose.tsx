@@ -18,7 +18,7 @@ export function AboutClose() {
         <Reveal>
           <h2
             id="about-close-heading"
-            className="font-display text-3xl font-medium text-white sm:text-5xl"
+            className="font-display text-[2.7rem] font-medium leading-tight text-white"
           >
             Quality Forever
           </h2>

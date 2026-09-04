@@ -21,7 +21,7 @@ export function FarmersClose() {
           </p>
           <h2
             id="farmers-close-heading"
-            className="mt-3 max-w-4xl font-display text-3xl font-medium text-white sm:text-5xl"
+            className="mt-3 max-w-4xl font-display text-[2.7rem] font-medium leading-tight text-white"
           >
             Whether you are a poultry farmer, trader, retailer, feed
             distributor, supplier or institutional buyer, Sakthi Poultry

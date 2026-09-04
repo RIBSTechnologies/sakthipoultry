@@ -32,7 +32,7 @@ export function ClosingCTA() {
 
       <Reveal>
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-light">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white">
           Quality Forever
         </p>
         <h2

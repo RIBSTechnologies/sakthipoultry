@@ -5,7 +5,6 @@ import { ProductsRange } from "@/components/products/ProductsRange";
 import { ProductsDetail } from "@/components/products/ProductsDetail";
 import { ProductsFeed } from "@/components/products/ProductsFeed";
 import { ProductsWhy } from "@/components/products/ProductsWhy";
-import { ProductsJourney } from "@/components/products/ProductsJourney";
 import { ProductsEnquire } from "@/components/products/ProductsEnquire";
 import { ProductsClose } from "@/components/products/ProductsClose";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
@@ -38,7 +37,6 @@ export default function ProductsPage() {
       <ProductsDetail />
       <ProductsFeed />
       <ProductsWhy />
-      <ProductsJourney />
       <ProductsEnquire />
       <ProductsClose />
     </>

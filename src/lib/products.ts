@@ -123,16 +123,6 @@ export const feedProducts = [
   },
 ];
 
-export const productJourney = [
-  "Breeder Farms",
-  "Hatching Eggs",
-  "Hatcheries",
-  "Broiler Day-Old Chicks",
-  "Poultry Feed",
-  "Broiler Farms",
-  "Broiler Birds",
-];
-
 export const productEnquiries = [
   {
     title: "Hatching Eggs",

@@ -19,8 +19,8 @@ export default function ContactPage() {
     <>
       <BreadcrumbJsonLd items={[{ name: "Contact", path: "/contact" }]} />
       <PageHero
-        title="Talk to the right desk"
-        description="Bulk purchase, farmer onboarding, feed distribution, vendor registration or a general office query — pick a form so the right team responds."
+        title="We would be happy to hear you"
+        description="We're Here to Help. For business enquiries, partnerships, farmer support, supplier registration or general queries, please choose the appropriate form below. Our team will be happy to assist you."
         image={asset("aerial-complex-01.jpg")}
         crumbs={[{ label: "Contact" }]}
       />

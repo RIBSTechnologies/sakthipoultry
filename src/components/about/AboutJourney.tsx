@@ -25,21 +25,15 @@ export function AboutJourney() {
             <p>
               Our journey has evolved from poultry production into a connected
               business model that brings together breeding, hatchery operations,
-              broiler nutrition, contract farming and distribution. The
-              company&apos;s existing records state more than 33 years of
-              experience in broiler poultry integration, reflecting a strong
-              foundation of industry knowledge and operational experience.
+              broiler nutrition, contract farming and distribution. 33 years of
+              experience in broiler poultry integration, Sakthi Poultry has
+              evolved into a connected business spanning breeding, hatcheries,
+              nutrition, contract farming and distribution.
             </p>
             <p>
-              As the poultry industry continues to develop, Sakthi Poultry
-              continues to strengthen its capabilities through improved farming
-              practices, technology, nutritional expertise and closer
-              collaboration with farmers and industry partners.
-            </p>
-            <p>
-              Our growth is guided by one consistent objective — to improve the
-              poultry production chain while maintaining high standards of
-              quality, bird health, safety and responsible farming.
+              Our growth has been driven by operational experience, technology,
+              improved farming practices and strong relationships with farmers
+              and industry partners.
             </p>
           </div>
         </Reveal>

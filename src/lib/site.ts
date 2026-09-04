@@ -41,7 +41,7 @@ export const navItems = [
   { href: "/products", label: "Products" },
   { href: "/farmers-partners", label: "Farmers & Partners" },
   { href: "/locations", label: "Locations" },
-  { href: "/news-events", label: "News & Events", short: "News" },
+  { href: "/news-events", label: "News & Events", short: "Events" },
   { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact" },
 ] as const;

@@ -26,24 +26,17 @@ export function AboutInfrastructure() {
                 Parent Breeder Farms
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                Sakthi Poultry&apos;s breeder operations support the management
-                of parent stock under carefully maintained conditions, with
-                focus on bird health, nutrition, breeding performance and
-                biosecurity.
+                Healthy parent stock managed with focus on nutrition, flock
+                performance and biosecurity.
               </p>
             </article>
           </Reveal>
           <Reveal delay={0.08}>
             <article className="h-full rounded-2xl border border-line bg-cream-2 p-6 shadow-sm sm:p-8">
-              <h3 className="font-display text-2xl text-ink">
-                Poultry Hatchery
-              </h3>
+              <h3 className="font-display text-2xl text-ink">Modern Hatchery</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                Our poultry hatchery uses modern incubation and climate-control
-                systems to manage temperature, humidity and ventilation,
-                supported by dedicated facilities for egg storage, sorting and
-                grading. Biosecurity and hygiene protocols are incorporated
-                throughout the hatchery process.
+                Controlled incubation, egg handling and chick processing with
+                strong hygiene and biosecurity.
               </p>
             </article>
           </Reveal>
@@ -52,7 +45,7 @@ export function AboutInfrastructure() {
         <div className="mt-5 overflow-hidden rounded-2xl bg-forest-deep text-white lg:grid lg:grid-cols-12">
           <Reveal className="p-8 sm:p-10 lg:col-span-7 lg:p-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-light">
-              Poultry Feed Manufacturing
+              Feed Manufacturing
             </p>
             <p className="mt-4 font-display text-6xl tracking-tight text-gold-light sm:text-7xl">
               12,000
@@ -61,11 +54,8 @@ export function AboutInfrastructure() {
               Tonnes per month
             </p>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75">
-              Poultry nutrition is supported by our feed manufacturing
-              operations. The company&apos;s source records indicate a
-              production capacity of 12,000 tonnes per month, with feed plant
-              machinery supplied and installed by Denmark-based Andritz
-              Technologies and supported by automated control systems.
+              12,000 tonnes/month capacity supported by automated production
+              systems.
             </p>
           </Reveal>
           <div className="relative min-h-[240px] lg:col-span-5">
@@ -94,9 +84,8 @@ export function AboutInfrastructure() {
               Broiler Farm Network
             </h3>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              Our broiler production network extends through contracted poultry
-              farmers, who are supported with feed supply, veterinary services
-              and technical guidance throughout the production cycle.
+              Contract farming network supported by feed, veterinary and
+              technical services.
             </p>
             <p className="mt-6 font-display text-xl text-forest">
               Together, our people, infrastructure, farmer network and

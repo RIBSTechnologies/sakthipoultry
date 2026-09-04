@@ -49,7 +49,7 @@ export function StatsSection() {
         <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {metrics.map((item) => (
             <StaggerItem key={`${item.value}-${item.unit}`}>
-              <article className="group h-full rounded-2xl border border-white/15 bg-white p-5 shadow-lg transition duration-300 hover:-translate-y-1 hover:border-gold/40 sm:p-6">
+              <article className="group flex h-full min-h-[9.5rem] flex-col items-center justify-center rounded-2xl border border-white/15 bg-white p-5 text-center shadow-lg transition duration-300 hover:-translate-y-1 hover:border-gold/40 sm:min-h-[10.5rem] sm:p-6">
                 <p className="font-display text-4xl font-medium text-forest xl:text-[2.35rem]">
                   <CountUp value={item.value} />
                 </p>

@@ -11,7 +11,7 @@ export function LocationsSection() {
     <section
       id="locations"
       aria-labelledby="locations-heading"
-      className="relative isolate scroll-mt-28 overflow-hidden bg-white py-20 sm:py-24 lg:py-28"
+      className="relative isolate scroll-mt-28 overflow-hidden bg-white py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <Reveal>

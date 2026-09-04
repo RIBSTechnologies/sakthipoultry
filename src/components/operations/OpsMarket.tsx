@@ -6,7 +6,7 @@ import { asset } from "@/lib/utils";
 
 export function OpsMarket() {
   return (
-    <section className="bg-white py-20 sm:py-24 lg:py-28">
+    <section className="bg-white py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl space-y-16 px-4 sm:px-6 lg:px-8">
         <article
           id="broiler-sales"

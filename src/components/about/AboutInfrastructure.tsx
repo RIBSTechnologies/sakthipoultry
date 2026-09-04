@@ -7,7 +7,7 @@ export function AboutInfrastructure() {
   return (
     <section
       aria-labelledby="about-infra-heading"
-      className="bg-white py-20 sm:py-24 lg:py-28"
+      className="bg-white py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>

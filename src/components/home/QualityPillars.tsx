@@ -62,7 +62,7 @@ export function QualityPillars() {
     <section
       id="quality"
       aria-labelledby="quality-heading"
-      className="scroll-mt-28 bg-[#f3f7f5] py-20 sm:py-24 lg:py-28"
+      className="scroll-mt-28 bg-[#f3f7f5] py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>

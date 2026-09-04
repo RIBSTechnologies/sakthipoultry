@@ -9,7 +9,7 @@ export function QualityPractice() {
     <>
       <section
         aria-labelledby="quality-food-heading"
-        className="bg-cream-2 py-20 sm:py-24 lg:py-28"
+        className="bg-cream-2 py-12 sm:py-16 lg:py-20"
       >
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
           <Reveal className="lg:col-span-7">
@@ -55,7 +55,7 @@ export function QualityPractice() {
 
       <section
         aria-labelledby="quality-welfare-heading"
-        className="bg-white py-20 sm:py-24 lg:py-28"
+        className="bg-white py-12 sm:py-16 lg:py-20"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">

@@ -11,7 +11,7 @@ export function ProductsFeed() {
       <section
         id="poultry-feed"
         aria-labelledby="products-feed-heading"
-        className="scroll-mt-32 bg-cream-2 py-20 sm:py-24 lg:py-28"
+        className="scroll-mt-32 bg-cream-2 py-12 sm:py-16 lg:py-20"
       >
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
           <Reveal className="lg:col-span-7">
@@ -67,7 +67,7 @@ export function ProductsFeed() {
             id={product.id}
             aria-labelledby={`${product.id}-heading`}
             className={cn(
-              "scroll-mt-32 py-20 sm:py-24 lg:py-28",
+              "scroll-mt-32 py-12 sm:py-16 lg:py-20",
               index % 2 === 0 ? "bg-white" : "bg-cream-2",
               last && "pb-10 sm:pb-12 lg:pb-14",
             )}

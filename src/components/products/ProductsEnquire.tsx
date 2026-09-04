@@ -8,7 +8,7 @@ export function ProductsEnquire() {
   return (
     <section
       aria-labelledby="products-enquire-heading"
-      className="bg-cream-2 py-20 sm:py-24 lg:py-28"
+      className="bg-cream-2 py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>

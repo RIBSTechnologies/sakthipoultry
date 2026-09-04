@@ -11,7 +11,7 @@ export function AboutOverview() {
     <section
       id="about-overview"
       aria-labelledby="about-heading"
-      className="scroll-mt-28 bg-white py-20 sm:py-24 lg:py-28"
+      className="scroll-mt-28 bg-white py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <Reveal>

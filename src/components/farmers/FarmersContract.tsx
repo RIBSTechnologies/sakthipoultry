@@ -9,7 +9,7 @@ export function FarmersContract() {
     <section
       id="contract-farming"
       aria-labelledby="farmers-contract-heading"
-      className="scroll-mt-32 bg-cream-2 py-20 sm:py-24 lg:py-28"
+      className="scroll-mt-32 bg-cream-2 py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
         <Reveal className="lg:col-span-7">

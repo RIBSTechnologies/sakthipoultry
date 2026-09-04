@@ -14,7 +14,7 @@ export function ProductsDetail() {
           id={product.id}
           aria-labelledby={`${product.id}-heading`}
           className={cn(
-            "scroll-mt-32 py-20 sm:py-24 lg:py-28",
+            "scroll-mt-32 py-12 sm:py-16 lg:py-20",
             index % 2 === 0 ? "bg-white" : "bg-cream-2",
           )}
         >

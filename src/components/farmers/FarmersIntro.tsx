@@ -9,7 +9,7 @@ export function FarmersIntro() {
   return (
     <section
       aria-labelledby="farmers-intro-heading"
-      className="bg-white py-20 sm:py-24 lg:py-28"
+      className="bg-white py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto grid max-w-7xl items-stretch gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
         <Reveal className="flex h-full flex-col lg:col-span-7">

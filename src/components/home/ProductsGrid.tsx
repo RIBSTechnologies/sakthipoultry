@@ -17,7 +17,7 @@ export function ProductsGrid() {
     <section
       id="products"
       aria-labelledby="products-heading"
-      className="scroll-mt-28 bg-white py-20 sm:py-24 lg:py-28"
+      className="scroll-mt-28 bg-white py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>

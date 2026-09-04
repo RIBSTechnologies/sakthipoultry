@@ -10,7 +10,7 @@ export function OpsClose() {
     <>
       <section
         aria-labelledby="ops-quality-heading"
-        className="bg-cream-2 py-20 sm:py-24"
+        className="bg-cream-2 py-12 sm:py-16"
       >
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
@@ -46,7 +46,7 @@ export function OpsClose() {
 
       <section
         aria-labelledby="ops-partner-heading"
-        className="relative isolate overflow-hidden bg-forest py-20 sm:py-24 lg:py-28"
+        className="relative isolate overflow-hidden bg-forest py-12 sm:py-16 lg:py-20"
       >
         <SectionBackdrop
           src={asset("sakthi-poultry-farm-aerial-complex.jpg")}

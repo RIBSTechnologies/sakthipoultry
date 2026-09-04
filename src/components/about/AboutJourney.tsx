@@ -7,7 +7,7 @@ export function AboutJourney() {
   return (
     <section
       aria-labelledby="about-journey-heading"
-      className="bg-cream-2 py-20 sm:py-24 lg:py-28"
+      className="bg-cream-2 py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
         <Reveal className="lg:col-span-7">

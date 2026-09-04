@@ -33,7 +33,7 @@ export function StatsSection() {
     <section
       id="strength"
       aria-labelledby="stats-heading"
-      className="relative isolate scroll-mt-28 overflow-hidden bg-forest-deep py-20 text-white sm:py-24 lg:py-28"
+      className="relative isolate scroll-mt-28 overflow-hidden bg-forest-deep py-12 text-white sm:py-16 lg:py-20"
     >
       <SectionBackdrop src={asset("aerial-farm-03.jpg")} />
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

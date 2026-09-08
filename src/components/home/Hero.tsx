@@ -61,8 +61,8 @@ export function Hero() {
           variants={item}
           className="mt-6 max-w-6xl font-display text-[2.7rem] font-medium leading-tight text-white"
         >
-          Integrated Poultry Excellence.{" "}
-          <span className="whitespace-nowrap italic text-gold-light">
+          Integrated Poultry Excellence.
+          <span className="mt-1 block whitespace-nowrap italic text-gold-light">
             Quality at Every Stage.
           </span>
         </motion.h1>

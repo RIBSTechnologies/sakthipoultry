@@ -31,7 +31,7 @@ export function Hero() {
       ) : (
         <VideoPlayer
           src={site.heroVideo}
-          poster={asset("aerial-farm-01.jpg")}
+          hideUntilPlaying
           className="hero-media pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
       )}

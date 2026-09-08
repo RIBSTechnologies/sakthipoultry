@@ -20,6 +20,12 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <link
+        rel="preload"
+        href={site.heroVideo}
+        as="video"
+        type="video/mp4"
+      />
       <Hero />
       <AboutOverview />
       <StatsSection />

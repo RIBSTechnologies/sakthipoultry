@@ -59,10 +59,12 @@ export function Hero() {
         <motion.h1
           id="hero-heading"
           variants={item}
-          className="mt-6 max-w-4xl font-display text-[2.7rem] font-medium leading-tight text-white"
+          className="mt-6 max-w-6xl font-display text-[2.7rem] font-medium leading-tight text-white"
         >
           Integrated Poultry Excellence.{" "}
-          <span className="italic text-gold-light">Quality at Every Stage.</span>
+          <span className="whitespace-nowrap italic text-gold-light">
+            Quality at Every Stage.
+          </span>
         </motion.h1>
 
         <motion.p
@@ -88,7 +90,7 @@ export function Hero() {
           <Button href="/farmers-partners" variant="accent" size="lg">
             Partner With Us
           </Button>
-          <Button href="#value-chain" variant="outlineLight" size="lg">
+          <Button href="#value-chain" variant="accent" size="lg">
             Explore Our Business
           </Button>
         </motion.div>

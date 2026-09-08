@@ -6,7 +6,6 @@ import { asset } from "@/lib/utils";
 const links = [
   { href: "/operations", label: "Explore Our Business" },
   { href: "/products", label: "View Our Products" },
-  { href: "/farmers-partners#apply", label: "Become Sakthi Farmer" },
   { href: "/contact?type=general", label: "Send an Enquiry" },
 ];
 
@@ -47,12 +46,8 @@ export function ClosingCTA() {
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          {links.map((link, i) => (
-            <Button
-              key={link.href}
-              href={link.href}
-              variant={i === 0 ? "accent" : "outlineLight"}
-            >
+          {links.map((link) => (
+            <Button key={link.href} href={link.href} variant="accent">
               {link.label}
             </Button>
           ))}

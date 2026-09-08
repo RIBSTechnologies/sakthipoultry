@@ -28,7 +28,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-white/95 text-ink backdrop-blur-md">
       <div className="bg-ink text-white">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-3 px-4 py-1.5 text-[11px] uppercase tracking-[0.16em] sm:px-6 lg:px-8">
-          <p className="font-semibold text-gold">Quality forever</p>
+          <p className="font-semibold text-white">Quality forever</p>
           <p className="hidden text-white/70 sm:block">Integrated Poultry Company · Tamil Nadu</p>
           <a href={`mailto:${site.email}`} className="truncate hover:text-gold">
             {site.email}

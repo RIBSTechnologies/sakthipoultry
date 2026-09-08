@@ -49,9 +49,9 @@ export function Hero() {
       >
         <motion.div variants={item} className="flex flex-wrap items-center gap-2.5">
           <span className="inline-flex items-center rounded-full border border-gold bg-gold px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white shadow-md">
-            Vencobb Family Associate
+            Vencobb Family
           </span>
-          <span className="inline-flex items-center rounded-full border-2 border-gold-light bg-forest-deep/90 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-light backdrop-blur-sm">
+          <span className="inline-flex items-center rounded-full border border-gold bg-gold px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white shadow-md">
             Integrated Poultry Integration
           </span>
         </motion.div>

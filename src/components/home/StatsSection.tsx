@@ -23,8 +23,8 @@ const metrics = [
     unit: "Poultry Farmers",
   },
   {
-    value: "3.40",
-    unit: "Core KG Broiler Production Per Annum",
+    value: "3.4 Cr. +",
+    unit: "Kg Broiler production",
   },
 ];
 
@@ -50,10 +50,10 @@ export function StatsSection() {
           {metrics.map((item) => (
             <StaggerItem key={`${item.value}-${item.unit}`}>
               <article className="group flex h-full min-h-[9.5rem] flex-col items-center justify-center rounded-2xl border border-white/15 bg-white p-5 text-center shadow-lg transition duration-300 hover:-translate-y-1 hover:border-gold/40 sm:min-h-[10.5rem] sm:p-6">
-                <p className="font-display text-4xl font-medium text-forest xl:text-[2.35rem]">
+                <p className="font-display text-3xl font-medium text-forest sm:text-4xl xl:text-[2.15rem] whitespace-nowrap">
                   <CountUp value={item.value} />
                 </p>
-                <p className="mt-1 text-sm font-semibold uppercase tracking-[0.12em] text-gold leading-snug">
+                <p className="mt-1 whitespace-nowrap text-sm font-semibold tracking-normal text-gold">
                   {item.unit}
                 </p>
               </article>

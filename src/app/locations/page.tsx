@@ -18,7 +18,7 @@ export default function LocationsPage() {
       <PageHero
         title="Locations"
         description="Corporate Office in Pollachi, and Feed Mills at Kariyapatti and Dindigul."
-        image={asset("aerial-complex-08.jpg")}
+        image={asset("sakthi-poultry-locations-hero.jpg")}
         crumbs={[{ label: "Locations" }]}
       />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">

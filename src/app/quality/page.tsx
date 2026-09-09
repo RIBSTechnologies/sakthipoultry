@@ -9,7 +9,7 @@ import { QualitySustain } from "@/components/quality/QualitySustain";
 import { QualityClose } from "@/components/quality/QualityClose";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { qualitySeo } from "@/lib/quality";
-import { asset } from "@/lib/utils";
+import { asset, videoAsset } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: { absolute: qualitySeo.title },
@@ -26,10 +26,17 @@ export default function QualityPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Quality", path: "/quality" }]} />
+      <link
+        rel="preload"
+        href={videoAsset("sakthi-poultry-quality-hero.mp4")}
+        as="video"
+        type="video/mp4"
+      />
       <PageHero
         title="Poultry Quality & Biosecurity – Quality Forever"
         description="At Sakthi Poultry Private Limited, quality is built into every stage of our poultry operations."
         image={asset("sakthi-poultry-farm-aerial-complex.jpg")}
+        video={videoAsset("sakthi-poultry-quality-hero.mp4")}
         crumbs={[{ label: "Quality" }]}
       />
       <QualityIntro />

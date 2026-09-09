@@ -1,7 +1,96 @@
 import { MediaImage } from "@/components/ui/MediaImage";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/home/SectionHeading";
-import { asset } from "@/lib/utils";
+import { asset, cn } from "@/lib/utils";
+
+const facilities = [
+  {
+    title: "Breeder Farms",
+    tagline: "A New Milestone in Indian Poultry",
+    subtitle: "State-of-the-Art Broiler Breeder EC Infrastructure",
+    image: asset("sakthi-poultry-breeder-farms.jpg"),
+    alt: "Sakthi Poultry broiler breeder farm infrastructure",
+    points: [
+      {
+        title: "State-of-the-Art EC Housing",
+        text: "Advanced ventilation, cooling and environmental monitoring for optimal flock conditions.",
+      },
+      {
+        title: "Advanced Biosecurity",
+        text: "Comprehensive biosecurity and controlled access to minimize disease risks.",
+      },
+      {
+        title: "All-In, All-Out System",
+        text: "Strict flock management with complete cleaning, disinfection and downtime.",
+      },
+      {
+        title: "Hatchery-to-Farm Biosecurity",
+        text: "Integrated control of egg, equipment, personnel and vehicle movement.",
+      },
+      {
+        title: "Sustainable Biogas Plant",
+        text: "Responsible poultry waste management through biogas utilization.",
+      },
+    ],
+  },
+  {
+    title: "Modern Hatchery",
+    tagline: "A New Milestone in Indian Poultry – Our Modern Hatchery",
+    image: asset("sakthi-poultry-about-hatchery.jpg"),
+    alt: "Sakthi Poultry modern hatchery complex",
+    points: [
+      {
+        title: "State-of-the-Art Single-Stage Incubation",
+        text: "Advanced single-stage incubation technology for better hatchability and chick quality.",
+      },
+      {
+        title: "International-Standard Hygiene",
+        text: "Strict hygiene protocols maintained in line with international standards.",
+      },
+      {
+        title: "In-Ovo Vaccination – First in India",
+        text: "Advanced In-Ovo vaccination technology, vaccinating the embryo before hatching.",
+      },
+      {
+        title: "Biosecurity Excellence & Premium Chick Quality",
+        text: "Robust biosecurity measures ensuring healthy, uniform and premium-quality chicks.",
+      },
+      {
+        title: "Seamless Hatchery-to-Farm Transfer",
+        text: "A well-integrated process ensuring chicks reach the farm quickly, safely and in optimal condition.",
+      },
+    ],
+  },
+  {
+    title: "Modern Feed Mill",
+    tagline: "A New Standard in Poultry Nutrition",
+    subtitle: "State-of-the-Art Automated Pellet Feed Plant",
+    image: asset("sakthi-poultry-modern-feed-mill.jpg"),
+    alt: "Sakthi Poultry modern automated feed mill",
+    points: [
+      {
+        title: "Fully Automated Andritz Pelletizing Technology",
+        text: "Equipped with advanced Andritz pelletizing machinery and automated processing systems, ensuring precision, consistency and superior pellet quality.",
+      },
+      {
+        title: "Advanced Quality Control Laboratory with HPLC Facility",
+        text: "Our well-equipped laboratory includes an HPLC facility dedicated to the accurate analysis and quality verification of feed additives, ensuring consistency, purity and compliance with defined quality standards.",
+      },
+      {
+        title: "Precision Feed Manufacturing",
+        text: "Advanced automation and process control ensure accurate ingredient handling, consistent formulation and uniform feed quality from batch to batch.",
+      },
+      {
+        title: "Stringent Quality & Safety Standards",
+        text: "Comprehensive quality-control procedures are followed from raw-material inspection through processing, pelletizing and finished-feed dispatch.",
+      },
+      {
+        title: "Integrated Feed-to-Farm Supply Chain",
+        text: "A seamless production and distribution system ensures timely availability of quality feed across our integrated poultry operations.",
+      },
+    ],
+  },
+];
 
 export function AboutInfrastructure() {
   return (
@@ -15,84 +104,73 @@ export function AboutInfrastructure() {
             id="about-infra-heading"
             eyebrow="Infrastructure"
             title="Integrated Infrastructure Across the Broiler Poultry Value Chain"
-            subtitle="Our integrated infrastructure supports the key stages of the broiler poultry value chain, enabling different operations to work together with greater consistency and control."
           />
         </Reveal>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-2">
-          <Reveal>
-            <article className="h-full rounded-2xl border border-line bg-cream-2 p-6 shadow-sm sm:p-8">
-              <h3 className="font-display text-2xl text-ink">
-                Parent Breeder Farms
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                Healthy parent stock managed with focus on nutrition, flock
-                performance and biosecurity.
-              </p>
-            </article>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <article className="h-full rounded-2xl border border-line bg-cream-2 p-6 shadow-sm sm:p-8">
-              <h3 className="font-display text-2xl text-ink">Modern Hatchery</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                Controlled incubation, egg handling and chick processing with
-                strong hygiene and biosecurity.
-              </p>
-            </article>
-          </Reveal>
-        </div>
-
-        <div className="mt-5 overflow-hidden rounded-2xl bg-forest-deep text-white lg:grid lg:grid-cols-12">
-          <Reveal className="p-8 sm:p-10 lg:col-span-7 lg:p-12">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-light">
-              Feed Manufacturing
-            </p>
-            <p className="mt-4 font-display text-6xl tracking-tight text-gold-light sm:text-7xl">
-              12,000
-            </p>
-            <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-white/80">
-              Tonnes per month
-            </p>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75">
-              12,000 tonnes/month capacity supported by automated production
-              systems.
-            </p>
-          </Reveal>
-          <div className="relative min-h-[240px] lg:col-span-5">
-            <MediaImage
-              src={asset("sakthi-poultry-feed-manufacturing.jpg")}
-              alt="Sakthi Poultry feed manufacturing plant"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 40vw, 100vw"
-            />
-          </div>
-        </div>
-
-        <div className="mt-5 grid items-center gap-5 overflow-hidden rounded-2xl border border-line bg-cream-2 lg:grid-cols-12">
-          <div className="relative min-h-[240px] lg:col-span-6 lg:min-h-[320px]">
-            <MediaImage
-              src={asset("sakthi-poultry-contract-broiler-farm.jpg")}
-              alt="Contract broiler farms in the Sakthi Poultry network"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 50vw, 100vw"
-            />
-          </div>
-          <Reveal className="p-8 sm:p-10 lg:col-span-6">
-            <h3 className="font-display text-2xl text-ink sm:text-3xl">
-              Broiler Farm Network
-            </h3>
-            <p className="mt-4 text-base leading-relaxed text-muted">
-              Contract farming network supported by feed, veterinary and
-              technical services.
-            </p>
-            <p className="mt-6 font-display text-xl text-forest">
-              Together, our people, infrastructure, farmer network and
-              integrated operations support one consistent commitment: Quality
-              Forever.
-            </p>
-          </Reveal>
+        <div className="mt-10 space-y-8">
+          {facilities.map((facility, index) => (
+            <Reveal key={facility.title} delay={index * 0.04}>
+              <article
+                className={cn(
+                  "overflow-hidden rounded-2xl border border-line",
+                  index % 2 ? "bg-cream-2" : "bg-white",
+                )}
+              >
+                <div className="grid items-stretch lg:grid-cols-12">
+                  <div
+                    className={cn(
+                      "relative min-h-[260px] lg:col-span-5 lg:min-h-[420px]",
+                      index % 2 ? "lg:order-2" : "lg:order-1",
+                    )}
+                  >
+                    <MediaImage
+                      src={facility.image}
+                      alt={facility.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 42vw, 100vw"
+                    />
+                  </div>
+                  <div
+                    className={cn(
+                      "p-6 sm:p-8 lg:col-span-7 lg:p-10",
+                      index % 2 ? "lg:order-1" : "lg:order-2",
+                    )}
+                  >
+                    <p className="font-display text-lg text-gold">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="mt-2 font-display text-2xl text-ink sm:text-3xl">
+                      {facility.title}
+                    </h3>
+                    <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-gold">
+                      {facility.tagline}
+                    </p>
+                    {"subtitle" in facility && facility.subtitle ? (
+                      <p className="mt-2 text-base font-medium text-ink">
+                        {facility.subtitle}
+                      </p>
+                    ) : null}
+                    <ol className="mt-6 space-y-4">
+                      {facility.points.map((point, pointIndex) => (
+                        <li key={point.title} className="flex gap-3">
+                          <span className="mt-0.5 font-display text-sm text-gold">
+                            {String(pointIndex + 1).padStart(2, "0")}
+                          </span>
+                          <div>
+                            <p className="font-semibold text-ink">{point.title}</p>
+                            <p className="mt-1 text-sm leading-relaxed text-muted">
+                              {point.text}
+                            </p>
+                          </div>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

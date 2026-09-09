@@ -29,7 +29,7 @@ const facilities = [
       },
       {
         title: "Sustainable Biogas Plant",
-        text: "Responsible poultry waste management through biogas utilization.",
+        text: "Responsible Poultry manure management through biogas utilization.",
       },
     ],
   },

@@ -47,10 +47,10 @@ export function QualityIntro() {
         <Reveal delay={0.1} className="lg:col-span-5">
           <div className="relative min-h-[22rem] overflow-hidden rounded-2xl lg:h-full">
             <MediaImage
-              src={asset("sakthi-poultry-farm-aerial-complex.jpg")}
-              alt="Sakthi Poultry farm facilities supporting quality production"
+              src={asset("sakthi-poultry-quality-house-interior.jpg")}
+              alt="Inside a Sakthi Poultry breeder house with birds in controlled housing"
               fill
-              className="object-cover"
+              className="object-cover object-[center_30%]"
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </div>

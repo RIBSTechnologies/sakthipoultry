@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: aboutSeo.title,
     description: aboutSeo.description,
-    images: ["/assets/images/sakthi-poultry-about-hero-team.jpg"],
+    images: ["/assets/images/sakthi-poultry-about-hero.jpg"],
   },
   twitter: {
     title: aboutSeo.title,
@@ -32,8 +32,8 @@ export default function AboutPage() {
       <PageHero
         title="About Sakthi Poultry"
         description="An established integrated poultry company in Tamil Nadu, operating across the broiler chicken value chain with a strong commitment to quality, efficiency and responsible poultry production."
-        image={asset("sakthi-poultry-about-hero-team.jpg")}
-        imageClassName="object-cover opacity-80 object-[center_68%]"
+        image={asset("sakthi-poultry-about-hero.jpg")}
+        imageClassName="object-cover opacity-80 object-center"
         crumbs={[{ label: "About" }]}
       />
       <AboutProfile />

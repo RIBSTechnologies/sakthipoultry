@@ -1,7 +1,7 @@
 import { MediaImage } from "@/components/ui/MediaImage";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/home/SectionHeading";
-import { asset, cn } from "@/lib/utils";
+import { asset } from "@/lib/utils";
 
 const facilities = [
   {
@@ -96,7 +96,7 @@ export function AboutInfrastructure() {
   return (
     <section
       aria-labelledby="about-infra-heading"
-      className="bg-white py-12 sm:py-16 lg:py-20"
+      className="bg-cream-2 py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
@@ -107,67 +107,53 @@ export function AboutInfrastructure() {
           />
         </Reveal>
 
-        <div className="mt-10 space-y-8">
+        <div className="mt-12 space-y-16 lg:space-y-20">
           {facilities.map((facility, index) => (
             <Reveal key={facility.title} delay={index * 0.04}>
-              <article
-                className={cn(
-                  "overflow-hidden rounded-2xl border border-line",
-                  index % 2 ? "bg-cream-2" : "bg-white",
-                )}
-              >
-                <div className="grid items-stretch lg:grid-cols-12">
-                  <div
-                    className={cn(
-                      "relative min-h-[260px] lg:col-span-5 lg:min-h-[420px]",
-                      index % 2 ? "lg:order-2" : "lg:order-1",
-                    )}
-                  >
-                    <MediaImage
-                      src={facility.image}
-                      alt={facility.alt}
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 1024px) 42vw, 100vw"
-                    />
-                  </div>
-                  <div
-                    className={cn(
-                      "p-6 sm:p-8 lg:col-span-7 lg:p-10",
-                      index % 2 ? "lg:order-1" : "lg:order-2",
-                    )}
-                  >
-                    <p className="font-display text-lg text-gold">
-                      {String(index + 1).padStart(2, "0")}
+              <article className="grid gap-8 lg:gap-10">
+                <header className="max-w-3xl">
+                  <p className="font-display text-lg text-gold">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="mt-2 font-display text-3xl font-medium leading-tight text-ink sm:text-4xl">
+                    {facility.title}
+                  </h3>
+                  <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-gold">
+                    {facility.tagline}
+                  </p>
+                  {"subtitle" in facility && facility.subtitle ? (
+                    <p className="mt-2 text-base font-medium text-ink sm:text-lg">
+                      {facility.subtitle}
                     </p>
-                    <h3 className="mt-2 font-display text-2xl text-ink sm:text-3xl">
-                      {facility.title}
-                    </h3>
-                    <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-gold">
-                      {facility.tagline}
-                    </p>
-                    {"subtitle" in facility && facility.subtitle ? (
-                      <p className="mt-2 text-base font-medium text-ink">
-                        {facility.subtitle}
+                  ) : null}
+                </header>
+
+                <figure className="overflow-hidden rounded-2xl bg-white">
+                  <MediaImage
+                    src={facility.image}
+                    alt={facility.alt}
+                    width={1024}
+                    height={576}
+                    className="h-auto w-full"
+                    sizes="(min-width: 1280px) 80rem, 100vw"
+                  />
+                </figure>
+
+                <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {facility.points.map((point, pointIndex) => (
+                    <li key={point.title} className="border-t border-line pt-5">
+                      <span className="font-display text-sm text-gold">
+                        {String(pointIndex + 1).padStart(2, "0")}
+                      </span>
+                      <h4 className="mt-2 font-display text-xl leading-snug text-ink">
+                        {point.title}
+                      </h4>
+                      <p className="mt-2 text-sm leading-relaxed text-muted sm:text-base">
+                        {point.text}
                       </p>
-                    ) : null}
-                    <ol className="mt-6 space-y-4">
-                      {facility.points.map((point, pointIndex) => (
-                        <li key={point.title} className="flex gap-3">
-                          <span className="mt-0.5 font-display text-sm text-gold">
-                            {String(pointIndex + 1).padStart(2, "0")}
-                          </span>
-                          <div>
-                            <p className="font-semibold text-ink">{point.title}</p>
-                            <p className="mt-1 text-sm leading-relaxed text-muted">
-                              {point.text}
-                            </p>
-                          </div>
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                </div>
+                    </li>
+                  ))}
+                </ol>
               </article>
             </Reveal>
           ))}

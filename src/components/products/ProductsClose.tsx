@@ -37,7 +37,7 @@ export function ProductsClose() {
             <Button href={productEnquireHref()} variant="accent">
               Enquire About Our Products
             </Button>
-            <Button href="/operations" variant="outlineLight">
+            <Button href="/operations" variant="accent">
               Explore Our Operations
             </Button>
           </div>

@@ -72,12 +72,8 @@ export function OpsClose() {
               connect with our team to discuss your requirement.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              {partnerLinks.map((link, index) => (
-                <Button
-                  key={link.href}
-                  href={link.href}
-                  variant={index === 0 ? "accent" : "outlineLight"}
-                >
+              {partnerLinks.map((link) => (
+                <Button key={link.href} href={link.href} variant="accent">
                   {link.label}
                 </Button>
               ))}

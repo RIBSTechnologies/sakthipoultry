@@ -64,7 +64,7 @@ export function StatsSection() {
         <Reveal delay={0.15}>
           <Button
             href="/operations"
-            variant="outlineLight"
+            variant="accent"
             size="lg"
             className="mt-10"
           >

@@ -10,6 +10,8 @@ const facilities = [
     subtitle: "State-of-the-Art Broiler Breeder EC Infrastructure",
     image: asset("sakthi-poultry-breeder-farms.jpg"),
     alt: "Sakthi Poultry broiler breeder farm infrastructure",
+    width: 1024,
+    height: 576,
     points: [
       {
         title: "State-of-the-Art EC Housing",
@@ -38,6 +40,8 @@ const facilities = [
     tagline: "A New Milestone in Indian Poultry – Our Modern Hatchery",
     image: asset("sakthi-poultry-about-hatchery.jpg"),
     alt: "Sakthi Poultry modern hatchery complex",
+    width: 1024,
+    height: 576,
     points: [
       {
         title: "State-of-the-Art Single-Stage Incubation",
@@ -67,6 +71,8 @@ const facilities = [
     subtitle: "State-of-the-Art Automated Pellet Feed Plant",
     image: asset("sakthi-poultry-modern-feed-mill.jpg"),
     alt: "Sakthi Poultry modern automated feed mill",
+    width: 793,
+    height: 576,
     points: [
       {
         title: "Fully Automated Andritz Pelletizing Technology",
@@ -132,8 +138,8 @@ export function AboutInfrastructure() {
                   <MediaImage
                     src={facility.image}
                     alt={facility.alt}
-                    width={1024}
-                    height={576}
+                    width={facility.width}
+                    height={facility.height}
                     className="h-auto w-full"
                     sizes="(min-width: 768px) 48rem, 100vw"
                   />

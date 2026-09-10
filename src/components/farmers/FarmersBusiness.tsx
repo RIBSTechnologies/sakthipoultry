@@ -184,7 +184,7 @@ export function FarmersBusiness() {
         aria-labelledby="farmers-suppliers-heading"
         className="scroll-mt-32 bg-white py-12 sm:py-16 lg:py-20"
       >
-        <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
           <Reveal className="lg:col-span-7">
             <SectionHeading
               id="farmers-suppliers-heading"
@@ -213,7 +213,7 @@ export function FarmersBusiness() {
           </Reveal>
           <Reveal
             delay={0.08}
-            className="relative aspect-[3/4] overflow-hidden rounded-2xl lg:col-span-5"
+            className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-2xl lg:col-span-5 lg:max-w-none"
           >
             <MediaImage
               src={farmerImages.suppliers}

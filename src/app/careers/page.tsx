@@ -19,10 +19,10 @@ export default function CareersPage() {
         title="Careers"
         description="Join the Sakthi Poultry team when openings become available."
         image={asset("sakthi-poultry-careers-hero.jpg")}
-        imageClassName="object-cover object-center"
-        overlayClassName="bg-gradient-to-t from-ink/70 via-ink/35 to-ink/20"
+        imageClassName="object-contain object-center"
+        overlayClassName="bg-gradient-to-t from-ink/65 via-ink/30 to-transparent"
         sectionClassName="min-h-0 aspect-[1024/271] w-full"
-        contentClassName="min-h-0 h-full justify-end pb-6 pt-24 sm:pb-8 sm:pt-28"
+        contentClassName="min-h-0 h-full justify-end pb-5 pt-24 sm:pb-6 sm:pt-28"
         crumbs={[{ label: "Careers" }]}
       />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">

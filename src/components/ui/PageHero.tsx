@@ -12,9 +12,9 @@ export function PageHero({
   crumbs,
   imageClassName = "object-cover opacity-80",
   overlayClassName = "bg-gradient-to-t from-ink via-ink/55 to-ink/20",
-  contentClassName = "justify-end pb-24 pt-32 sm:pb-14 sm:pt-36",
+  contentClassName = "min-h-[48vh] justify-end pb-24 pt-32 sm:pb-14 sm:pt-36",
   contentPanelClassName,
-  sectionClassName,
+  sectionClassName = "min-h-[48vh]",
 }: {
   title: string;
   description: string;
@@ -29,10 +29,7 @@ export function PageHero({
 }) {
   return (
     <section
-      className={cn(
-        "relative isolate min-h-[48vh] overflow-hidden bg-ink",
-        sectionClassName,
-      )}
+      className={cn("relative isolate overflow-hidden bg-ink", sectionClassName)}
     >
       {video ? (
         <VideoPlayer
@@ -53,7 +50,7 @@ export function PageHero({
       <div className={`absolute inset-0 ${overlayClassName}`} />
       <div
         className={cn(
-          "relative mx-auto flex min-h-[48vh] max-w-7xl flex-col px-4 sm:px-6 lg:px-8",
+          "relative mx-auto flex h-full max-w-7xl flex-col px-4 sm:px-6 lg:px-8",
           contentClassName,
         )}
       >

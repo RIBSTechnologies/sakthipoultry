@@ -19,7 +19,7 @@ export function OpsClose() {
             </p>
             <h2
               id="ops-quality-heading"
-              className="mt-3 font-display text-[2.7rem] font-medium tracking-tight leading-tight text-ink"
+              className="mt-3 font-display text-3xl font-medium tracking-tight leading-tight sm:text-4xl lg:text-[2.7rem] text-ink"
             >
               Quality is not treated as a single checkpoint
             </h2>
@@ -36,7 +36,7 @@ export function OpsClose() {
             </p>
             <div className="mt-8 inline-flex items-center gap-3">
               <Quote className="size-6 text-gold" aria-hidden />
-              <p className="whitespace-nowrap font-display text-[2.7rem] leading-tight text-forest">
+              <p className="font-display text-3xl sm:text-[2.7rem] leading-tight text-forest">
                 Quality Forever
               </p>
             </div>
@@ -59,7 +59,7 @@ export function OpsClose() {
             </p>
             <h2
               id="ops-partner-heading"
-              className="mt-3 font-display text-[2.7rem] font-medium leading-tight text-white"
+              className="mt-3 font-display text-3xl font-medium leading-tight sm:text-4xl lg:text-[2.7rem] text-white"
             >
               Connect with our team
             </h2>
@@ -71,9 +71,9 @@ export function OpsClose() {
               broiler feed or an opportunity to work with Sakthi Poultry,
               connect with our team to discuss your requirement.
             </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
               {partnerLinks.map((link) => (
-                <Button key={link.href} href={link.href} variant="accent">
+                <Button key={link.href} href={link.href} variant="accent" className="w-full sm:w-auto">
                   {link.label}
                 </Button>
               ))}

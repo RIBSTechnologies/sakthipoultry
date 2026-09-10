@@ -67,7 +67,7 @@ export function FarmersBusiness() {
             </p>
           </Reveal>
 
-          <Stagger className="mt-8 grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <Stagger className="mt-8 grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {partnerAudiences.map((item, index) => (
               <StaggerItem key={item.title} className="h-full">
                 <Link href={item.href} className="block h-full">

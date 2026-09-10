@@ -39,7 +39,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/55 via-transparent to-forest-deep/15" />
 
       <motion.div
-        className="relative z-10 mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-4 pb-16 pt-36 sm:px-6 sm:pb-20 lg:px-8"
+        className="relative z-10 mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-4 pb-24 pt-32 sm:px-6 sm:pb-20 sm:pt-36 lg:px-8"
         initial={reduce ? false : "hidden"}
         animate="show"
         variants={{
@@ -48,21 +48,22 @@ export function Hero() {
         }}
       >
         <motion.div variants={item} className="flex flex-wrap items-center gap-2.5">
-          <span className="inline-flex items-center rounded-full border-2 border-gold-light bg-forest-deep/90 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-light backdrop-blur-sm">
+          <span className="inline-flex items-center rounded-full border-2 border-gold-light bg-forest-deep/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-gold-light backdrop-blur-sm sm:px-4 sm:text-[11px] sm:tracking-[0.16em]">
             Vencobb Family
           </span>
-          <span className="inline-flex items-center rounded-full border-2 border-gold-light bg-forest-deep/90 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-light backdrop-blur-sm">
-            Integrated Poultry Integration
+          <span className="inline-flex items-center rounded-full border-2 border-gold-light bg-forest-deep/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-gold-light backdrop-blur-sm sm:px-4 sm:text-[11px] sm:tracking-[0.16em]">
+            <span className="sm:hidden">Integrated Poultry</span>
+            <span className="hidden sm:inline">Integrated Poultry Integration</span>
           </span>
         </motion.div>
 
         <motion.h1
           id="hero-heading"
           variants={item}
-          className="mt-6 max-w-6xl font-display text-[2.7rem] font-medium leading-tight text-white"
+          className="mt-6 max-w-6xl font-display text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-[2.7rem]"
         >
           Integrated Poultry Excellence.
-          <span className="mt-1 block whitespace-nowrap italic text-gold-light">
+          <span className="mt-1 block italic text-gold-light">
             Quality at Every Stage.
           </span>
         </motion.h1>
@@ -86,11 +87,11 @@ export function Hero() {
           <em className="font-medium not-italic text-gold-light">“Quality Forever”</em>.
         </motion.p>
 
-        <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
-          <Button href="/farmers-partners" variant="accent" size="lg">
+        <motion.div variants={item} className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
+          <Button href="/farmers-partners" variant="accent" size="lg" className="w-full sm:w-auto">
             Partner With Us
           </Button>
-          <Button href="#value-chain" variant="accent" size="lg">
+          <Button href="#value-chain" variant="accent" size="lg" className="w-full sm:w-auto">
             Explore Our Business
           </Button>
         </motion.div>

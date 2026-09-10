@@ -36,7 +36,7 @@ export function ClosingCTA() {
         </p>
         <h2
           id="closing-heading"
-          className="mt-3 font-display text-[2.7rem] font-medium leading-tight text-white"
+          className="mt-3 font-display text-3xl font-medium leading-tight sm:text-4xl lg:text-[2.7rem] text-white"
         >
           Quality Begins at the Source
         </h2>
@@ -45,9 +45,9 @@ export function ClosingCTA() {
           Connects the Value Chain with One Consistent Commitment: Quality Forever.
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
           {links.map((link) => (
-            <Button key={link.href} href={link.href} variant="accent">
+            <Button key={link.href} href={link.href} variant="accent" className="w-full sm:w-auto">
               {link.label}
             </Button>
           ))}

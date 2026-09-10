@@ -6,7 +6,7 @@ import { enquiryTypes } from "@/lib/data";
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-white">
+    <footer className="bg-ink pb-24 text-white lg:pb-0">
       <div className="border-b border-white/10 bg-gold py-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-ink">
         Quality forever
       </div>
@@ -35,7 +35,7 @@ export function Footer() {
         <div className="lg:col-span-2">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold">Explore</p>
           <ul className="mt-4 grid gap-2 text-sm text-white/75">
-            {navItems.slice(1, 6).map((item) => (
+            {navItems.slice(1).map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-gold">
                   {item.label}

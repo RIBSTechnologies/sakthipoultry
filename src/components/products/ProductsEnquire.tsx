@@ -16,7 +16,7 @@ export function ProductsEnquire() {
             id="products-enquire-heading"
             eyebrow="Product Enquiries"
             title="Looking for Poultry Products?"
-            subtitle="Whether your requirement is for hatching eggs, broiler day-old chicks, broiler birds, breeder feed or broiler feed, our team is ready to understand your business needs."
+            subtitle="Quality you can trace—from breeding and nutrition to farming and market supply. Whether your requirement is for hatching eggs, broiler day-old chicks, broiler birds, breeder feed or broiler feed, our team is ready to understand your business needs."
           />
         </Reveal>
 

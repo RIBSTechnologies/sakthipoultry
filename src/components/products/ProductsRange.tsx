@@ -20,7 +20,7 @@ export function ProductsRange() {
           />
         </Reveal>
 
-        <Stagger className="mt-10 grid auto-rows-fr items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <Stagger className="mt-10 grid auto-rows-fr items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {productRange.map((item, index) => (
             <StaggerItem key={item.title} className="h-full">
               <Link href={item.href} className="block h-full">

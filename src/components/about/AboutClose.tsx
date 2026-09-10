@@ -18,7 +18,7 @@ export function AboutClose() {
         <Reveal>
           <h2
             id="about-close-heading"
-            className="font-display text-[2.7rem] font-medium leading-tight text-white"
+            className="font-display text-3xl font-medium leading-tight sm:text-4xl lg:text-[2.7rem] text-white"
           >
             Quality Forever
           </h2>
@@ -26,9 +26,9 @@ export function AboutClose() {
             Together, our people, infrastructure, farmer network and integrated
             operations support one consistent commitment.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
             {aboutLinks.map((link) => (
-              <Button key={link.href} href={link.href} variant="accent">
+              <Button key={link.href} href={link.href} variant="accent" className="w-full sm:w-auto">
                 {link.label}
               </Button>
             ))}

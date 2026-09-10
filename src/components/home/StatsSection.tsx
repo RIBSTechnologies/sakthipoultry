@@ -40,7 +40,7 @@ export function StatsSection() {
         <Reveal>
           <h2
             id="stats-heading"
-            className="font-display text-[2.7rem] font-medium tracking-tight leading-tight text-gold-light"
+            className="font-display text-3xl font-medium tracking-tight leading-tight text-gold-light sm:text-4xl lg:text-[2.7rem]"
           >
             Strength & Scale
           </h2>
@@ -50,10 +50,10 @@ export function StatsSection() {
           {metrics.map((item) => (
             <StaggerItem key={`${item.value}-${item.unit}`}>
               <article className="group flex h-full min-h-[9.5rem] flex-col items-center justify-center rounded-2xl border border-white/15 bg-white p-5 text-center shadow-lg transition duration-300 hover:-translate-y-1 hover:border-gold/40 sm:min-h-[10.5rem] sm:p-6">
-                <p className="font-display text-3xl font-medium text-forest sm:text-4xl xl:text-[2.15rem] whitespace-nowrap">
+                <p className="font-display text-3xl font-medium text-forest sm:text-4xl xl:text-[2.15rem]">
                   <CountUp value={item.value} />
                 </p>
-                <p className="mt-1 whitespace-nowrap text-sm font-semibold tracking-normal text-gold">
+                <p className="mt-1 text-sm font-semibold tracking-normal text-gold">
                   {item.unit}
                 </p>
               </article>

@@ -52,7 +52,10 @@ export function Modal({
         )}
       >
         <div className="mb-6 flex items-start justify-between gap-4">
-          <h2 id="modal-title" className="text-2xl font-semibold text-forest">
+          <h2
+            id="modal-title"
+            className="pr-2 text-lg font-semibold break-words text-forest sm:text-2xl"
+          >
             {title}
           </h2>
           <button

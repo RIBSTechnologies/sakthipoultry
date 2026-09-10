@@ -19,7 +19,7 @@ export function QualityLab() {
                 </p>
                 <h2
                   id="quality-lab-heading"
-                  className="mt-3 font-display text-[2.7rem] font-medium leading-tight tracking-tight text-ink"
+                  className="mt-3 font-display text-3xl font-medium leading-tight tracking-tight sm:text-4xl lg:text-[2.7rem] text-ink"
                 >
                   Supporting Poultry Quality Through Testing
                 </h2>

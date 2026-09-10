@@ -53,7 +53,7 @@ export function QualityBiosecurity() {
         <p className="mt-10 text-[11px] font-semibold uppercase tracking-[0.22em] text-forest">
           Biosecurity Across Our Operations
         </p>
-        <Stagger className="mt-4 grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <Stagger className="mt-4 grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {biosecurityAreas.map((item, index) => (
             <StaggerItem key={item} className="h-full">
               <article className="flex h-full flex-col rounded-2xl border border-line bg-cream-2 p-5 shadow-sm">

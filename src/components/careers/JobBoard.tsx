@@ -20,12 +20,12 @@ export function JobBoard() {
 
   if (jobs.length === 0) {
     return (
-      <div className="border border-line bg-white p-8 sm:p-10">
+      <div className="border border-line bg-white p-6 sm:p-10">
         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
           Openings
         </p>
-        <h2 className="mt-3 font-display text-[2.7rem] font-medium leading-tight text-ink">
-          There are no career opportunities at this time
+        <h2 className="mt-3 font-display text-2xl font-medium leading-tight text-ink sm:text-3xl">
+          No openings right now
         </h2>
         <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
           Please check back later. You can also write to us at{" "}

@@ -5,10 +5,16 @@ import { usePathname } from "next/navigation";
 
 export function MobileCtas() {
   const pathname = usePathname();
-  if (pathname === "/contact" || pathname === "/farmers-partners") return null;
+  if (
+    pathname === "/contact" ||
+    pathname === "/farmers-partners" ||
+    pathname === "/careers"
+  ) {
+    return null;
+  }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-line bg-cream/95 p-3 backdrop-blur-md lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-line bg-cream/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-md lg:hidden">
       <Button href="/farmers-partners#apply" variant="gold" size="sm">
         Become a Farmer
       </Button>

@@ -17,20 +17,20 @@ export function ContactForms() {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-2">
+      <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {enquiryTypes.map((t) => (
           <Link
             key={t.id}
             href={`/contact?type=${t.id}`}
             className={cn(
-              "rounded-sm border px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em]",
+              "shrink-0 rounded-sm border px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em]",
               type === t.id
                 ? "border-forest bg-forest text-white"
                 : "border-line bg-white text-forest hover:border-gold",
             )}
             scroll={false}
           >
-            {t.label}
+            {t.label.replace(" Enquiry", "")}
           </Link>
         ))}
       </div>

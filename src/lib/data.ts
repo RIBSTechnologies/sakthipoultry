@@ -686,10 +686,3 @@ export const enquiryTypes = [
     href: "/contact?type=general",
   },
 ] as const;
-
-export const trustBadges = [
-  { title: "Veterinary care", text: "Flock health protocols from placement to harvest" },
-  { title: "Lab testing", text: "Pathology and nutritional analysis in-house" },
-  { title: "Food safety", text: "Hygiene, welfare and antibiotic stewardship" },
-  { title: "Biosecurity", text: "Zoned access, sanitisation and visitor control" },
-];

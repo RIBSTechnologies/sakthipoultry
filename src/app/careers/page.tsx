@@ -17,7 +17,7 @@ export default function CareersPage() {
       <BreadcrumbJsonLd items={[{ name: "Careers", path: "/careers" }]} />
       <PageHero
         title="Careers"
-        description="There are no career opportunities at this time."
+        description="Join the Sakthi Poultry team when openings become available."
         image={asset("sakthi-poultry-careers-hero.jpg")}
         imageClassName="object-cover opacity-80 object-[center_72%]"
         crumbs={[{ label: "Careers" }]}

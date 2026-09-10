@@ -77,7 +77,7 @@ export function ValueChain() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <ol className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-2 text-sm font-semibold text-forest">
+          <ol className="mt-8 hidden flex-wrap items-center gap-x-2 gap-y-2 text-sm font-semibold text-forest sm:flex">
           {steps.map((item, i) => (
             <li key={item.step} className="flex items-center gap-2">
               {i > 0 ? (

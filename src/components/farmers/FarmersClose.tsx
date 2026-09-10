@@ -21,14 +21,15 @@ export function FarmersClose() {
           </p>
           <h2
             id="farmers-close-heading"
-            className="mt-3 max-w-4xl font-display text-[2.7rem] font-medium leading-tight text-white"
+            className="mt-3 max-w-3xl font-display text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-[2.7rem]"
           >
-            Whether you are a poultry farmer, trader, retailer, feed
-            distributor, supplier or institutional buyer, Sakthi Poultry
-            welcomes the opportunity to understand your requirements.
+            Partner with Sakthi Poultry
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-white/80 sm:text-lg">
-            Choose the enquiry that best matches your interest:
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-white/80 sm:text-lg">
+            Whether you are a poultry farmer, trader, retailer, feed
+            distributor, supplier or institutional buyer, we welcome the
+            opportunity to understand your requirements. Choose the enquiry that
+            best matches your interest:
           </p>
         </Reveal>
 

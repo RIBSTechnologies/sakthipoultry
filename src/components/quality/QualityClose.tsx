@@ -22,7 +22,7 @@ export function QualityClose() {
           </p>
           <h2
             id="quality-close-heading"
-            className="mt-3 font-display text-[2.7rem] font-medium leading-tight text-white"
+            className="mt-3 font-display text-3xl font-medium leading-tight sm:text-4xl lg:text-[2.7rem] text-white"
           >
             Quality connects every part of Sakthi Poultry
           </h2>
@@ -37,7 +37,7 @@ export function QualityClose() {
           </p>
           <div className="mt-8 inline-flex items-center gap-3">
             <Quote className="size-6 text-gold-light" aria-hidden />
-            <p className="whitespace-nowrap font-display text-[2.7rem] leading-tight text-white">
+            <p className="font-display text-3xl sm:text-[2.7rem] leading-tight text-white">
               Quality Forever
             </p>
           </div>
@@ -45,9 +45,9 @@ export function QualityClose() {
             Learn more about how Sakthi Poultry brings quality into every stage
             of its integrated poultry operations.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
             {qualityLinks.map((link) => (
-              <Button key={link.href} href={link.href} variant="accent">
+              <Button key={link.href} href={link.href} variant="accent" className="w-full sm:w-auto">
                 {link.label}
               </Button>
             ))}

@@ -75,7 +75,7 @@ export function FormCaptcha({ onChange }: Props) {
 
       <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center">
         <div
-          className="overflow-hidden rounded-sm border border-line bg-white"
+          className="w-full max-w-full overflow-hidden rounded-sm border border-line bg-white [&_svg]:h-auto [&_svg]:max-w-full"
           aria-hidden={loading || error}
           dangerouslySetInnerHTML={
             loading || error || !svg ? undefined : { __html: svg }

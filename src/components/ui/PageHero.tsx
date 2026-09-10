@@ -11,7 +11,7 @@ export function PageHero({
   crumbs,
   imageClassName = "object-cover opacity-80",
   overlayClassName = "bg-gradient-to-t from-ink via-ink/55 to-ink/20",
-  contentClassName = "justify-end pb-14 pt-36",
+  contentClassName = "justify-end pb-24 pt-32 sm:pb-14 sm:pt-36",
   contentPanelClassName,
 }: {
   title: string;
@@ -49,7 +49,7 @@ export function PageHero({
         <Reveal y={20}>
           <div className={contentPanelClassName}>
             <Breadcrumbs items={crumbs} />
-            <h1 className="mt-5 max-w-4xl font-display text-[2.7rem] font-medium tracking-tight leading-tight text-white">
+            <h1 className="mt-5 max-w-4xl font-display text-3xl font-medium tracking-tight leading-tight text-white sm:text-4xl lg:text-[2.7rem]">
               {title}
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">

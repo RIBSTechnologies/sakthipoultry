@@ -22,22 +22,22 @@ export function ProductsClose() {
           </p>
           <h2
             id="products-close-heading"
-            className="mt-3 font-display text-[2.7rem] font-medium leading-tight text-white"
+            className="mt-3 font-display text-3xl font-medium leading-tight sm:text-4xl lg:text-[2.7rem] text-white"
           >
             Quality Forever. Integrated Poultry Operations. Dependable Poultry
             Products.
           </h2>
           <div className="mt-8 inline-flex items-center gap-3">
             <Quote className="size-6 text-gold-light" aria-hidden />
-            <p className="whitespace-nowrap font-display text-[2.7rem] leading-tight text-white">
+            <p className="font-display text-3xl sm:text-[2.7rem] leading-tight text-white">
               Quality Forever
             </p>
           </div>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button href={productEnquireHref()} variant="accent">
+          <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
+            <Button href={productEnquireHref()} variant="accent" className="w-full sm:w-auto">
               Enquire About Our Products
             </Button>
-            <Button href="/operations" variant="accent">
+            <Button href="/operations" variant="accent" className="w-full sm:w-auto">
               Explore Our Operations
             </Button>
           </div>

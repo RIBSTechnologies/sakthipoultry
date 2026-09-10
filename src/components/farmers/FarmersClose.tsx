@@ -8,11 +8,10 @@ export function FarmersClose() {
   return (
     <section
       aria-labelledby="farmers-close-heading"
-      className="relative isolate overflow-hidden bg-forest py-12 sm:py-16 lg:py-20"
+      className="relative isolate overflow-hidden bg-ink py-12 sm:py-16 lg:py-20"
     >
       <SectionBackdrop
         src={farmerImages.close}
-        overlay="from-forest/90 via-forest/82 to-forest-deep/88"
       />
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>

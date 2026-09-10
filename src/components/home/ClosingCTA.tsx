@@ -14,19 +14,10 @@ export function ClosingCTA() {
     <section
       id="closing"
       aria-labelledby="closing-heading"
-      className="relative isolate overflow-hidden bg-forest py-12 sm:py-16 lg:py-20"
+      className="relative isolate overflow-hidden bg-ink py-12 sm:py-16 lg:py-20"
     >
       <SectionBackdrop
         src={asset("aerial-complex-01.jpg")}
-        overlay="from-forest/90 via-forest/82 to-forest-deep/88"
-      />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-20"
-        aria-hidden
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 20% 20%, #f59e0b 0, transparent 40%), radial-gradient(circle at 80% 80%, #0f382c 0, transparent 45%)",
-        }}
       />
 
       <Reveal>

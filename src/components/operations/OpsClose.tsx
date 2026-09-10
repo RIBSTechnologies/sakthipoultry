@@ -46,11 +46,10 @@ export function OpsClose() {
 
       <section
         aria-labelledby="ops-partner-heading"
-        className="relative isolate overflow-hidden bg-forest py-12 sm:py-16 lg:py-20"
+        className="relative isolate overflow-hidden bg-ink py-12 sm:py-16 lg:py-20"
       >
         <SectionBackdrop
           src={asset("sakthi-poultry-farm-aerial-complex.jpg")}
-          overlay="from-forest/90 via-forest/82 to-forest-deep/88"
         />
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>

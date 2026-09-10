@@ -90,7 +90,7 @@ export function QualityPillars() {
               className="object-cover"
               sizes="(min-width: 1024px) 42vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/55 to-forest-deep/25" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/40 to-ink/20" />
             <div className="relative flex h-full min-h-[22rem] flex-col justify-end p-7 text-white sm:p-9 lg:min-h-[40rem] lg:p-10">
               <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/12 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-light backdrop-blur-sm">
                 <ShieldCheck className="size-3.5" aria-hidden />

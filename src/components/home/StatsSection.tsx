@@ -35,7 +35,7 @@ export function StatsSection() {
       aria-labelledby="stats-heading"
       className="relative isolate scroll-mt-28 overflow-hidden bg-ink py-12 text-white sm:py-16 lg:py-20"
     >
-      <SectionBackdrop src={asset("aerial-farm-03.jpg")} />
+      <SectionBackdrop src={asset("sakthi-poultry-strength-team.jpg")} />
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <h2

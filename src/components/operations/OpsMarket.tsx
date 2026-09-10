@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { Reveal } from "@/components/ui/Reveal";
-import { asset } from "@/lib/utils";
+import { asset, birdFaceImageClass } from "@/lib/utils";
 
 export function OpsMarket() {
   return (
@@ -50,10 +50,10 @@ export function OpsMarket() {
           </Reveal>
           <Reveal delay={0.08} className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-6">
             <MediaImage
-              src={asset("sakthi-poultry-live-birds.jpg")}
+              src={asset("sakthi-poultry-ops-broiler-sales.jpg")}
               alt="Sakthi Poultry broiler birds for sales and distribution"
               fill
-              className="object-cover"
+              className={birdFaceImageClass}
               sizes="(min-width: 1024px) 48vw, 100vw"
             />
           </Reveal>

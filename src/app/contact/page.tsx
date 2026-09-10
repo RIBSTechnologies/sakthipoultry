@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { site, fullAddress, mapsHref } from "@/lib/site";
 import { asset } from "@/lib/utils";
 import { Mail, MapPin } from "lucide-react";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -46,6 +47,12 @@ export default function ContactPage() {
             <Mail className="mt-1 size-5 shrink-0 text-gold" />
             {site.email}
           </a>
+          <div className="mt-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+              Follow us
+            </p>
+            <SocialLinks className="mt-3" tone="light" />
+          </div>
           <p className="mt-6 text-sm text-muted">CIN {site.cin}</p>
           <iframe
             title="Sakthi Poultry head office map"

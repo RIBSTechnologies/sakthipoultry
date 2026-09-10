@@ -16,8 +16,8 @@ export const site = {
   logo: "/assets/images/logo.png",
   heroVideo: "/assets/videos/sakthi-poultry-tamil-nadu-farm-hero.mp4",
   social: {
-    facebook: "",
-    instagram: "",
+    facebook: "https://www.facebook.com/sakthipoultry",
+    instagram: "https://www.instagram.com/sakthi_poultry/",
     linkedin: "",
     youtube: "",
   },
@@ -66,3 +66,16 @@ export function fullAddress() {
   const a = site.address;
   return `${a.line1}, ${a.line2}, ${a.city}, ${a.district}, ${a.state} ${a.pincode}, ${a.country}`;
 }
+
+export const socialLinks = [
+  {
+    id: "facebook",
+    label: "Facebook",
+    href: site.social.facebook,
+  },
+  {
+    id: "instagram",
+    label: "Instagram",
+    href: site.social.instagram,
+  },
+].filter((item) => Boolean(item.href));

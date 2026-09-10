@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 import { navItems, site, fullAddress, mapsHref } from "@/lib/site";
 import { enquiryTypes } from "@/lib/data";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export function Footer() {
   return (
@@ -30,6 +31,7 @@ export function Footer() {
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
             {site.description}
           </p>
+          <SocialLinks className="mt-6" tone="dark" />
           <p className="mt-4 text-xs text-white/45">CIN {site.cin}</p>
         </div>
         <div className="lg:col-span-2">

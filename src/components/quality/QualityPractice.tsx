@@ -44,9 +44,9 @@ export function QualityPractice() {
           <Reveal delay={0.08} className="relative aspect-[3/4] overflow-hidden rounded-2xl lg:col-span-5">
             <MediaImage
               src={asset("sakthi-poultry-food-safety.jpg")}
-              alt="Premium broiler quality from Sakthi Poultry — high breast yield and clean dressing"
+              alt="Premium broiler quality with high breast yield and clean dressing"
               fill
-              className="object-cover object-center"
+              className="object-cover object-top"
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </Reveal>

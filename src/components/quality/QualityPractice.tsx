@@ -46,7 +46,7 @@ export function QualityPractice() {
               src={asset("sakthi-poultry-food-safety.jpg")}
               alt="Premium broiler quality with high breast yield and clean dressing"
               fill
-              className="object-cover object-top"
+              className="object-cover object-center"
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </Reveal>

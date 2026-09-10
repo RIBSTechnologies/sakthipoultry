@@ -41,12 +41,12 @@ export function QualityPractice() {
               quality.
             </p>
           </Reveal>
-          <Reveal delay={0.08} className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5">
+          <Reveal delay={0.08} className="relative aspect-[3/4] overflow-hidden rounded-2xl lg:col-span-5">
             <MediaImage
-              src={asset("sakthi-poultry-chicken-meat.jpg")}
-              alt="Quality chicken products from Sakthi Poultry production"
+              src={asset("sakthi-poultry-food-safety.jpg")}
+              alt="Premium broiler quality from Sakthi Poultry — high breast yield and clean dressing"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </Reveal>

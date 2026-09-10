@@ -44,12 +44,12 @@ export function ProductsIntro() {
             Product Enquiry
           </Button>
         </Reveal>
-        <Reveal delay={0.08} className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5">
+        <Reveal delay={0.08} className="relative aspect-[3/4] overflow-hidden rounded-2xl lg:col-span-5">
           <MediaImage
-            src={asset("sakthi-poultry-hatching-eggs.jpg")}
-            alt="Hatching eggs from Sakthi Poultry product operations"
+            src={asset("sakthi-poultry-products-intro.jpg")}
+            alt="Broiler birds from Sakthi Poultry product operations"
             fill
-            className="object-cover"
+            className="object-cover object-[center_35%]"
             sizes="(min-width: 1024px) 40vw, 100vw"
           />
         </Reveal>

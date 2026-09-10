@@ -12,7 +12,7 @@ export function QualityClose() {
       className="relative isolate overflow-hidden bg-forest py-12 sm:py-16 lg:py-20"
     >
       <SectionBackdrop
-        src={asset("sakthi-poultry-farm-aerial-complex.jpg")}
+        src={asset("sakthi-poultry-quality-close.jpg")}
         overlay="from-forest/90 via-forest/82 to-forest-deep/88"
       />
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
@@ -46,12 +46,8 @@ export function QualityClose() {
             of its integrated poultry operations.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            {qualityLinks.map((link, index) => (
-              <Button
-                key={link.href}
-                href={link.href}
-                variant={index === 0 ? "accent" : "outlineLight"}
-              >
+            {qualityLinks.map((link) => (
+              <Button key={link.href} href={link.href} variant="accent">
                 {link.label}
               </Button>
             ))}

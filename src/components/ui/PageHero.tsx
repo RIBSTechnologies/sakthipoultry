@@ -52,7 +52,10 @@ export function PageHero({
       )}
       <div className={`absolute inset-0 ${overlayClassName}`} />
       <div
-        className={`relative mx-auto flex min-h-[48vh] max-w-7xl flex-col px-4 sm:px-6 lg:px-8 ${contentClassName}`}
+        className={cn(
+          "relative mx-auto flex min-h-[48vh] max-w-7xl flex-col px-4 sm:px-6 lg:px-8",
+          contentClassName,
+        )}
       >
         <Reveal y={20}>
           <div className={contentPanelClassName}>

@@ -44,10 +44,10 @@ export function OpsIntro() {
         <Reveal delay={0.1} className="lg:col-span-5">
           <div className="relative min-h-[22rem] overflow-hidden rounded-2xl lg:h-full">
             <MediaImage
-              src={asset("sakthi-poultry-farm-aerial-complex.jpg")}
-              alt="Sakthi Poultry integrated farm facilities in Tamil Nadu"
+              src={asset("sakthi-poultry-operations-intro.jpg")}
+              alt="Aerial view of Sakthi Poultry farm sheds with ventilation systems among palm groves"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </div>

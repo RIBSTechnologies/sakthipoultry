@@ -17,23 +17,72 @@ export function VideoPlayer({
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
-  const [playing, setPlaying] = useState(false);
+  const [ready, setReady] = useState(!hideUntilPlaying);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video || controls) return;
 
-    const start = () => {
-      void video.play().catch(() => {});
+    let cancelled = false;
+    let attempts = 0;
+    let retryTimer: ReturnType<typeof setTimeout> | undefined;
+
+    const markReady = () => {
+      if (!cancelled) setReady(true);
     };
 
-    start();
-    video.addEventListener("loadeddata", start);
-    video.addEventListener("canplay", start);
+    const tryPlay = async () => {
+      if (cancelled || !video) return;
+
+      try {
+        video.muted = true;
+        video.defaultMuted = true;
+        await video.play();
+        markReady();
+      } catch {
+        attempts += 1;
+        if (attempts < 10) {
+          retryTimer = setTimeout(() => {
+            void tryPlay();
+          }, Math.min(250 * attempts, 1500));
+          return;
+        }
+        // Autoplay blocked, but a decoded frame is enough to show something.
+        if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+          markReady();
+        }
+      }
+    };
+
+    const onMediaReady = () => {
+      void tryPlay();
+    };
+
+    const onVisibility = () => {
+      if (document.visibilityState === "visible") void tryPlay();
+    };
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+
+    video.addEventListener("loadeddata", onMediaReady);
+    video.addEventListener("canplay", onMediaReady);
+    video.addEventListener("playing", markReady);
+    document.addEventListener("visibilitychange", onVisibility);
+
+    // Hard refresh can leave the element without a fresh load attempt.
+    video.load();
+    void tryPlay();
 
     return () => {
-      video.removeEventListener("loadeddata", start);
-      video.removeEventListener("canplay", start);
+      cancelled = true;
+      if (retryTimer) clearTimeout(retryTimer);
+      video.removeEventListener("loadeddata", onMediaReady);
+      video.removeEventListener("canplay", onMediaReady);
+      video.removeEventListener("playing", markReady);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, [controls, src]);
 
@@ -42,7 +91,9 @@ export function VideoPlayer({
   return (
     <video
       ref={videoRef}
-      className={`${className}${hideUntilPlaying && !playing ? " opacity-0" : ""}`}
+      key={src}
+      src={src}
+      className={`${className}${hideUntilPlaying && !ready ? " opacity-0" : ""}`}
       autoPlay={!controls}
       muted={!controls}
       loop={!controls}
@@ -51,13 +102,8 @@ export function VideoPlayer({
       preload={controls ? "metadata" : "auto"}
       poster={hideUntilPlaying ? undefined : poster}
       aria-hidden={!controls}
-      onPlaying={() => setPlaying(true)}
+      onPlaying={() => setReady(true)}
       onError={() => setFailed(true)}
-    >
-      <source
-        src={src}
-        type={src.endsWith(".mov") ? "video/quicktime" : "video/mp4"}
-      />
-    </video>
+    />
   );
 }

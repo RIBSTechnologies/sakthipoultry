@@ -19,22 +19,23 @@ export function Hero() {
       aria-labelledby="hero-heading"
       className="relative isolate min-h-[88vh] overflow-hidden bg-forest-deep"
     >
-      {reduce ? (
+      <div className="absolute inset-0">
         <MediaImage
           src={asset("aerial-farm-01.jpg")}
-          alt="Sakthi Poultry integrated farm in Tamil Nadu"
+          alt=""
           fill
           priority
           className="object-cover"
           sizes="100vw"
         />
-      ) : (
-        <VideoPlayer
-          src={site.heroVideo}
-          hideUntilPlaying
-          className="hero-media pointer-events-none absolute inset-0 h-full w-full object-cover"
-        />
-      )}
+        {reduce ? null : (
+          <VideoPlayer
+            src={site.heroVideo}
+            hideUntilPlaying
+            className="hero-media pointer-events-none absolute inset-0 h-full w-full object-cover"
+          />
+        )}
+      </div>
       <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/45 via-forest-deep/20 to-forest-deep/5" />
       <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/55 via-transparent to-forest-deep/15" />
 

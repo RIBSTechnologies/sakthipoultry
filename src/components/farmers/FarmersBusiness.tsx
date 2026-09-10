@@ -213,11 +213,11 @@ export function FarmersBusiness() {
           </Reveal>
           <Reveal
             delay={0.08}
-            className="relative aspect-[3/4] overflow-hidden rounded-2xl lg:col-span-5"
+            className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5"
           >
             <MediaImage
               src={farmerImages.suppliers}
-              alt="Sakthi Poultry refrigerated delivery truck"
+              alt="Sakthi Poultry refrigerated logistics truck"
               fill
               className="object-cover object-center"
               sizes="(min-width: 1024px) 40vw, 100vw"

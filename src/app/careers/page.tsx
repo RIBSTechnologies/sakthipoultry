@@ -19,7 +19,7 @@ export default function CareersPage() {
         title="Careers"
         description="Join the Sakthi Poultry team when openings become available."
         image={asset("sakthi-poultry-careers-hero.jpg")}
-        imageClassName="object-cover opacity-80 object-[center_85%]"
+        imageClassName="object-cover opacity-80 object-center"
         crumbs={[{ label: "Careers" }]}
       />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">

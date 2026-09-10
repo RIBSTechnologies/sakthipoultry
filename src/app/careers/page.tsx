@@ -18,7 +18,8 @@ export default function CareersPage() {
       <PageHero
         title="Careers"
         description="There are no career opportunities at this time."
-        image={asset("sakthi-poultry-farm-aerial-complex.jpg")}
+        image={asset("sakthi-poultry-careers-hero.jpg")}
+        imageClassName="object-cover opacity-80 object-[center_35%]"
         crumbs={[{ label: "Careers" }]}
       />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">

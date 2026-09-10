@@ -20,11 +20,15 @@ type SendMailOptions = {
 };
 
 function getMailTargets() {
-  const user = process.env.SMTP_USER;
-  return {
-    to: process.env.MAIL_TO ?? user ?? "",
-    from: process.env.MAIL_FROM ?? user ?? "",
-  };
+  const user = process.env.SMTP_USER?.trim() ?? "";
+  const to = (process.env.MAIL_TO ?? user).trim();
+  const fromRaw = (process.env.MAIL_FROM ?? user).trim();
+  const from =
+    fromRaw && !fromRaw.includes("<") && user
+      ? `Sakthi Poultry <${fromRaw}>`
+      : fromRaw;
+
+  return { to, from };
 }
 
 function getMailConfig(): MailConfig | null {

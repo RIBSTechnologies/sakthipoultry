@@ -55,9 +55,9 @@ export function FarmersContract() {
         >
           <MediaImage
             src={farmerImages.contract}
-            alt="Farming communities in the Sakthi Poultry contract farming network"
+            alt="A Sakthi Poultry farmer with broiler birds in a contract farming shed"
             fill
-            className="object-cover object-[center_35%]"
+            className="object-cover object-center"
             sizes="(min-width: 1024px) 40vw, 100vw"
           />
         </Reveal>

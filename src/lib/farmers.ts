@@ -10,7 +10,7 @@ export const farmersSeo = {
 export const farmerImages = {
   hero: asset("sakthi-poultry-contract-broiler-farm.jpg"),
   intro: asset("sakthi-poultry-contract-broiler-farm.jpg"),
-  contract: asset("sakthi-poultry-contract-broiler-farm.jpg"),
+  contract: asset("sakthi-poultry-contract-farming.jpg"),
   technical: asset("sakthi-poultry-broiler-chicks.jpg"),
   feed: asset("sakthi-poultry-feed-manufacturing.jpg"),
   suppliers: asset("sakthi-poultry-farm-aerial-complex.jpg"),

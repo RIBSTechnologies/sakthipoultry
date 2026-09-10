@@ -20,30 +20,33 @@ export function QualityLab() {
             />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
               <p>
-                Laboratory testing forms part of Sakthi Poultry&apos;s
-                quality-focused operations.
+                Laboratory testing supports Sakthi Poultry&apos;s quality focused
+                operations.
               </p>
               <p>
-                Our in-house poultry laboratory supports testing related to
-                poultry operations and raw materials.
+                Our in house laboratory covers poultry health, nutrition and raw
+                material testing.
               </p>
             </div>
           </Reveal>
-          <Reveal delay={0.08} className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5">
+          <Reveal
+            delay={0.08}
+            className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:col-span-5"
+          >
             <MediaImage
-              src={asset("sakthi-poultry-feed-manufacturing.jpg")}
-              alt="Feed manufacturing supporting nutritional raw-material testing"
+              src={asset("sakthi-poultry-quality-lab-hplc.png")}
+              alt="Sakthi Poultry laboratory HPLC testing for feed additives"
               fill
-              className="object-cover"
+              className="object-cover object-[center_20%]"
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </Reveal>
         </div>
 
         <p className="mt-10 text-[11px] font-semibold uppercase tracking-[0.22em] text-forest">
-          Current laboratory capabilities include
+          Current Laboratory Capabilities
         </p>
-        <Stagger className="mt-4 grid auto-rows-fr items-stretch gap-4 lg:grid-cols-3">
+        <Stagger className="mt-4 grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {labCapabilities.map((item, index) => (
             <StaggerItem key={item.title} className="h-full">
               <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-6 shadow-sm">
@@ -60,17 +63,6 @@ export function QualityLab() {
             </StaggerItem>
           ))}
         </Stagger>
-
-        <Reveal delay={0.08}>
-          <p className="mt-10 text-base leading-relaxed text-muted">
-            These laboratory capabilities support our broader focus on poultry
-            nutrition, bird health and quality across our integrated production
-            system.
-          </p>
-          <p className="mt-6 font-display text-2xl text-forest sm:text-3xl">
-            Quality through knowledge, testing and responsible management
-          </p>
-        </Reveal>
       </div>
     </section>
   );

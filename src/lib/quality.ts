@@ -34,16 +34,20 @@ export const welfarePoints = [
 
 export const labCapabilities = [
   {
-    title: "Raw Material Testing",
-    text: "Testing of third-party raw materials for nutritional values, supporting better understanding of materials associated with poultry nutrition.",
+    title: "Raw Material Testing & Proximate Analysis",
+    text: "Moisture, protein, fat, fibre and ash analysis for feed quality and formulation.",
   },
   {
     title: "Serology Testing",
-    text: "Testing related to breeder and broiler chicks and birds for serology.",
+    text: "Monitoring antibody responses in breeder and broiler birds to support vaccination programmes.",
   },
   {
     title: "Bacterial Testing",
-    text: "Testing of breeder and broiler chicks and birds for bacteria.",
+    text: "Testing bird and environmental samples to support disease monitoring and hygiene.",
+  },
+  {
+    title: "HPLC Testing for Feed Additives",
+    text: "Analysis of selected vitamins and antibiotics to verify quality, formulation and feed safety.",
   },
 ];
 

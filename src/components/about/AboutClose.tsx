@@ -27,12 +27,8 @@ export function AboutClose() {
             operations support one consistent commitment.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            {aboutLinks.map((link, index) => (
-              <Button
-                key={link.href}
-                href={link.href}
-                variant={index === 0 ? "accent" : "outlineLight"}
-              >
+            {aboutLinks.map((link) => (
+              <Button key={link.href} href={link.href} variant="accent">
                 {link.label}
               </Button>
             ))}

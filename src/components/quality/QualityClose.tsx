@@ -13,7 +13,7 @@ export function QualityClose() {
     >
       <SectionBackdrop
         src={asset("sakthi-poultry-quality-close.jpg")}
-        overlay="from-forest/90 via-forest/82 to-forest-deep/88"
+        overlay="from-forest/55 via-forest/45 to-forest-deep/55"
       />
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <Reveal>

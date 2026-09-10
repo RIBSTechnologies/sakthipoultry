@@ -49,14 +49,14 @@ export function StatsSection() {
           </h2>
         </Reveal>
 
-        <Stagger className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {metrics.map((item) => (
             <StaggerItem key={`${item.value}-${item.unit}`}>
-              <article className="group flex h-full flex-col items-center justify-center rounded-xl border border-white/15 bg-white/95 px-3 py-3 text-center shadow-md backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-gold/40 sm:py-3.5">
-                <p className="font-display text-2xl font-medium text-forest sm:text-[1.65rem]">
+              <article className="group flex h-full min-h-[8.5rem] flex-col items-center justify-center rounded-2xl border border-white/15 bg-white/95 px-4 py-5 text-center shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-gold/40 sm:min-h-[9.5rem] sm:p-6">
+                <p className="font-display text-3xl font-medium text-forest sm:text-4xl xl:text-[2.15rem]">
                   <CountUp value={item.value} />
                 </p>
-                <p className="mt-0.5 text-xs font-semibold tracking-normal text-gold sm:text-sm">
+                <p className="mt-1 text-sm font-semibold tracking-normal text-gold">
                   {item.unit}
                 </p>
               </article>
@@ -69,7 +69,7 @@ export function StatsSection() {
             href="/operations"
             variant="accent"
             size="lg"
-            className="mt-6"
+            className="mt-8"
           >
             Discover Our Capabilities
             <ArrowRight className="size-4" aria-hidden />

@@ -33,10 +33,13 @@ export function StatsSection() {
     <section
       id="strength"
       aria-labelledby="stats-heading"
-      className="relative isolate scroll-mt-28 overflow-hidden bg-ink py-12 text-white sm:py-16 lg:py-20"
+      className="relative isolate scroll-mt-28 min-h-[36rem] overflow-hidden bg-ink py-10 text-white sm:min-h-[42rem] sm:py-12 lg:min-h-[48rem] lg:py-14"
     >
-      <SectionBackdrop src={asset("sakthi-poultry-strength-team.jpg")} />
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionBackdrop
+        src={asset("sakthi-poultry-strength-team.jpg")}
+        overlay="from-ink/55 via-ink/25 to-ink/15"
+      />
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-start px-4 sm:px-6 lg:px-8">
         <Reveal>
           <h2
             id="stats-heading"
@@ -46,14 +49,14 @@ export function StatsSection() {
           </h2>
         </Reveal>
 
-        <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <Stagger className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {metrics.map((item) => (
             <StaggerItem key={`${item.value}-${item.unit}`}>
-              <article className="group flex h-full min-h-[9.5rem] flex-col items-center justify-center rounded-2xl border border-white/15 bg-white p-5 text-center shadow-lg transition duration-300 hover:-translate-y-1 hover:border-gold/40 sm:min-h-[10.5rem] sm:p-6">
-                <p className="font-display text-3xl font-medium text-forest sm:text-4xl xl:text-[2.15rem]">
+              <article className="group flex h-full flex-col items-center justify-center rounded-xl border border-white/15 bg-white/95 px-3 py-3 text-center shadow-md backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-gold/40 sm:py-3.5">
+                <p className="font-display text-2xl font-medium text-forest sm:text-[1.65rem]">
                   <CountUp value={item.value} />
                 </p>
-                <p className="mt-1 text-sm font-semibold tracking-normal text-gold">
+                <p className="mt-0.5 text-xs font-semibold tracking-normal text-gold sm:text-sm">
                   {item.unit}
                 </p>
               </article>
@@ -66,7 +69,7 @@ export function StatsSection() {
             href="/operations"
             variant="accent"
             size="lg"
-            className="mt-10"
+            className="mt-6"
           >
             Discover Our Capabilities
             <ArrowRight className="size-4" aria-hidden />

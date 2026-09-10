@@ -33,11 +33,11 @@ export function StatsSection() {
     <section
       id="strength"
       aria-labelledby="stats-heading"
-      className="relative isolate scroll-mt-28 min-h-[36rem] overflow-hidden bg-ink py-10 text-white sm:min-h-[42rem] sm:py-12 lg:min-h-[48rem] lg:py-14"
+      className="relative isolate scroll-mt-28 min-h-[36rem] overflow-hidden bg-forest py-10 text-white sm:min-h-[42rem] sm:py-12 lg:min-h-[48rem] lg:py-14"
     >
       <SectionBackdrop
         src={asset("sakthi-poultry-strength-team.jpg")}
-        overlay="from-ink/55 via-ink/25 to-ink/15"
+        overlay="from-forest/75 via-forest/45 to-forest-deep/55"
       />
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-start px-4 sm:px-6 lg:px-8">
         <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">

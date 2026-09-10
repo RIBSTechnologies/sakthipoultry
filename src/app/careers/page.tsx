@@ -7,7 +7,7 @@ import { asset } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Explore career opportunities at Sakthi Poultry Private Limited across poultry operations in Tamil Nadu.",
+    "Career opportunities at Sakthi Poultry Private Limited. There are no openings at this time.",
   alternates: { canonical: "/careers" },
 };
 
@@ -17,10 +17,9 @@ export default function CareersPage() {
       <BreadcrumbJsonLd items={[{ name: "Careers", path: "/careers" }]} />
       <PageHero
         title="Careers"
-        description="Explore current openings and grow with Sakthi Poultry across our integrated poultry operations."
+        description="There are no career opportunities at this time."
         image={asset("sakthi-poultry-careers-hero.jpg")}
-        imageClassName="object-cover object-[center_42%]"
-        overlayClassName="bg-gradient-to-t from-ink/85 via-ink/40 to-ink/25"
+        imageClassName="object-cover opacity-80 object-[center_12%]"
         crumbs={[{ label: "Careers" }]}
       />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">

@@ -47,7 +47,7 @@ export const labCapabilities = [
   },
   {
     title: "HPLC Testing for Feed Additives",
-    text: "Analysis of selected vitamins and antibiotics to verify quality, formulation and feed safety.",
+    text: "Analysis of selected vitamins, Amino acids and antibiotics to verify quality, formulation and feed safety.",
   },
 ];
 

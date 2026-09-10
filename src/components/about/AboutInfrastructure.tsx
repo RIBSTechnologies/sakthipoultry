@@ -134,14 +134,14 @@ export function AboutInfrastructure() {
                   ) : null}
                 </header>
 
-                <figure className="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl bg-white">
+                <figure className="w-full overflow-hidden rounded-2xl bg-white">
                   <MediaImage
                     src={facility.image}
                     alt={facility.alt}
                     width={facility.width}
                     height={facility.height}
                     className="h-auto w-full"
-                    sizes="(min-width: 768px) 48rem, 100vw"
+                    sizes="(min-width: 1280px) 80rem, 100vw"
                   />
                 </figure>
 

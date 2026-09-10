@@ -15,7 +15,7 @@ export const farmerImages = {
   feed: asset("sakthi-poultry-feed-manufacturing.jpg"),
   suppliers: asset("sakthi-poultry-supplier-corn.jpg"),
   institutional: asset("sakthi-poultry-hatching-eggs.jpg"),
-  close: asset("sakthi-poultry-farm-aerial-complex.jpg"),
+  close: asset("sakthi-poultry-farmers-close.jpg"),
 };
 
 export const farmerEnquire = {

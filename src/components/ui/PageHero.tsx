@@ -2,6 +2,7 @@ import { MediaImage } from "@/components/ui/MediaImage";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Reveal } from "@/components/ui/Reveal";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
+import { cn } from "@/lib/utils";
 
 export function PageHero({
   title,
@@ -13,6 +14,7 @@ export function PageHero({
   overlayClassName = "bg-gradient-to-t from-ink via-ink/55 to-ink/20",
   contentClassName = "justify-end pb-24 pt-32 sm:pb-14 sm:pt-36",
   contentPanelClassName,
+  sectionClassName,
 }: {
   title: string;
   description: string;
@@ -23,9 +25,15 @@ export function PageHero({
   overlayClassName?: string;
   contentClassName?: string;
   contentPanelClassName?: string;
+  sectionClassName?: string;
 }) {
   return (
-    <section className="relative isolate min-h-[48vh] overflow-hidden bg-ink">
+    <section
+      className={cn(
+        "relative isolate min-h-[48vh] overflow-hidden bg-ink",
+        sectionClassName,
+      )}
+    >
       {video ? (
         <VideoPlayer
           src={video}

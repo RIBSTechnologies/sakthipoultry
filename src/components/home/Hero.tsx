@@ -51,10 +51,6 @@ export function Hero() {
           <span className="inline-flex items-center rounded-full border-2 border-gold-light bg-forest-deep/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-gold-light backdrop-blur-sm sm:px-4 sm:text-[11px] sm:tracking-[0.16em]">
             Vencobb Family
           </span>
-          <span className="inline-flex items-center rounded-full border-2 border-gold-light bg-forest-deep/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-gold-light backdrop-blur-sm sm:px-4 sm:text-[11px] sm:tracking-[0.16em]">
-            <span className="sm:hidden">Integrated Poultry</span>
-            <span className="hidden sm:inline">Integrated Poultry Integration</span>
-          </span>
         </motion.div>
 
         <motion.h1

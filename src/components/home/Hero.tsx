@@ -1,5 +1,6 @@
 "use client";
 
+import { useCallback, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
@@ -12,6 +13,9 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export function Hero() {
   const reduce = useReducedMotion();
+  const [showFallback, setShowFallback] = useState(false);
+  const useImage = Boolean(reduce) || showFallback;
+  const handleVideoFail = useCallback(() => setShowFallback(true), []);
 
   return (
     <section
@@ -20,18 +24,20 @@ export function Hero() {
       className="relative isolate min-h-[88vh] overflow-hidden bg-forest-deep"
     >
       <div className="absolute inset-0">
-        <MediaImage
-          src={asset("aerial-farm-01.jpg")}
-          alt=""
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        {reduce ? null : (
+        {useImage ? (
+          <MediaImage
+            src={asset("aerial-farm-01.jpg")}
+            alt="Sakthi Poultry integrated farm in Tamil Nadu"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        ) : (
           <VideoPlayer
             src={site.heroVideo}
             hideUntilPlaying
+            onFail={handleVideoFail}
             className="hero-media pointer-events-none absolute inset-0 h-full w-full object-cover"
           />
         )}

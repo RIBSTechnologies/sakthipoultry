@@ -8,12 +8,14 @@ export function VideoPlayer({
   className = "",
   controls = false,
   hideUntilPlaying = false,
+  onFail,
 }: {
   src: string;
   poster?: string;
   className?: string;
   controls?: boolean;
   hideUntilPlaying?: boolean;
+  onFail?: () => void;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
@@ -26,9 +28,16 @@ export function VideoPlayer({
     let cancelled = false;
     let attempts = 0;
     let retryTimer: ReturnType<typeof setTimeout> | undefined;
+    let failTimer: ReturnType<typeof setTimeout> | undefined;
 
     const markReady = () => {
       if (!cancelled) setReady(true);
+    };
+
+    const markFailed = () => {
+      if (cancelled) return;
+      setFailed(true);
+      onFail?.();
     };
 
     const tryPlay = async () => {
@@ -37,54 +46,58 @@ export function VideoPlayer({
       try {
         video.muted = true;
         video.defaultMuted = true;
-        await video.play();
-        markReady();
+        const playPromise = video.play();
+        if (playPromise !== undefined) await playPromise;
+        if (!cancelled && !video.paused) markReady();
       } catch {
         attempts += 1;
-        if (attempts < 10) {
+        if (attempts < 12) {
           retryTimer = setTimeout(() => {
             void tryPlay();
-          }, Math.min(250 * attempts, 1500));
+          }, Math.min(200 * attempts, 1200));
           return;
         }
-        // Autoplay blocked, but a decoded frame is enough to show something.
-        if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-          markReady();
-        }
+        markFailed();
       }
     };
 
-    const onMediaReady = () => {
+    const onPlaying = () => markReady();
+    const onCanPlay = () => {
       void tryPlay();
     };
-
     const onVisibility = () => {
       if (document.visibilityState === "visible") void tryPlay();
     };
 
     video.muted = true;
     video.defaultMuted = true;
+    video.playsInline = true;
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
+    video.setAttribute("muted", "");
 
-    video.addEventListener("loadeddata", onMediaReady);
-    video.addEventListener("canplay", onMediaReady);
-    video.addEventListener("playing", markReady);
+    video.addEventListener("playing", onPlaying);
+    video.addEventListener("canplay", onCanPlay);
+    video.addEventListener("loadeddata", onCanPlay);
     document.addEventListener("visibilitychange", onVisibility);
 
-    // Hard refresh can leave the element without a fresh load attempt.
-    video.load();
     void tryPlay();
+
+    // If autoplay never starts, surface the poster/fallback path.
+    failTimer = setTimeout(() => {
+      if (!cancelled && video.paused) markFailed();
+    }, 8000);
 
     return () => {
       cancelled = true;
       if (retryTimer) clearTimeout(retryTimer);
-      video.removeEventListener("loadeddata", onMediaReady);
-      video.removeEventListener("canplay", onMediaReady);
-      video.removeEventListener("playing", markReady);
+      if (failTimer) clearTimeout(failTimer);
+      video.removeEventListener("playing", onPlaying);
+      video.removeEventListener("canplay", onCanPlay);
+      video.removeEventListener("loadeddata", onCanPlay);
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  }, [controls, src]);
+  }, [controls, onFail, src]);
 
   if (failed && !controls) return null;
 
@@ -103,7 +116,10 @@ export function VideoPlayer({
       poster={hideUntilPlaying ? undefined : poster}
       aria-hidden={!controls}
       onPlaying={() => setReady(true)}
-      onError={() => setFailed(true)}
+      onError={() => {
+        setFailed(true);
+        onFail?.();
+      }}
     />
   );
 }
